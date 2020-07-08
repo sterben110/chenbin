@@ -8,7 +8,7 @@ tags:
 ```
 hexo new 博客名
 ```
-利用这条命令我们可以创建一个新的md文件，比如我们输入`hexo new hello`，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。
+利用这条命令我们可以创建一个新的md文件，比如我们输入`hexo new hello`，<br />那么框架就会自动替我们创建一个叫做hello.md的文件。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。
 <a name="beb9b908"></a>
 # 2、Hexo更换主题
 <a name="3cbb5269"></a>
