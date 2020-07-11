@@ -5,15 +5,26 @@
   
 
   
-  <title>sterben110的博客</title>
+  <title>动态规划 | sterben110的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="sterben110的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="动态规划步骤1、确定公式自变量，确定函数值的含义2、明确公式3、代码编写（1）考虑特殊情况（2）加入缓存（3）将公式代码化（4）存储缓存（缓存一般为键值对，键存自变量，值存相应的函数值） 经典案例 1、钞票凑数问题 假设有11元、5元、1元面额的钞票，如何凑出15元使得钞票数量最少？  我们用f(M)来表示凑出 M 所需的最少钞票数量，以上情况可表示为： 则该问题的公式可概括为：加入缓存后的代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态规划">
+<meta property="og:url" content="http://yoursite.com/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="sterben110的博客">
+<meta property="og:description" content="动态规划步骤1、确定公式自变量，确定函数值的含义2、明确公式3、代码编写（1）考虑特殊情况（2）加入缓存（3）将公式代码化（4）存储缓存（缓存一般为键值对，键存自变量，值存相应的函数值） 经典案例 1、钞票凑数问题 假设有11元、5元、1元面额的钞票，如何凑出15元使得钞票数量最少？  我们用f(M)来表示凑出 M 所需的最少钞票数量，以上情况可表示为： 则该问题的公式可概括为：加入缓存后的代码">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/437282/1594446749488-bd8945f6-b875-4bdd-80bb-f84e5da33874.png#align=left&display=inline&height=108&margin=%5Bobject%20Object%5D&originHeight=216&originWidth=819&size=0&status=done&style=none&width=410">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594446986811-e97f8502-606b-45df-a1e2-af4390f709b1.svg#align=left&display=inline&height=22&margin=%5Bobject%20Object%5D&originHeight=22&originWidth=479&size=0&status=done&style=none&width=479">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594448392744-2299eb65-3a08-4274-931e-114aa2761f26.svg#align=left&display=inline&height=18&margin=%5Bobject%20Object%5D&originHeight=18&originWidth=557&size=0&status=done&style=none&width=557">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/437282/1594452385600-ae57d35f-69b8-4b8d-a62c-fea5b6f9a370.png#align=left&display=inline&height=27&margin=%5Bobject%20Object%5D&name=image.png&originHeight=54&originWidth=392&size=4167&status=done&style=none&width=196">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/437282/1594452357561-664494e7-493d-477b-9784-6a3da2576b2a.png#align=left&display=inline&height=52&margin=%5Bobject%20Object%5D&name=image.png&originHeight=103&originWidth=771&size=23444&status=done&style=none&width=385.5">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/437282/1594452258480-d3b51f5f-38d5-4482-9081-d2e7b5d64b4d.png#align=left&display=inline&height=28&margin=%5Bobject%20Object%5D&name=image.png&originHeight=56&originWidth=770&size=12748&status=done&style=none&width=385">
+<meta property="article:published_time" content="2020-07-11T07:28:45.000Z">
+<meta property="article:modified_time" content="2020-07-11T07:29:49.845Z">
 <meta property="article:author" content="chenbin">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2020/png/437282/1594446749488-bd8945f6-b875-4bdd-80bb-f84e5da33874.png#align=left&display=inline&height=108&margin=%5Bobject%20Object%5D&originHeight=216&originWidth=819&size=0&status=done&style=none&width=410">
   
     <link rel="alternate" href="/atom.xml" title="sterben110的博客" type="application/atom+xml">
   
@@ -62,9 +73,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-算法/动态规划" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-算法/动态规划" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="article-date">
   <time datetime="2020-07-11T07:28:45.000Z" itemprop="datePublished">2020-07-11</time>
@@ -81,8 +90,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+    <h1 class="article-title" itemprop="name">
+      动态规划
     </h1>
   
 
@@ -134,200 +143,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Hexo/3、本地电脑部署博客步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/" class="article-date">
-  <time datetime="2020-07-08T09:35:57.000Z" itemprop="datePublished">2020-07-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/">3、本地电脑部署博客步骤</a>
-    </h1>
+    <a href="/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">3、本地电脑部署博客步骤</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a name="45ca8f20"></a></p>
-<h1 id="1、本地安装Git"><a href="#1、本地安装Git" class="headerlink" title="1、本地安装Git"></a>1、本地安装Git</h1><p><br />在官网下载最新版本的git：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a><br /></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;查看git版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<p><a name="290f6479"></a></p>
-<h1 id="2、本地配置SSH并绑定至GitHub"><a href="#2、本地配置SSH并绑定至GitHub" class="headerlink" title="2、本地配置SSH并绑定至GitHub"></a>2、本地配置SSH并绑定至GitHub</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;生成本地SSH</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br><span class="line">&#x2F;&#x2F;查询本地SSH</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<p><a name="2d096043"></a></p>
-<h1 id="3、本地安装node-js"><a href="#3、本地安装node-js" class="headerlink" title="3、本地安装node.js"></a>3、本地安装node.js</h1><p><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">下载地址</a><br /></p>
-<p><a name="4d0c7542"></a></p>
-<h1 id="4、本地安装hexo"><a href="#4、本地安装hexo" class="headerlink" title="4、本地安装hexo"></a>4、本地安装hexo</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">查阅文档</a><br />安装完node.js之后,我们就可以安装Hexo啦，在命令行输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p><br />局部安装 hexo 包，在命令行输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-
-<p><a name="5b58a060"></a></p>
-<h1 id="5、git-clone-到本地"><a href="#5、git-clone-到本地" class="headerlink" title="5、git clone 到本地"></a>5、git clone 到本地</h1><p>clone 远程仓库dev分支的代码到本地</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b dev 仓库地址</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/" data-id="ckchbwqi80004ikle2f4j62y2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-Hexo/2、Hexo的应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
-  <time datetime="2020-07-08T09:33:48.000Z" itemprop="datePublished">2020-07-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/">2、Hexo的应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a name="3a3636e1"></a></p>
-<h1 id="1、创建博客"><a href="#1、创建博客" class="headerlink" title="1、创建博客"></a>1、创建博客</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
-<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。<br><a name="beb9b908"></a></p>
-<h1 id="2、Hexo更换主题"><a href="#2、Hexo更换主题" class="headerlink" title="2、Hexo更换主题"></a>2、Hexo更换主题</h1><p><a name="3cbb5269"></a></p>
-<h2 id="下载主题文件至themes目录下"><a href="#下载主题文件至themes目录下" class="headerlink" title="下载主题文件至themes目录下"></a>下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
-</blockquote>
-<blockquote>
-<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
-</blockquote>
-<p><a name="95cb21c7"></a></p>
-<h2 id="更改文件配置"><a href="#更改文件配置" class="headerlink" title="更改文件配置"></a>更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code><br><a name="f6cb763b"></a></p>
-<h2 id="发布更改"><a href="#发布更改" class="headerlink" title="发布更改"></a>发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/" data-id="ckchbwqhv0001iklea3dzenx3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Hexo/1、初识Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/" class="article-date">
-  <time datetime="2020-07-08T09:24:39.000Z" itemprop="datePublished">2020-07-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/">1、初识Hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1、Hexo定义"><a href="#1、Hexo定义" class="headerlink" title="1、Hexo定义"></a>1、Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
-<h1 id="2、安装Hexo"><a href="#2、安装Hexo" class="headerlink" title="2、安装Hexo"></a>2、安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">hexo的安装</a></p>
-<ol>
-<li>安装<strong>Node.js</strong>和<strong>Git</strong></li>
-<li>然后使用npm安装Hexo<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li>局部安装 <code>hexo</code> 包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>安装以后，可以使用以下两种方式执行 Hexo命令：</p>
-<ol>
-<li><code>npx hexo &lt;command&gt;</code></li>
-<li>将 Hexo 所在的目录下的 node_modules 添加到环境变量之中即可直接使用 hexo ：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;PATH&#x3D;&quot;$PATH:.&#x2F;node_modules&#x2F;.bin&quot;&#39; &gt;&gt; ~&#x2F;.profile</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="3、创建博客文件夹"><a href="#3、创建博客文件夹" class="headerlink" title="3、创建博客文件夹"></a>3、创建博客文件夹</h1><p>进入某目录，执行如下命令创建博客文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;在当前目录下创建一个叫blog的博客文件夹</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-
-<h1 id="4、安装发布工具"><a href="#4、安装发布工具" class="headerlink" title="4、安装发布工具"></a>4、安装发布工具</h1><p>进入博客目录（<code>cd blog</code>），打开控制台，输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="5、修改配置文件"><a href="#5、修改配置文件" class="headerlink" title="5、修改配置文件"></a>5、修改配置文件</h1><p>找到blog文件夹中的<code>_config.yml</code>文件，输入如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">theme: landscape</span><br><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repository: git@github.com:sterben110&#x2F;sterben110.github.io.git  </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<h1 id="6、Hexo提交"><a href="#6、Hexo提交" class="headerlink" title="6、Hexo提交"></a>6、Hexo提交</h1><h2 id="hexo-generate"><a href="#hexo-generate" class="headerlink" title="hexo generate"></a>hexo generate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>作用是生成新的静态文件,可以简写为<code>hexo g</code></p>
-<h2 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>作用是把生成的文件部署到我们的博客上，可以简写为<code>hexo d</code>，发布后，我们就可以看到我们的博客变成了这样：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594185106908-7ab390a4-e0fc-45bc-a0c0-4b04b20d7392.png#align=left&display=inline&height=1302&margin=%5Bobject%20Object%5D&originHeight=1302&originWidth=2524&size=0&status=done&style=none&width=2524" alt=""></p>
-<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>用途是清除缓存，能让新发布的博客能快速生效</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/" data-id="ckchbwqi70003ikle5mn9cvr6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
