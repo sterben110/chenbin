@@ -5,39 +5,39 @@
 # 网站
 title: sterben110的博客
 subtitle: '' 
-description: ''
-keywords:
-author: John Doe
-language: zh-CN
-timezone: ''
+description: ''   #网站描述
+keywords:         #网站的关键词。使用半角逗号 , 分隔多个关键词。
+author: chenbin   #作者
+language: zh-CN   #网站使用的语言
+timezone: ''      #网站时区
 
 # 网址
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
-permalink: :year/:month/:day/:title/
-permalink_defaults:
+url: http://yoursite.com        #网址
+root: /                         #网站根目录
+permalink: :year/:month/:day/:title/    #文章的 永久链接 格式
+permalink_defaults:                     #永久链接中各部分的默认值
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: true        #是否在永久链接中保留尾部的 index.html，设置为 false 时去除
+  trailing_html: true         #是否在永久链接中保留尾部的 .html, 设置为 false 时去除 (对尾部的 index.html无效)
 
-# Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
+# 目录
+source_dir: source          #资源文件夹
+public_dir: public          #公共文件夹，这个文件夹用于存放生成的站点文件。
+tag_dir: tags               #标签文件夹
+archive_dir: archives       #归档文件夹
+category_dir: categories    #分类文件夹
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render:                #跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。
 
-# Writing
-new_post_name: :title.md # File name of new posts
-default_layout: post
-titlecase: false # Transform title into titlecase
-external_link:
-  enable: true # Open external links in new tab
-  field: site # Apply to the whole site
+# 文章
+new_post_name: :title.md    #hexo new [title]时新文章的文件名称
+default_layout: post        #新建文章时的预设布局
+auto_spacing: false         #在中文和英文之间加入空格
+titlecase: false            #把标题转换为 title case
+external_link:              #在新标签中打开链接
+  enable: true 
+  field: site               #对整个网站（site）生效或仅对文章（post）生效
   exclude: ''
 filename_case: 0
 render_drafts: false
@@ -101,3 +101,9 @@ deploy:
   type: git
   repository: git@github.com:sterben110/sterben110.github.io.git
   branch: master
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000

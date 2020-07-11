@@ -9,7 +9,7 @@ excerpt_link: Read More
 fancybox: true
 
 # Sidebar
-sidebar: left
+sidebar: right
 widgets:
  - category
  - tag
@@ -18,7 +18,7 @@ widgets:
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
-#  - category
+# - category
 #  - tagcloud
 #  - archive
 
@@ -34,3 +34,13 @@ twitter:
 google_plus:
 fb_admins:
 fb_app_id:
+
+# Local search
+# Dependencies: https://github.com/flashlab/hexo-generator-search
+local_search:
+  enable: true
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
