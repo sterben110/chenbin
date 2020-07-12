@@ -47,9 +47,8 @@
 <p><a name="5b58a060"></a></p>
 <h1 id="git-clone-到本地"><a href="#git-clone-到本地" class="headerlink" title="git clone 到本地"></a>git clone 到本地</h1><p>clone 远程仓库dev分支的代码到本地</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b dev 仓库地址</span><br></pre></td></tr></table></figure>
-
-<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>]]></content>
+<p>[rectangle setX: 10 y: 10 width: 20 height: 20];</p>
+]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
