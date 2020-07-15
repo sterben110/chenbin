@@ -64,6 +64,100 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java/生成随机数" class="article article-type-post" itemscope
+  itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/15/Java/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/" class="article-date">
+  <time datetime="2020-07-15T05:51:37.000Z" itemprop="datePublished">2020-07-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/15/Java/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/">生成随机数</a>
+    </h1>
+  
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><a name="QBuIG"></a></p>
+<h2 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h2><p>Math.random() 方法返回一个<font color=red><strong>double类型</strong></font>的随机数，随机数范围为<font color=red><strong>[0,1)</strong></font>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
+<p><a name="uXhY2"></a></p>
+<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/15/Java/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/" data-id="ckcmy8lp000007ole66h125ev" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java/Java是如何运行的" class="article article-type-post" itemscope
+  itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/15/Java/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/" class="article-date">
+  <time datetime="2020-07-15T05:44:28.000Z" itemprop="datePublished">2020-07-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/15/Java/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/">Java是如何运行的</a>
+    </h1>
+  
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><a name="d8gTZ"></a></p>
+<h2 id="什么是编程语言"><a href="#什么是编程语言" class="headerlink" title="什么是编程语言"></a>什么是编程语言</h2><p>Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color=red><strong>只能运行低级语言</strong></font>，所以<font color=red><strong>高级语言编写的程序必须先被翻译成低级语言才能运行</strong></font>。<br /><font color=red><strong>高级语言的优点</strong></font>有很多：更容易编程、更容易阅读和修改、<font color=red><strong>可移植性高</strong></font>；低级语言只能在一种计算机上运行。<br><a name="pEuKX"></a></p>
+<h2 id="Java语言的执行"><a href="#Java语言的执行" class="headerlink" title="Java语言的执行"></a>Java语言的执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765" alt=""><br />Java 既可以被编译也可以被解释，不同的是<font color=red><strong>Java 编译</strong></font>过程并不生成机器语言，而是<font color=red><strong>生成字节码</strong></font>。<font color=red><strong>字节码</strong></font>和机器语言一样，但是它<font color=red><strong>具备高级语言的可移植性</strong></font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color=red><strong>字节码的解释运行</strong></font>。<br><a name="yCKxX"></a></p>
+<h2 id="Java代码的注释"><a href="#Java代码的注释" class="headerlink" title="Java代码的注释"></a>Java代码的注释</h2><p><a name="Cfmrv"></a></p>
+<h3 id="块注释"><a href="#块注释" class="headerlink" title="块注释"></a>块注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><a name="kZhPr"></a></p>
+<h3 id="行注释"><a href="#行注释" class="headerlink" title="行注释"></a>行注释</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/15/Java/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/" data-id="ckcmy2fxh000558lego1gc5vj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-算法/动态规划" class="article article-type-post" itemscope
   itemprop="blogPost">
   <div class="article-meta">
@@ -129,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" data-id="ckciypna30004rsle19oc51j5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" data-id="ckcmy2fxe000458le0ovwh6dx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,9 +232,6 @@
 </article>
 
 
-<div>
-  链接地址为<a href="http://www.baidu.com/" target="_blank" rel="noopener" title="www.baidu.com">www.baidu.com</a>
-</div>
   
     <article id="post-Hexo/3、本地电脑部署博客步骤" class="article article-type-post" itemscope
   itemprop="blogPost">
@@ -193,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/" data-id="ckciypna20003rsle7fi72u0p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/" data-id="ckcmy2fxd000358le5sc6bmj3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,9 +293,6 @@
 </article>
 
 
-<div>
-  链接地址为<a href="http://www.baidu.com/" target="_blank" rel="noopener" title="www.baidu.com">www.baidu.com</a>
-</div>
   
     <article id="post-Hexo/2、Hexo的应用" class="article article-type-post" itemscope
   itemprop="blogPost">
@@ -253,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/" data-id="ckciypn9r0000rslegq796hxv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/" data-id="ckcmy2fxa000158le6o3fbik2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,87 +350,13 @@
 </article>
 
 
-<div>
-  链接地址为<a href="http://www.baidu.com/" target="_blank" rel="noopener" title="www.baidu.com">www.baidu.com</a>
-</div>
   
-    <article id="post-Hexo/1、初识Hexo" class="article article-type-post" itemscope
-  itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/" class="article-date">
-  <time datetime="2020-07-08T09:24:39.000Z" itemprop="datePublished">2020-07-08</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/">1、初识Hexo</a>
-    </h1>
-  
-
-    </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      <h1 id="Hexo定义"><a href="#Hexo定义" class="headerlink" title="Hexo定义"></a>Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
-<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">hexo的安装</a></p>
-<ol>
-<li>安装<strong>Node.js</strong>和<strong>Git</strong></li>
-<li>然后使用npm安装Hexo<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li>局部安装 <code>hexo</code> 包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>安装以后，可以使用以下两种方式执行 Hexo命令：</p>
-<ol>
-<li><code>npx hexo &lt;command&gt;</code></li>
-<li>将 Hexo 所在的目录下的 node_modules 添加到环境变量之中即可直接使用 hexo ：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;PATH&#x3D;&quot;$PATH:.&#x2F;node_modules&#x2F;.bin&quot;&#39; &gt;&gt; ~&#x2F;.profile</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="创建博客文件夹"><a href="#创建博客文件夹" class="headerlink" title="创建博客文件夹"></a>创建博客文件夹</h1><p>进入某目录，执行如下命令创建博客文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;在当前目录下创建一个叫blog的博客文件夹</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-
-<h1 id="安装发布工具"><a href="#安装发布工具" class="headerlink" title="安装发布工具"></a>安装发布工具</h1><p>进入博客目录（<code>cd blog</code>），打开控制台，输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h1><p>找到blog文件夹中的<code>_config.yml</code>文件，输入如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">theme: landscape</span><br><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repository: git@github.com:sterben110&#x2F;sterben110.github.io.git  </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<h1 id="Hexo提交"><a href="#Hexo提交" class="headerlink" title="Hexo提交"></a>Hexo提交</h1><h2 id="hexo-generate"><a href="#hexo-generate" class="headerlink" title="hexo generate"></a>hexo generate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>作用是生成新的静态文件,可以简写为<code>hexo g</code></p>
-<h2 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>作用是把生成的文件部署到我们的博客上，可以简写为<code>hexo d</code>，发布后，我们就可以看到我们的博客变成了这样：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594185106908-7ab390a4-e0fc-45bc-a0c0-4b04b20d7392.png#align=left&display=inline&height=1302&margin=%5Bobject%20Object%5D&originHeight=1302&originWidth=2524&size=0&status=done&style=none&width=2524" alt=""></p>
-<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>用途是清除缓存，能让新发布的博客能快速生效</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/" data-id="ckciypn9x0001rslea5sad5y5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-<div>
-  链接地址为<a href="http://www.baidu.com/" target="_blank" rel="noopener" title="www.baidu.com">www.baidu.com</a>
-</div>
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -352,7 +366,7 @@
 <div class="widget-wrap">
     <h3 class="widget-title">文章目录</h3>
     <div class="widget">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划步骤"><span class="toc-number">1.</span> <span class="toc-text">动态规划步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典案例"><span class="toc-number">2.</span> <span class="toc-text">经典案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、钞票凑数问题"><span class="toc-number">2.1.</span> <span class="toc-text">1、钞票凑数问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、背包放财宝问题"><span class="toc-number">2.2.</span> <span class="toc-text">2、背包放财宝问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、台阶问题"><span class="toc-number">2.3.</span> <span class="toc-text">3、台阶问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、打家劫舍的例子"><span class="toc-number">2.4.</span> <span class="toc-text">4、打家劫舍的例子</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Math-random"><span class="toc-number">1.</span> <span class="toc-text">Math.random()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成6位随机数的例子"><span class="toc-number">1.1.</span> <span class="toc-text">生成6位随机数的例子</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -361,7 +375,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -379,6 +393,14 @@
       <ul>
         
           <li>
+            <a href="/2020/07/15/Java/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/">生成随机数</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/15/Java/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/">Java是如何运行的</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
           </li>
         
@@ -388,10 +410,6 @@
         
           <li>
             <a href="/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/">2、Hexo的应用</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/">1、初识Hexo</a>
           </li>
         
       </ul>
