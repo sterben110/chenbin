@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2、Hexo的应用</title>
-    <url>/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<p><a name="3a3636e1"></a></p>
-<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
-<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。<br><a name="beb9b908"></a></p>
-<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><p><a name="3cbb5269"></a></p>
-<h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
-</blockquote>
-<blockquote>
-<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
-</blockquote>
-<p><a name="95cb21c7"></a></p>
-<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code><br><a name="f6cb763b"></a></p>
-<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>1、初识Hexo</title>
     <url>/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/</url>
     <content><![CDATA[<h1 id="一、Hexo定义"><a href="#一、Hexo定义" class="headerlink" title="一、Hexo定义"></a>一、Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
@@ -65,32 +41,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Java冷门知识点</title>
-    <url>/2020/07/16/Java/Java%E5%86%B7%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
-    <content><![CDATA[<p><a name="GBaN9"></a></p>
-<h2 id="一、数组"><a href="#一、数组" class="headerlink" title="一、数组"></a>一、数组</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
-<p>上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。<font color=red><strong>数组初始化完后</strong></font>，并没有存储实际的值，<font color=red><strong>int 类型的数据默认值是 0</strong></font>,<font color=red><strong>String 类型的数据默认值是 null</strong></font>。</p>
-<p><a name="VI23W"></a></p>
-<h2 id="二、循环"><a href="#二、循环" class="headerlink" title="二、循环"></a>二、循环</h2><p><a name="YDAqY"></a></p>
-<h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>增强<code>for</code>循环是<code>JDK1.5</code>以后出来的一个高级<code>for</code>循环，专门用来遍历数组和集合的。它的内部原理其实是个<code>Iterator</code>迭代器，所以在遍历的过程中，<font color=red><strong>不能对集合中的元素进行增删操作</strong></font>。<br />格式：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量 : Collection集合or数组)&#123;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>遍历数组的例子</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> n : arr) &#123;</span><br><span class="line">    <span class="comment">//变量n代表被遍历到的数组元素</span></span><br><span class="line">    System.out.println(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>遍历Collection集合的例子</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection&lt;String&gt; coll = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">coll.add(<span class="string">"a1"</span>);</span><br><span class="line">coll.add(<span class="string">"a2"</span>);</span><br><span class="line">coll.add(<span class="string">"a3"</span>);</span><br><span class="line">coll.add(<span class="string">"a4"</span>);</span><br><span class="line"><span class="keyword">for</span>(String str : coll)&#123;</span><br><span class="line">    <span class="comment">//变量Str代表被遍历到的集合元素</span></span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a name="TjOyv"></a></p>
-<h2 id="三、字符串"><a href="#三、字符串" class="headerlink" title="三、字符串"></a>三、字符串</h2><p><a name="PMJeb"></a></p>
-<h3 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h3><p>这里要强调一下特殊字符的分割</p>
-<blockquote>
-<p><code>.</code> <code>|</code> <code>*</code>  这三个字符如果作为分割符，那么就需要加上 <code>\\</code>,比如 <code>str.split(&quot;\\|&quot;)</code> </p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>3、本地电脑部署博客步骤</title>
     <url>/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/</url>
     <content><![CDATA[<p><a name="45ca8f20"></a></p>
@@ -119,13 +69,51 @@
       </categories>
   </entry>
   <entry>
-    <title>生成随机数</title>
-    <url>/2020/07/15/Java/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</url>
-    <content><![CDATA[<p><a name="QBuIG"></a></p>
-<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color=red><strong>double类型</strong></font>的随机数，随机数范围为<font color=red><strong>[0,1)</strong></font>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
-<p><a name="uXhY2"></a></p>
-<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>2、Hexo的应用</title>
+    <url>/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<p><a name="3a3636e1"></a></p>
+<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
+<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。<br><a name="beb9b908"></a></p>
+<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><p><a name="3cbb5269"></a></p>
+<h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
+</blockquote>
+<blockquote>
+<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
+</blockquote>
+<p><a name="95cb21c7"></a></p>
+<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code><br><a name="f6cb763b"></a></p>
+<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java冷门知识点</title>
+    <url>/2020/07/16/Java/Java%E5%86%B7%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <content><![CDATA[<p><a name="GBaN9"></a></p>
+<h2 id="一、数组"><a href="#一、数组" class="headerlink" title="一、数组"></a>一、数组</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
+<p>上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。<font color=red><strong>数组初始化完后</strong></font>，并没有存储实际的值，<font color=red><strong>int 类型的数据默认值是 0</strong></font>,<font color=red><strong>String 类型的数据默认值是 null</strong></font>。</p>
+<p><a name="VI23W"></a></p>
+<h2 id="二、循环"><a href="#二、循环" class="headerlink" title="二、循环"></a>二、循环</h2><p><a name="YDAqY"></a></p>
+<h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>增强<code>for</code>循环是<code>JDK1.5</code>以后出来的一个高级<code>for</code>循环，专门用来遍历数组和集合的。它的内部原理其实是个<code>Iterator</code>迭代器，所以在遍历的过程中，<font color=red><strong>不能对集合中的元素进行增删操作</strong></font>。<br />格式：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量 : Collection集合or数组)&#123;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>遍历数组的例子</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> n : arr) &#123;</span><br><span class="line">    <span class="comment">//变量n代表被遍历到的数组元素</span></span><br><span class="line">    System.out.println(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>遍历Collection集合的例子</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection&lt;String&gt; coll = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">coll.add(<span class="string">"a1"</span>);</span><br><span class="line">coll.add(<span class="string">"a2"</span>);</span><br><span class="line">coll.add(<span class="string">"a3"</span>);</span><br><span class="line">coll.add(<span class="string">"a4"</span>);</span><br><span class="line"><span class="keyword">for</span>(String str : coll)&#123;</span><br><span class="line">    <span class="comment">//变量Str代表被遍历到的集合元素</span></span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="TjOyv"></a></p>
+<h2 id="三、字符串"><a href="#三、字符串" class="headerlink" title="三、字符串"></a>三、字符串</h2><p><a name="PMJeb"></a></p>
+<h3 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h3><p>这里要强调一下特殊字符的分割</p>
+<blockquote>
+<p><code>.</code> <code>|</code> <code>*</code>  这三个字符如果作为分割符，那么就需要加上 <code>\\</code>,比如 <code>str.split(&quot;\\|&quot;)</code> </p>
+</blockquote>
+]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -142,6 +130,18 @@
 <h3 id="2、行注释"><a href="#2、行注释" class="headerlink" title="2、行注释"></a>2、行注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>生成随机数</title>
+    <url>/2020/07/15/Java/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</url>
+    <content><![CDATA[<p><a name="QBuIG"></a></p>
+<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color=red><strong>double类型</strong></font>的随机数，随机数范围为<font color=red><strong>[0,1)</strong></font>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
+<p><a name="uXhY2"></a></p>
+<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Java</category>
       </categories>
