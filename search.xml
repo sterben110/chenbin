@@ -1,41 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2、Hexo的应用</title>
-    <url>/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-<a name="3a3636e1"></a>
-# 一、创建博客
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
-利用这条命令我们可以创建一个新的md文件，比如我们输入`hexo new hello`，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。
-<a name="beb9b908"></a>
-# 二、Hexo更换主题
-<a name="3cbb5269"></a>
-## 1、下载主题文件至themes目录下
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
-</blockquote>
-<blockquote>
-<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
-</blockquote>
-<p><a name="95cb21c7"></a></p>
-<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code><br><a name="f6cb763b"></a></p>
-<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>1、初识Hexo</title>
     <url>/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-# 一、Hexo定义
-hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。
-
+    <content><![CDATA[<h1 id="一、Hexo定义"><a href="#一、Hexo定义" class="headerlink" title="一、Hexo定义"></a>一、Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
 <h1 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">hexo的安装</a></p>
 <ol>
 <li>安装<strong>Node.js</strong>和<strong>Git</strong></li>
@@ -73,13 +41,42 @@ hexo是一个快速、简洁且高效的博客框架，它支持几条简短的�
       </categories>
   </entry>
   <entry>
+    <title>2、Hexo的应用</title>
+    <url>/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<p><a name="3a3636e1"></a></p>
+<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
+<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。<br><a name="beb9b908"></a></p>
+<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><p><a name="3cbb5269"></a></p>
+<h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
+</blockquote>
+<blockquote>
+<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
+</blockquote>
+<p><a name="95cb21c7"></a></p>
+<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code><br><a name="f6cb763b"></a></p>
+<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java冷门知识点</title>
+    <url>/2020/07/16/Java/Java%E5%86%B7%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>3、本地电脑部署博客步骤</title>
     <url>/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-<a name="45ca8f20"></a>
-# 一、本地安装Git
-<br />在官网下载最新版本的git：[下载地址](https://git-scm.com/downloads)<br />
-
+    <content><![CDATA[<p><a name="45ca8f20"></a></p>
+<h1 id="一、本地安装Git"><a href="#一、本地安装Git" class="headerlink" title="一、本地安装Git"></a>一、本地安装Git</h1><p><br />在官网下载最新版本的git：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a><br /></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;查看git版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
 
 <p><a name="290f6479"></a></p>
@@ -104,31 +101,15 @@ hexo是一个快速、简洁且高效的博客框架，它支持几条简短的�
       </categories>
   </entry>
   <entry>
-    <title>Java冷门知识点</title>
-    <url>/2020/07/16/Java/Java%E5%86%B7%E9%97%A8%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java是如何运行的</title>
     <url>/2020/07/15/Java/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-<a name="d8gTZ"></a>
-## 一、什么是编程语言
-Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color=red>**只能运行低级语言**</font>，所以<font color=red>**高级语言编写的程序必须先被翻译成低级语言才能运行**</font>。<br /><font color=red>**高级语言的优点**</font>有很多：更容易编程、更容易阅读和修改、<font color=red>**可移植性高**</font>；低级语言只能在一种计算机上运行。
-<a name="pEuKX"></a>
-## 二、Java语言的执行
-![](https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765)<br />Java 既可以被编译也可以被解释，不同的是<font color=red>**Java 编译**</font>过程并不生成机器语言，而是<font color=red>**生成字节码**</font>。<font color=red>**字节码**</font>和机器语言一样，但是它<font color=red>**具备高级语言的可移植性**</font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color=red>**字节码的解释运行**</font>。
-<a name="yCKxX"></a>
-## 三、Java代码的注释
-<a name="Cfmrv"></a>
-### 1、块注释
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<a name="kZhPr"></a>
-### 2、行注释
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p><a name="d8gTZ"></a></p>
+<h2 id="一、什么是编程语言"><a href="#一、什么是编程语言" class="headerlink" title="一、什么是编程语言"></a>一、什么是编程语言</h2><p>Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color=red><strong>只能运行低级语言</strong></font>，所以<font color=red><strong>高级语言编写的程序必须先被翻译成低级语言才能运行</strong></font>。<br /><font color=red><strong>高级语言的优点</strong></font>有很多：更容易编程、更容易阅读和修改、<font color=red><strong>可移植性高</strong></font>；低级语言只能在一种计算机上运行。<br><a name="pEuKX"></a></p>
+<h2 id="二、Java语言的执行"><a href="#二、Java语言的执行" class="headerlink" title="二、Java语言的执行"></a>二、Java语言的执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765" alt=""><br />Java 既可以被编译也可以被解释，不同的是<font color=red><strong>Java 编译</strong></font>过程并不生成机器语言，而是<font color=red><strong>生成字节码</strong></font>。<font color=red><strong>字节码</strong></font>和机器语言一样，但是它<font color=red><strong>具备高级语言的可移植性</strong></font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color=red><strong>字节码的解释运行</strong></font>。<br><a name="yCKxX"></a></p>
+<h2 id="三、Java代码的注释"><a href="#三、Java代码的注释" class="headerlink" title="三、Java代码的注释"></a>三、Java代码的注释</h2><p><a name="Cfmrv"></a></p>
+<h3 id="1、块注释"><a href="#1、块注释" class="headerlink" title="1、块注释"></a>1、块注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><a name="kZhPr"></a></p>
+<h3 id="2、行注释"><a href="#2、行注释" class="headerlink" title="2、行注释"></a>2、行注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -138,14 +119,11 @@ Java 是一种高级语言，有“高级语言”自然也有“低级语言”
   <entry>
     <title>生成随机数</title>
     <url>/2020/07/15/Java/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-<a name="QBuIG"></a>
-## 一、Math.random()
-Math.random() 方法返回一个<font color=red>**double类型**</font>的随机数，随机数范围为<font color=red>**[0,1)**</font>。
+    <content><![CDATA[<p><a name="QBuIG"></a></p>
+<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color=red><strong>double类型</strong></font>的随机数，随机数范围为<font color=red><strong>[0,1)</strong></font>。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
-<a name="uXhY2"></a>
-### 生成6位随机数的例子
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
+<p><a name="uXhY2"></a></p>
+<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -153,16 +131,12 @@ Math.random() 方法返回一个<font color=red>**double类型**</font>的随机
   <entry>
     <title>动态规划</title>
     <url>/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-<a name="eTh4Q"></a>
-## 一、动态规划步骤
-1、确定公式自变量，确定函数值的含义<br />2、明确公式<br />3、代码编写<br />（1）考虑特殊情况<br />（2）加入缓存<br />（3）将公式代码化<br />（4）存储缓存（缓存一般为键值对，键存自变量，值存相应的函数值）
-<a name="8h5iD"></a>
-## 二、经典案例
-<a name="ojxQH"></a>
-### 1、钞票凑数问题
-> 假设有11元、5元、1元面额的钞票，如何凑出15元使得钞票数量最少？
-
+    <content><![CDATA[<p><a name="eTh4Q"></a></p>
+<h2 id="一、动态规划步骤"><a href="#一、动态规划步骤" class="headerlink" title="一、动态规划步骤"></a>一、动态规划步骤</h2><p>1、确定公式自变量，确定函数值的含义<br />2、明确公式<br />3、代码编写<br />（1）考虑特殊情况<br />（2）加入缓存<br />（3）将公式代码化<br />（4）存储缓存（缓存一般为键值对，键存自变量，值存相应的函数值）<br><a name="8h5iD"></a></p>
+<h2 id="二、经典案例"><a href="#二、经典案例" class="headerlink" title="二、经典案例"></a>二、经典案例</h2><p><a name="ojxQH"></a></p>
+<h3 id="1、钞票凑数问题"><a href="#1、钞票凑数问题" class="headerlink" title="1、钞票凑数问题"></a>1、钞票凑数问题</h3><blockquote>
+<p>假设有11元、5元、1元面额的钞票，如何凑出15元使得钞票数量最少？</p>
+</blockquote>
 <p>我们用<strong>f(M)</strong>来表示<strong>凑出 M 所需的最少钞票数量</strong>，以上情况可表示为：</p>
 <p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594446749488-bd8945f6-b875-4bdd-80bb-f84e5da33874.png#align=left&display=inline&height=108&margin=%5Bobject%20Object%5D&originHeight=216&originWidth=819&size=0&status=done&style=none&width=410" alt=""><br /><br><br />则该问题的公式可概括为：<br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594446986811-e97f8502-606b-45df-a1e2-af4390f709b1.svg#align=left&display=inline&height=22&margin=%5Bobject%20Object%5D&originHeight=22&originWidth=479&size=0&status=done&style=none&width=479" alt=""><br />加入缓存后的代码为：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> HashMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 寻找最少的钞票数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// #1 处理边界情况</span></span><br><span class="line">	<span class="keyword">if</span> (m &lt; <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (m == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">       </span><br><span class="line">	<span class="comment">// #2 加入缓存</span></span><br><span class="line">	<span class="keyword">if</span>(map.containsKey(m))&#123;</span><br><span class="line">	  <span class="keyword">return</span> map.get(m);</span><br><span class="line">	&#125;</span><br><span class="line">       </span><br><span class="line">       <span class="comment">// #3 处理公式</span></span><br><span class="line">       <span class="comment">// 取 1 、5、11的最小钞票书数</span></span><br><span class="line">	<span class="keyword">int</span> min = Math.min(f(m - <span class="number">1</span>), f(m - <span class="number">5</span>));</span><br><span class="line">	min = Math.min(min, f(m - <span class="number">11</span>));</span><br><span class="line">       </span><br><span class="line">	<span class="comment">// #3 存储缓存</span></span><br><span class="line">       <span class="comment">//m代表函数自变量，min+1为函数值</span></span><br><span class="line">	map.put(m, min + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> min + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
