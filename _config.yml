@@ -52,7 +52,7 @@ highlight:
   wrap: true
   hljs: false
 
-# Home page setting
+# 主页设置
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
@@ -61,7 +61,7 @@ index_generator:            #首页博客分布
   per_page: 3               #每页博客数量上限
   order_by: -date           #博客排序
 
-# Category & Tag
+# 分类与标签
 default_category: uncategorized
 category_map:
 tag_map:
