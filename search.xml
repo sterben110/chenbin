@@ -135,8 +135,8 @@
       </categories>
   </entry>
   <entry>
-    <title>File</title>
-    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/File/</url>
+    <title>File类</title>
+    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/File%E7%B1%BB/</url>
     <content><![CDATA[<p><a name="oRhxD"></a></p>
 <h2 id="一、构造函数"><a href="#一、构造函数" class="headerlink" title="一、构造函数"></a>一、构造函数</h2><blockquote>
 <p>Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。<br>File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。</p>
@@ -341,21 +341,8 @@
       </categories>
   </entry>
   <entry>
-    <title>生成随机数</title>
-    <url>/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</url>
-    <content><![CDATA[<p><a name="QBuIG"></a></p>
-<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color=red><strong>double类型</strong></font>的随机数，随机数范围为<font color=red><strong>[0,1)</strong></font>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
-<p><a name="uXhY2"></a></p>
-<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java语言入门</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>LocalDate</title>
-    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/LocalDate/</url>
+    <title>LocalDate类</title>
+    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/LocalDate%E7%B1%BB/</url>
     <content><![CDATA[<p><a name="ZUHea"></a></p>
 <h2 id="一、日期时间与字符串的转化"><a href="#一、日期时间与字符串的转化" class="headerlink" title="一、日期时间与字符串的转化"></a>一、日期时间与字符串的转化</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line">   <span class="comment">// 打印默认的时间数据</span></span><br><span class="line">   System.out.println(time.toString());</span><br><span class="line">   <span class="comment">// 创建一个格式化方式</span></span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy年MM月dd"</span>);</span><br><span class="line">   <span class="comment">// 执行时间的格式化处理，得到期望格式的时间字符串</span></span><br><span class="line">   String timeStr = df.format(time);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 定义一个时间字符串，日期是2019年1月1日</span></span><br><span class="line">   String date = <span class="string">"2019/01/01"</span>;</span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd"</span>);</span><br><span class="line">   <span class="comment">// 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期</span></span><br><span class="line">   LocalDate date2 = LocalDate.parse(date,df);</span><br><span class="line">   <span class="comment">// 打印出日期</span></span><br><span class="line">   System.out.println(date2.toString());</span><br></pre></td></tr></table></figure>
 <p><a name="iyBqb"></a></p>
@@ -370,6 +357,19 @@
 <h2 id="四、两个LocalDate日期时间的比较"><a href="#四、两个LocalDate日期时间的比较" class="headerlink" title="四、两个LocalDate日期时间的比较"></a>四、两个LocalDate日期时间的比较</h2><p><a name="xASAL"></a></p>
 <h3 id="之前、之后、同一天"><a href="#之前、之后、同一天" class="headerlink" title="之前、之后、同一天"></a>之前、之后、同一天</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate now = LocalDate.now();</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 可以对两个 LocalDate 进行比较，</span></span><br><span class="line">   <span class="comment">// 可以判断一个日期是否在另一个日期之前、之后或同一天，</span></span><br><span class="line">   <span class="comment">// 或者判断两个日期是否是同年同月同日。</span></span><br><span class="line">   <span class="keyword">boolean</span> isBefore = now.minusDays(<span class="number">1</span>).isBefore(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天之前："</span> + isBefore);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">boolean</span> isAfter = now.plusDays(<span class="number">1</span>).isAfter(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天之后："</span> + isAfter);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 判断是否是当天</span></span><br><span class="line">   <span class="keyword">boolean</span> sameDate = now.isEqual(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天："</span> + sameDate);</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java语言入门</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>生成随机数</title>
+    <url>/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</url>
+    <content><![CDATA[<p><a name="QBuIG"></a></p>
+<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color=red><strong>double类型</strong></font>的随机数，随机数范围为<font color=red><strong>[0,1)</strong></font>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
+<p><a name="uXhY2"></a></p>
+<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Java</category>
         <category>Java语言入门</category>
