@@ -1,37 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>2、Hexo的应用</title>
-    <url>/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-# 一、创建博客
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
-利用这条命令我们可以创建一个新的md文件，比如我们输入`hexo new hello`，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。
-# 二、Hexo更换主题
-## 1、下载主题文件至themes目录下
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
-</blockquote>
-<blockquote>
-<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
-</blockquote>
-<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code></p>
-<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>3、本地电脑部署博客步骤</title>
     <url>/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-# 一、本地安装Git
-<br />在官网下载最新版本的git：[下载地址](https://git-scm.com/downloads)<br />
 
+<h1 id="一、本地安装Git"><a href="#一、本地安装Git" class="headerlink" title="一、本地安装Git"></a>一、本地安装Git</h1><p><br />在官网下载最新版本的git：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a><br /></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;查看git版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
 
 <h1 id="二、本地配置SSH并绑定至GitHub"><a href="#二、本地配置SSH并绑定至GitHub" class="headerlink" title="二、本地配置SSH并绑定至GitHub"></a>二、本地配置SSH并绑定至GitHub</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;生成本地SSH</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br><span class="line">&#x2F;&#x2F;查询本地SSH</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
@@ -55,9 +29,8 @@
     <title>1、初识Hexo</title>
     <url>/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-# 一、Hexo定义
-hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。
 
+<h1 id="一、Hexo定义"><a href="#一、Hexo定义" class="headerlink" title="一、Hexo定义"></a>一、Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
 <h1 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">hexo的安装</a></p>
 <ol>
 <li>安装<strong>Node.js</strong>和<strong>Git</strong></li>
@@ -98,9 +71,8 @@ hexo是一个快速、简洁且高效的博客框架，它支持几条简短的�
     <title>动态规划</title>
     <url>/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-## 一、动态规划步骤
-1、确定公式自变量，确定函数值的含义<br />2、明确公式<br />3、代码编写<br />（1）考虑特殊情况<br />（2）加入缓存<br />（3）将公式代码化<br />（4）存储缓存（缓存一般为键值对，键存自变量，值存相应的函数值）
 
+<h2 id="一、动态规划步骤"><a href="#一、动态规划步骤" class="headerlink" title="一、动态规划步骤"></a>一、动态规划步骤</h2><p>1、确定公式自变量，确定函数值的含义<br />2、明确公式<br />3、代码编写<br />（1）考虑特殊情况<br />（2）加入缓存<br />（3）将公式代码化<br />（4）存储缓存（缓存一般为键值对，键存自变量，值存相应的函数值）</p>
 <h2 id="二、经典案例"><a href="#二、经典案例" class="headerlink" title="二、经典案例"></a>二、经典案例</h2><h3 id="1、钞票凑数问题"><a href="#1、钞票凑数问题" class="headerlink" title="1、钞票凑数问题"></a>1、钞票凑数问题</h3><blockquote>
 <p>假设有11元、5元、1元面额的钞票，如何凑出15元使得钞票数量最少？</p>
 </blockquote>
@@ -135,13 +107,36 @@ hexo是一个快速、简洁且高效的博客框架，它支持几条简短的�
       </categories>
   </entry>
   <entry>
+    <title>2、Hexo的应用</title>
+    <url>/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
+<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。</p>
+<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
+</blockquote>
+<blockquote>
+<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
+</blockquote>
+<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code></p>
+<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>File类</title>
     <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/File%E7%B1%BB/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-## 一、构造函数
-> Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。
-> File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。
 
+<h2 id="一、构造函数"><a href="#一、构造函数" class="headerlink" title="一、构造函数"></a>一、构造函数</h2><blockquote>
+<p>Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。<br>File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。</p>
+</blockquote>
 <h3 id="1、File-File-parent-String-child"><a href="#1、File-File-parent-String-child" class="headerlink" title="1、File(File parent, String child)"></a>1、File(File parent, String child)</h3><blockquote>
 <p>通过给定的 <code>parent</code> 父文件对象和 <code>child</code> 子路径名字符串创建一个新的File实例。</p>
 </blockquote>
@@ -293,52 +288,12 @@ hexo是一个快速、简洁且高效的博客框架，它支持几条简短的�
       </categories>
   </entry>
   <entry>
-    <title>Java是如何运行的</title>
-    <url>/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-## 一、什么是编程语言
-Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color=red>**只能运行低级语言**</font>，所以<font color=red>**高级语言编写的程序必须先被翻译成低级语言才能运行**</font>。<br /><font color=red>**高级语言的优点**</font>有很多：更容易编程、更容易阅读和修改、<font color=red>**可移植性高**</font>；低级语言只能在一种计算机上运行。
-
-<h2 id="二、Java语言的执行"><a href="#二、Java语言的执行" class="headerlink" title="二、Java语言的执行"></a>二、Java语言的执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765" alt=""><br />Java 既可以被编译也可以被解释，不同的是<font color=red><strong>Java 编译</strong></font>过程并不生成机器语言，而是<font color=red><strong>生成字节码</strong></font>。<font color=red><strong>字节码</strong></font>和机器语言一样，但是它<font color=red><strong>具备高级语言的可移植性</strong></font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color=red><strong>字节码的解释运行</strong></font>。</p>
-<h2 id="三、Java代码的注释"><a href="#三、Java代码的注释" class="headerlink" title="三、Java代码的注释"></a>三、Java代码的注释</h2><h3 id="1、块注释"><a href="#1、块注释" class="headerlink" title="1、块注释"></a>1、块注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2、行注释"><a href="#2、行注释" class="headerlink" title="2、行注释"></a>2、行注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java语言入门</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>LocalDate类</title>
-    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/LocalDate%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-## 一、日期时间与字符串的转化
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line">   <span class="comment">// 打印默认的时间数据</span></span><br><span class="line">   System.out.println(time.toString());</span><br><span class="line">   <span class="comment">// 创建一个格式化方式</span></span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy年MM月dd"</span>);</span><br><span class="line">   <span class="comment">// 执行时间的格式化处理，得到期望格式的时间字符串</span></span><br><span class="line">   String timeStr = df.format(time);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 定义一个时间字符串，日期是2019年1月1日</span></span><br><span class="line">   String date = <span class="string">"2019/01/01"</span>;</span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd"</span>);</span><br><span class="line">   <span class="comment">// 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期</span></span><br><span class="line">   LocalDate date2 = LocalDate.parse(date,df);</span><br><span class="line">   <span class="comment">// 打印出日期</span></span><br><span class="line">   System.out.println(date2.toString());</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、LocalDate获取日期时间具体的值"><a href="#二、LocalDate获取日期时间具体的值" class="headerlink" title="二、LocalDate获取日期时间具体的值"></a>二、LocalDate获取日期时间具体的值</h2><h3 id="获取年、月、日、星期"><a href="#获取年、月、日、星期" class="headerlink" title="获取年、月、日、星期"></a>获取年、月、日、星期</h3><blockquote>
-<p>获取月、星期      重点关注</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在年</span></span><br><span class="line">   <span class="keyword">int</span> year = time.getYear();</span><br><span class="line">   System.out.println(<span class="string">"当前年份 "</span> + year);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在月</span></span><br><span class="line">   <span class="keyword">int</span> month = time.getMonth().getValue();</span><br><span class="line">   System.out.println(<span class="string">"当前月份 "</span> + month);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间在这个月中的天数</span></span><br><span class="line">   <span class="keyword">int</span> day = time.getDayOfMonth();</span><br><span class="line">   System.out.println(<span class="string">"当前日 "</span> + day);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在星期数</span></span><br><span class="line">   <span class="keyword">int</span> dayOfWeek = time.getDayOfWeek().getValue();</span><br><span class="line">   System.out.println(<span class="string">"当前星期 "</span> + dayOfWeek);</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、LocalDate时间日期的加减运算"><a href="#三、LocalDate时间日期的加减运算" class="headerlink" title="三、LocalDate时间日期的加减运算"></a>三、LocalDate时间日期的加减运算</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate now = LocalDate.now();</span><br><span class="line">System.out.println(<span class="string">"当前："</span> + now.toString());</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"加法运算"</span>);</span><br><span class="line">System.out.println(<span class="string">"加1天："</span> + now.plusDays(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1周："</span> + now.plusWeeks(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1月："</span> + now.plusMonths(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1年："</span> + now.plusYears(<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"减法运算"</span>);</span><br><span class="line">System.out.println(<span class="string">"减1天："</span> + now.minusDays(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1周："</span> + now.minusWeeks(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1月："</span> + now.minusMonths(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1年："</span> + now.minusYears(<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、两个LocalDate日期时间的比较"><a href="#四、两个LocalDate日期时间的比较" class="headerlink" title="四、两个LocalDate日期时间的比较"></a>四、两个LocalDate日期时间的比较</h2><h3 id="之前、之后、同一天"><a href="#之前、之后、同一天" class="headerlink" title="之前、之后、同一天"></a>之前、之后、同一天</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate now = LocalDate.now();</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 可以对两个 LocalDate 进行比较，</span></span><br><span class="line">   <span class="comment">// 可以判断一个日期是否在另一个日期之前、之后或同一天，</span></span><br><span class="line">   <span class="comment">// 或者判断两个日期是否是同年同月同日。</span></span><br><span class="line">   <span class="keyword">boolean</span> isBefore = now.minusDays(<span class="number">1</span>).isBefore(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天之前："</span> + isBefore);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">boolean</span> isAfter = now.plusDays(<span class="number">1</span>).isAfter(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天之后："</span> + isAfter);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 判断是否是当天</span></span><br><span class="line">   <span class="keyword">boolean</span> sameDate = now.isEqual(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天："</span> + sameDate);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java语言入门</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java注意点</title>
     <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-## 数组初始化注意事项
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
-上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。**数组初始化完后**，并没有存储实际的值，**int 类型的数据默认值是 0**,**String 类型的数据默认值是 null**。
 
+<h2 id="数组初始化注意事项"><a href="#数组初始化注意事项" class="headerlink" title="数组初始化注意事项"></a>数组初始化注意事项</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
+<p>上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。<strong>数组初始化完后</strong>，并没有存储实际的值，<strong>int 类型的数据默认值是 0</strong>,<strong>String 类型的数据默认值是 null</strong>。</p>
 <h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>增强<code>for</code>循环是<code>JDK1.5</code>以后出来的一个高级<code>for</code>循环，专门用来遍历数组和集合的。它的内部原理其实是个<code>Iterator</code>迭代器，所以在遍历的过程中，<strong>不能对集合中的元素进行增删操作</strong>。<br />格式：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量 : Collection集合or数组)&#123;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>遍历数组的例子</p>
@@ -362,11 +317,49 @@ Java 是一种高级语言，有“高级语言”自然也有“低级语言”
       </categories>
   </entry>
   <entry>
+    <title>Java是如何运行的</title>
+    <url>/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="一、什么是编程语言"><a href="#一、什么是编程语言" class="headerlink" title="一、什么是编程语言"></a>一、什么是编程语言</h2><p>Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color=red><strong>只能运行低级语言</strong></font>，所以<font color=red><strong>高级语言编写的程序必须先被翻译成低级语言才能运行</strong></font>。<br /><font color=red><strong>高级语言的优点</strong></font>有很多：更容易编程、更容易阅读和修改、<font color=red><strong>可移植性高</strong></font>；低级语言只能在一种计算机上运行。</p>
+<h2 id="二、Java语言的执行"><a href="#二、Java语言的执行" class="headerlink" title="二、Java语言的执行"></a>二、Java语言的执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765" alt=""><br />Java 既可以被编译也可以被解释，不同的是<font color=red><strong>Java 编译</strong></font>过程并不生成机器语言，而是<font color=red><strong>生成字节码</strong></font>。<font color=red><strong>字节码</strong></font>和机器语言一样，但是它<font color=red><strong>具备高级语言的可移植性</strong></font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color=red><strong>字节码的解释运行</strong></font>。</p>
+<h2 id="三、Java代码的注释"><a href="#三、Java代码的注释" class="headerlink" title="三、Java代码的注释"></a>三、Java代码的注释</h2><h3 id="1、块注释"><a href="#1、块注释" class="headerlink" title="1、块注释"></a>1、块注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、行注释"><a href="#2、行注释" class="headerlink" title="2、行注释"></a>2、行注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java语言入门</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>LocalDate类</title>
+    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/LocalDate%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="一、日期时间与字符串的转化"><a href="#一、日期时间与字符串的转化" class="headerlink" title="一、日期时间与字符串的转化"></a>一、日期时间与字符串的转化</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line">   <span class="comment">// 打印默认的时间数据</span></span><br><span class="line">   System.out.println(time.toString());</span><br><span class="line">   <span class="comment">// 创建一个格式化方式</span></span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy年MM月dd"</span>);</span><br><span class="line">   <span class="comment">// 执行时间的格式化处理，得到期望格式的时间字符串</span></span><br><span class="line">   String timeStr = df.format(time);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 定义一个时间字符串，日期是2019年1月1日</span></span><br><span class="line">   String date = <span class="string">"2019/01/01"</span>;</span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd"</span>);</span><br><span class="line">   <span class="comment">// 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期</span></span><br><span class="line">   LocalDate date2 = LocalDate.parse(date,df);</span><br><span class="line">   <span class="comment">// 打印出日期</span></span><br><span class="line">   System.out.println(date2.toString());</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、LocalDate获取日期时间具体的值"><a href="#二、LocalDate获取日期时间具体的值" class="headerlink" title="二、LocalDate获取日期时间具体的值"></a>二、LocalDate获取日期时间具体的值</h2><h3 id="获取年、月、日、星期"><a href="#获取年、月、日、星期" class="headerlink" title="获取年、月、日、星期"></a>获取年、月、日、星期</h3><blockquote>
+<p>获取月、星期      重点关注</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在年</span></span><br><span class="line">   <span class="keyword">int</span> year = time.getYear();</span><br><span class="line">   System.out.println(<span class="string">"当前年份 "</span> + year);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在月</span></span><br><span class="line">   <span class="keyword">int</span> month = time.getMonth().getValue();</span><br><span class="line">   System.out.println(<span class="string">"当前月份 "</span> + month);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间在这个月中的天数</span></span><br><span class="line">   <span class="keyword">int</span> day = time.getDayOfMonth();</span><br><span class="line">   System.out.println(<span class="string">"当前日 "</span> + day);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在星期数</span></span><br><span class="line">   <span class="keyword">int</span> dayOfWeek = time.getDayOfWeek().getValue();</span><br><span class="line">   System.out.println(<span class="string">"当前星期 "</span> + dayOfWeek);</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、LocalDate时间日期的加减运算"><a href="#三、LocalDate时间日期的加减运算" class="headerlink" title="三、LocalDate时间日期的加减运算"></a>三、LocalDate时间日期的加减运算</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate now = LocalDate.now();</span><br><span class="line">System.out.println(<span class="string">"当前："</span> + now.toString());</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"加法运算"</span>);</span><br><span class="line">System.out.println(<span class="string">"加1天："</span> + now.plusDays(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1周："</span> + now.plusWeeks(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1月："</span> + now.plusMonths(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1年："</span> + now.plusYears(<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"减法运算"</span>);</span><br><span class="line">System.out.println(<span class="string">"减1天："</span> + now.minusDays(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1周："</span> + now.minusWeeks(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1月："</span> + now.minusMonths(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1年："</span> + now.minusYears(<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、两个LocalDate日期时间的比较"><a href="#四、两个LocalDate日期时间的比较" class="headerlink" title="四、两个LocalDate日期时间的比较"></a>四、两个LocalDate日期时间的比较</h2><h3 id="之前、之后、同一天"><a href="#之前、之后、同一天" class="headerlink" title="之前、之后、同一天"></a>之前、之后、同一天</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDate now = LocalDate.now();</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 可以对两个 LocalDate 进行比较，</span></span><br><span class="line">   <span class="comment">// 可以判断一个日期是否在另一个日期之前、之后或同一天，</span></span><br><span class="line">   <span class="comment">// 或者判断两个日期是否是同年同月同日。</span></span><br><span class="line">   <span class="keyword">boolean</span> isBefore = now.minusDays(<span class="number">1</span>).isBefore(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天之前："</span> + isBefore);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">boolean</span> isAfter = now.plusDays(<span class="number">1</span>).isAfter(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天之后："</span> + isAfter);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 判断是否是当天</span></span><br><span class="line">   <span class="keyword">boolean</span> sameDate = now.isEqual(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天："</span> + sameDate);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java语言入门</category>
+      </categories>
+  </entry>
+  <entry>
     <title>生成随机数</title>
     <url>/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-## 一、Math.random()
-Math.random() 方法返回一个<font color=red>**double类型**</font>的随机数，随机数范围为<font color=red>**[0,1)**</font>。
+
+<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color=red><strong>double类型</strong></font>的随机数，随机数范围为<font color=red><strong>[0,1)</strong></font>。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
 
 <h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
@@ -379,9 +372,8 @@ Math.random() 方法返回一个<font color=red>**double类型**</font>的随机
     <title>Map接口</title>
     <url>/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/Map%E6%8E%A5%E5%8F%A3/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-## 1、分析
-Map接口中键和值一一映射. 可以通过键来获取值。
 
+<h2 id="1、分析"><a href="#1、分析" class="headerlink" title="1、分析"></a>1、分析</h2><p>Map接口中键和值一一映射. 可以通过键来获取值。</p>
 <ul>
 <li>给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。<br /></li>
 <li>当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常.<br /></li>
@@ -417,14 +409,21 @@ Map接口中键和值一一映射. 可以通过键来获取值。
     <title>类之间的关系</title>
     <url>/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E7%B1%BB%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-## 1、关联
-**下图表示 <font color=red>Student  类关联  Major  类</font>，即表示Major类为Student类的属性（成员变量）**<br />![](https://cdn.nlark.com/yuque/0/2020/svg/437282/1594970231959-d7c25130-3788-43c5-b795-ad0d0004fa51.svg#align=left&display=inline&height=427&margin=%5Bobject%20Object%5D&originHeight=427&originWidth=197&size=0&status=done&style=none&width=197)
 
+<h2 id="1、关联"><a href="#1、关联" class="headerlink" title="1、关联"></a>1、关联</h2><p><strong>下图表示 <font color=red>Student  类关联  Major  类</font>，即表示Major类为Student类的属性（成员变量）</strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594970231959-d7c25130-3788-43c5-b795-ad0d0004fa51.svg#align=left&display=inline&height=427&margin=%5Bobject%20Object%5D&originHeight=427&originWidth=197&size=0&status=done&style=none&width=197" alt=""></p>
 <h2 id="2、依赖"><a href="#2、依赖" class="headerlink" title="2、依赖"></a>2、依赖</h2><h2 id="3、聚集"><a href="#3、聚集" class="headerlink" title="3、聚集"></a>3、聚集</h2><h2 id="4、泛化"><a href="#4、泛化" class="headerlink" title="4、泛化"></a>4、泛化</h2><p><strong>泛化等同于<font color=red>继承</font></strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594974464425-cdbdcdc4-c055-40e4-bdd5-107807d78647.svg#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&originHeight=222&originWidth=266&size=0&status=done&style=none&width=266" alt=""><br><a name="Z6NTj"></a></p>
 <h2 id="5、实现"><a href="#5、实现" class="headerlink" title="5、实现"></a>5、实现</h2>]]></content>
       <categories>
         <category>Java</category>
         <category>Java面向对象</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Hexo问题与解决方案</title>
+    <url>/2020/07/17/Hexo/Hexo%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="hexo引用外网的图片不显示"><a href="#hexo引用外网的图片不显示" class="headerlink" title="hexo引用外网的图片不显示"></a>hexo引用外网的图片不显示</h2><p>方法其实很简单，只需要文章的头部如下图所示位置添加<code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;</code>这一句话就可以完美解决问题。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo问题与解决方案</span><br><span class="line">toc: true</span><br><span class="line">date: 2020-07-17 18:24:16</span><br><span class="line">categories:</span><br><span class="line">---</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"referrer"</span> <span class="attr">content</span>=<span class="string">"no-referrer"</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
 </search>

@@ -261,6 +261,338 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/File%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/File%E7%B1%BB/" itemprop="url">File类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-16T17:12:48+08:00">
+                2020-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">Java语言入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="一、构造函数"><a href="#一、构造函数" class="headerlink" title="一、构造函数"></a>一、构造函数</h2><blockquote>
+<p>Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。<br>File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。</p>
+</blockquote>
+<h3 id="1、File-File-parent-String-child"><a href="#1、File-File-parent-String-child" class="headerlink" title="1、File(File parent, String child)"></a>1、File(File parent, String child)</h3><blockquote>
+<p>通过给定的 <code>parent</code> 父文件对象和 <code>child</code> 子路径名字符串创建一个新的File实例。</p>
+</blockquote>
+<h3 id="2、File-String-pathname"><a href="#2、File-String-pathname" class="headerlink" title="2、File(String pathname)"></a>2、File(String pathname)</h3><blockquote>
+<p>通过将给定路径名字符串 <code>pathname</code> 转换成抽象路径名来创建一个新 File 实例。</p>
+</blockquote>
+<h3 id="3、File-String-parent-String-child"><a href="#3、File-String-parent-String-child" class="headerlink" title="3、File(String parent, String child)"></a>3、File(String parent, String child)</h3><blockquote>
+<p>根据 <code>parent</code>  路径名字符串和 <code>child</code>  路径名字符串创建一个新 File 实例。</p>
+</blockquote>
+<h3 id="4、File-URI-uri"><a href="#4、File-URI-uri" class="headerlink" title="4、File(URI uri)"></a>4、File(URI uri)</h3><blockquote>
+<p>通过将给定的 <code>file: URI</code>  转换成一个抽象路径名来创建一个新的 File 实例。</p>
+</blockquote>
+<h2 id="二、方法"><a href="#二、方法" class="headerlink" title="二、方法"></a>二、方法</h2><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><font color=red><strong>public String getName()</strong></font><br />返回由此抽象路径名表示的文件或目录的名称。</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><strong>public String getParent()、</strong><br /> 返回此抽象路径名的父路径名的路径名字符串，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><strong>public File getParentFile()</strong><br />返回此抽象路径名的父路径名的抽象路径名，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left"><font color=red><strong>public String getPath()</strong></font><br />将此抽象路径名转换为一个路径名字符串。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left"><strong>public boolean isAbsolute()</strong><br />测试此抽象路径名是否为绝对路径名。</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left"><strong>public String getAbsolutePath()</strong><br />返回抽象路径名的绝对路径名字符串。</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left"><strong>public boolean canRead()</strong><br />测试应用程序是否可以读取此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left"><strong>public boolean canWrite()</strong><br />测试应用程序是否可以修改此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left"><font color=red><strong>public boolean exists()</strong></font><br />测试此抽象路径名表示的文件或目录是否存在。</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left"><strong>public boolean isDirectory()</strong><br />测试此抽象路径名表示的文件是否是一个目录。</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left"><strong>public boolean isFile()</strong><br />测试此抽象路径名表示的文件是否是一个标准文件。</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left"><strong>public long lastModified()</strong><br />返回此抽象路径名表示的文件最后一次被修改的时间。</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left"><font color=red><strong>public long length()</strong></font><br />返回由此抽象路径名表示的文件的长度。</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left"><font color=red><strong>public boolean createNewFile() throws IOException</strong></font><br />当且仅当不存在具有此抽象路径名指定的名称的文件时，原子地创建由此抽象路径名指定的一个新的空文件。</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left"><font color=red><strong>public boolean delete()</strong></font><br /> 删除此抽象路径名表示的文件或目录。</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left"><strong>public void deleteOnExit()</strong><br />在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。</td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left"><font color=red><strong>public String[] list()</strong></font><br />返回由此抽象路径名所表示的目录中的文件和目录的名称所组成字符串数组。</td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left"><font color=red><strong>public String[] list(FilenameFilter filter)</strong></font><br />返回由包含在目录中的文件和目录的名称所组成的字符串数组，这一目录是通过满足指定过滤器的抽象路径名来表示的。</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left"><font color=red><strong>public File[] listFiles()</strong></font><br />  返回一个抽象路径名数组，这些路径名表示此抽象路径名所表示目录中的文件。</td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left"><font color=red><strong>public File[] listFiles(FileFilter filter)</strong></font><br />返回表示此抽象路径名所表示目录中的文件和目录的抽象路径名数组，这些路径名满足特定过滤器。</td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left"><strong>public boolean mkdir()</strong><br />创建此抽象路径名指定的目录。</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left"><font color=red><strong>public boolean mkdirs()</strong></font><br />创建此抽象路径名指定的目录，包括创建必需但不存在的父目录。创建整个目录树。</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left"><font color=red><strong>public boolean renameTo(File dest)</strong></font><br /> 重新命名此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="left"><strong>public boolean setLastModified(long time)</strong><br />设置由此抽象路径名所指定的文件或目录的最后一次修改时间。</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left"><strong>public boolean setReadOnly()</strong><br />标记此抽象路径名指定的文件或目录，以便只可对其进行读操作。</td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left"><strong>public static File createTempFile(String prefix, String suffix, File directory) throws IOException</strong><br />在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。</td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left"><strong>public static File createTempFile(String prefix, String suffix) throws IOException</strong><br />在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。</td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="left"><strong>public int compareTo(File pathname)</strong><br />按字母顺序比较两个抽象路径名。</td>
+</tr>
+<tr>
+<td align="left">29</td>
+<td align="left"><strong>public int compareTo(Object o)</strong><br />按字母顺序比较抽象路径名与给定对象。</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left"><strong>public boolean equals(Object obj)</strong><br />测试此抽象路径名与给定对象是否相等。</td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left"><strong>public String toString()</strong><br /> 返回此抽象路径名的路径名字符串。</td>
+</tr>
+</tbody></table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/LocalDate%E7%B1%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -397,8 +729,8 @@
         
           
             <meta name="referrer" content="no-referrer"/>
-## 一、日期时间与字符串的转化
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line">   <span class="comment">// 打印默认的时间数据</span></span><br><span class="line">   System.out.println(time.toString());</span><br><span class="line">   <span class="comment">// 创建一个格式化方式</span></span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy年MM月dd"</span>);</span><br><span class="line">   <span class="comment">// 执行时间的格式化处理，得到期望格式的时间字符串</span></span><br><span class="line">   String timeStr = df.format(time);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 定义一个时间字符串，日期是2019年1月1日</span></span><br><span class="line">   String date = <span class="string">"2019/01/01"</span>;</span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd"</span>);</span><br><span class="line">   <span class="comment">// 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期</span></span><br><span class="line">   LocalDate date2 = LocalDate.parse(date,df);</span><br><span class="line">   <span class="comment">// 打印出日期</span></span><br><span class="line">   System.out.println(date2.toString());</span><br></pre></td></tr></table></figure>
+
+<h2 id="一、日期时间与字符串的转化"><a href="#一、日期时间与字符串的转化" class="headerlink" title="一、日期时间与字符串的转化"></a>一、日期时间与字符串的转化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line">   <span class="comment">// 打印默认的时间数据</span></span><br><span class="line">   System.out.println(time.toString());</span><br><span class="line">   <span class="comment">// 创建一个格式化方式</span></span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy年MM月dd"</span>);</span><br><span class="line">   <span class="comment">// 执行时间的格式化处理，得到期望格式的时间字符串</span></span><br><span class="line">   String timeStr = df.format(time);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 定义一个时间字符串，日期是2019年1月1日</span></span><br><span class="line">   String date = <span class="string">"2019/01/01"</span>;</span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd"</span>);</span><br><span class="line">   <span class="comment">// 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期</span></span><br><span class="line">   LocalDate date2 = LocalDate.parse(date,df);</span><br><span class="line">   <span class="comment">// 打印出日期</span></span><br><span class="line">   System.out.println(date2.toString());</span><br></pre></td></tr></table></figure>
 
 <h2 id="二、LocalDate获取日期时间具体的值"><a href="#二、LocalDate获取日期时间具体的值" class="headerlink" title="二、LocalDate获取日期时间具体的值"></a>二、LocalDate获取日期时间具体的值</h2><h3 id="获取年、月、日、星期"><a href="#获取年、月、日、星期" class="headerlink" title="获取年、月、日、星期"></a>获取年、月、日、星期</h3><blockquote>
 <p>获取月、星期      重点关注</p>
@@ -592,10 +924,9 @@
         
           
             <meta name="referrer" content="no-referrer"/>
-## 数组初始化注意事项
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
-上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。**数组初始化完后**，并没有存储实际的值，**int 类型的数据默认值是 0**,**String 类型的数据默认值是 null**。
 
+<h2 id="数组初始化注意事项"><a href="#数组初始化注意事项" class="headerlink" title="数组初始化注意事项"></a>数组初始化注意事项</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
+<p>上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。<strong>数组初始化完后</strong>，并没有存储实际的值，<strong>int 类型的数据默认值是 0</strong>,<strong>String 类型的数据默认值是 null</strong>。</p>
 <h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>增强<code>for</code>循环是<code>JDK1.5</code>以后出来的一个高级<code>for</code>循环，专门用来遍历数组和集合的。它的内部原理其实是个<code>Iterator</code>迭代器，所以在遍历的过程中，<strong>不能对集合中的元素进行增删操作</strong>。<br />格式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量 : Collection集合or数组)&#123;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>遍历数组的例子</p>
@@ -613,194 +944,6 @@
 </blockquote>
 <h2 id="子类继承了父类的私有属性及方法吗？"><a href="#子类继承了父类的私有属性及方法吗？" class="headerlink" title="子类继承了父类的私有属性及方法吗？"></a>子类继承了父类的私有属性及方法吗？</h2><p><strong>子类对象确实拥有父类对象中所有的属性和方法</strong>，但是父类对象中的私有属性和方法，<strong>子类是无法访问到的</strong>，只是拥有，但不能使用。<br /></p>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/" itemprop="url">生成随机数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-15T13:51:37+08:00">
-                2020-07-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" itemprop="url" rel="index">
-                    <span itemprop="name">Java语言入门</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  74字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-## 一、Math.random()
-Math.random() 方法返回一个<font color=red>**double类型**</font>的随机数，随机数范围为<font color=red>**[0,1)**</font>。
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
-
-<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -891,7 +1034,7 @@ Math.random() 方法返回一个<font color=red>**double类型**</font>的随机
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -971,7 +1114,7 @@ Math.random() 方法返回一个<font color=red>**double类型**</font>的随机
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.2k</span>
+    <span title="Site words total count">5.3k</span>
   
 </div>
 

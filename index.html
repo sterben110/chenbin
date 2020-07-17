@@ -261,6 +261,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/Hexo/Hexo%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/17/Hexo/Hexo%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" itemprop="url">Hexo问题与解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-17T18:24:16+08:00">
+                2020-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  85字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="hexo引用外网的图片不显示"><a href="#hexo引用外网的图片不显示" class="headerlink" title="hexo引用外网的图片不显示"></a>hexo引用外网的图片不显示</h2><p>方法其实很简单，只需要文章的头部如下图所示位置添加<code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;</code>这一句话就可以完美解决问题。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo问题与解决方案</span><br><span class="line">toc: true</span><br><span class="line">date: 2020-07-17 18:24:16</span><br><span class="line">categories:</span><br><span class="line">---</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"referrer"</span> <span class="attr">content</span>=<span class="string">"no-referrer"</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/Map%E6%8E%A5%E5%8F%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -397,9 +550,8 @@
         
           
             <meta name="referrer" content="no-referrer"/>
-## 1、分析
-Map接口中键和值一一映射. 可以通过键来获取值。
 
+<h2 id="1、分析"><a href="#1、分析" class="headerlink" title="1、分析"></a>1、分析</h2><p>Map接口中键和值一一映射. 可以通过键来获取值。</p>
 <ul>
 <li>给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。<br /></li>
 <li>当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常.<br /></li>
@@ -569,7 +721,7 @@ Map接口中键和值一一映射. 可以通过键来获取值。
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  84字
+                  46字
                 </span>
               
 
@@ -609,343 +761,10 @@ Map接口中键和值一一映射. 可以通过键来获取值。
         
           
             <meta name="referrer" content="no-referrer"/>
-## 1、关联
-**下图表示 <font color=red>Student  类关联  Major  类</font>，即表示Major类为Student类的属性（成员变量）**<br />![](https://cdn.nlark.com/yuque/0/2020/svg/437282/1594970231959-d7c25130-3788-43c5-b795-ad0d0004fa51.svg#align=left&display=inline&height=427&margin=%5Bobject%20Object%5D&originHeight=427&originWidth=197&size=0&status=done&style=none&width=197)
 
+<h2 id="1、关联"><a href="#1、关联" class="headerlink" title="1、关联"></a>1、关联</h2><p><strong>下图表示 <font color=red>Student  类关联  Major  类</font>，即表示Major类为Student类的属性（成员变量）</strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594970231959-d7c25130-3788-43c5-b795-ad0d0004fa51.svg#align=left&display=inline&height=427&margin=%5Bobject%20Object%5D&originHeight=427&originWidth=197&size=0&status=done&style=none&width=197" alt=""></p>
 <h2 id="2、依赖"><a href="#2、依赖" class="headerlink" title="2、依赖"></a>2、依赖</h2><h2 id="3、聚集"><a href="#3、聚集" class="headerlink" title="3、聚集"></a>3、聚集</h2><h2 id="4、泛化"><a href="#4、泛化" class="headerlink" title="4、泛化"></a>4、泛化</h2><p><strong>泛化等同于<font color=red>继承</font></strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594974464425-cdbdcdc4-c055-40e4-bdd5-107807d78647.svg#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&originHeight=222&originWidth=266&size=0&status=done&style=none&width=266" alt=""><br><a name="Z6NTj"></a></p>
 <h2 id="5、实现"><a href="#5、实现" class="headerlink" title="5、实现"></a>5、实现</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/File%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/File%E7%B1%BB/" itemprop="url">File类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-16T17:12:48+08:00">
-                2020-07-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" itemprop="url" rel="index">
-                    <span itemprop="name">Java语言入门</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-## 一、构造函数
-> Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。
-> File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。
-
-<h3 id="1、File-File-parent-String-child"><a href="#1、File-File-parent-String-child" class="headerlink" title="1、File(File parent, String child)"></a>1、File(File parent, String child)</h3><blockquote>
-<p>通过给定的 <code>parent</code> 父文件对象和 <code>child</code> 子路径名字符串创建一个新的File实例。</p>
-</blockquote>
-<h3 id="2、File-String-pathname"><a href="#2、File-String-pathname" class="headerlink" title="2、File(String pathname)"></a>2、File(String pathname)</h3><blockquote>
-<p>通过将给定路径名字符串 <code>pathname</code> 转换成抽象路径名来创建一个新 File 实例。</p>
-</blockquote>
-<h3 id="3、File-String-parent-String-child"><a href="#3、File-String-parent-String-child" class="headerlink" title="3、File(String parent, String child)"></a>3、File(String parent, String child)</h3><blockquote>
-<p>根据 <code>parent</code>  路径名字符串和 <code>child</code>  路径名字符串创建一个新 File 实例。</p>
-</blockquote>
-<h3 id="4、File-URI-uri"><a href="#4、File-URI-uri" class="headerlink" title="4、File(URI uri)"></a>4、File(URI uri)</h3><blockquote>
-<p>通过将给定的 <code>file: URI</code>  转换成一个抽象路径名来创建一个新的 File 实例。</p>
-</blockquote>
-<h2 id="二、方法"><a href="#二、方法" class="headerlink" title="二、方法"></a>二、方法</h2><table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">方法描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1</td>
-<td align="left"><font color=red><strong>public String getName()</strong></font><br />返回由此抽象路径名表示的文件或目录的名称。</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left"><strong>public String getParent()、</strong><br /> 返回此抽象路径名的父路径名的路径名字符串，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left"><strong>public File getParentFile()</strong><br />返回此抽象路径名的父路径名的抽象路径名，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left"><font color=red><strong>public String getPath()</strong></font><br />将此抽象路径名转换为一个路径名字符串。</td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left"><strong>public boolean isAbsolute()</strong><br />测试此抽象路径名是否为绝对路径名。</td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left"><strong>public String getAbsolutePath()</strong><br />返回抽象路径名的绝对路径名字符串。</td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left"><strong>public boolean canRead()</strong><br />测试应用程序是否可以读取此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left"><strong>public boolean canWrite()</strong><br />测试应用程序是否可以修改此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left"><font color=red><strong>public boolean exists()</strong></font><br />测试此抽象路径名表示的文件或目录是否存在。</td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left"><strong>public boolean isDirectory()</strong><br />测试此抽象路径名表示的文件是否是一个目录。</td>
-</tr>
-<tr>
-<td align="left">11</td>
-<td align="left"><strong>public boolean isFile()</strong><br />测试此抽象路径名表示的文件是否是一个标准文件。</td>
-</tr>
-<tr>
-<td align="left">12</td>
-<td align="left"><strong>public long lastModified()</strong><br />返回此抽象路径名表示的文件最后一次被修改的时间。</td>
-</tr>
-<tr>
-<td align="left">13</td>
-<td align="left"><font color=red><strong>public long length()</strong></font><br />返回由此抽象路径名表示的文件的长度。</td>
-</tr>
-<tr>
-<td align="left">14</td>
-<td align="left"><font color=red><strong>public boolean createNewFile() throws IOException</strong></font><br />当且仅当不存在具有此抽象路径名指定的名称的文件时，原子地创建由此抽象路径名指定的一个新的空文件。</td>
-</tr>
-<tr>
-<td align="left">15</td>
-<td align="left"><font color=red><strong>public boolean delete()</strong></font><br /> 删除此抽象路径名表示的文件或目录。</td>
-</tr>
-<tr>
-<td align="left">16</td>
-<td align="left"><strong>public void deleteOnExit()</strong><br />在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。</td>
-</tr>
-<tr>
-<td align="left">17</td>
-<td align="left"><font color=red><strong>public String[] list()</strong></font><br />返回由此抽象路径名所表示的目录中的文件和目录的名称所组成字符串数组。</td>
-</tr>
-<tr>
-<td align="left">18</td>
-<td align="left"><font color=red><strong>public String[] list(FilenameFilter filter)</strong></font><br />返回由包含在目录中的文件和目录的名称所组成的字符串数组，这一目录是通过满足指定过滤器的抽象路径名来表示的。</td>
-</tr>
-<tr>
-<td align="left">19</td>
-<td align="left"><font color=red><strong>public File[] listFiles()</strong></font><br />  返回一个抽象路径名数组，这些路径名表示此抽象路径名所表示目录中的文件。</td>
-</tr>
-<tr>
-<td align="left">20</td>
-<td align="left"><font color=red><strong>public File[] listFiles(FileFilter filter)</strong></font><br />返回表示此抽象路径名所表示目录中的文件和目录的抽象路径名数组，这些路径名满足特定过滤器。</td>
-</tr>
-<tr>
-<td align="left">21</td>
-<td align="left"><strong>public boolean mkdir()</strong><br />创建此抽象路径名指定的目录。</td>
-</tr>
-<tr>
-<td align="left">22</td>
-<td align="left"><font color=red><strong>public boolean mkdirs()</strong></font><br />创建此抽象路径名指定的目录，包括创建必需但不存在的父目录。创建整个目录树。</td>
-</tr>
-<tr>
-<td align="left">23</td>
-<td align="left"><font color=red><strong>public boolean renameTo(File dest)</strong></font><br /> 重新命名此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left">24</td>
-<td align="left"><strong>public boolean setLastModified(long time)</strong><br />设置由此抽象路径名所指定的文件或目录的最后一次修改时间。</td>
-</tr>
-<tr>
-<td align="left">25</td>
-<td align="left"><strong>public boolean setReadOnly()</strong><br />标记此抽象路径名指定的文件或目录，以便只可对其进行读操作。</td>
-</tr>
-<tr>
-<td align="left">26</td>
-<td align="left"><strong>public static File createTempFile(String prefix, String suffix, File directory) throws IOException</strong><br />在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。</td>
-</tr>
-<tr>
-<td align="left">27</td>
-<td align="left"><strong>public static File createTempFile(String prefix, String suffix) throws IOException</strong><br />在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。</td>
-</tr>
-<tr>
-<td align="left">28</td>
-<td align="left"><strong>public int compareTo(File pathname)</strong><br />按字母顺序比较两个抽象路径名。</td>
-</tr>
-<tr>
-<td align="left">29</td>
-<td align="left"><strong>public int compareTo(Object o)</strong><br />按字母顺序比较抽象路径名与给定对象。</td>
-</tr>
-<tr>
-<td align="left">30</td>
-<td align="left"><strong>public boolean equals(Object obj)</strong><br />测试此抽象路径名与给定对象是否相等。</td>
-</tr>
-<tr>
-<td align="left">31</td>
-<td align="left"><strong>public String toString()</strong><br /> 返回此抽象路径名的路径名字符串。</td>
-</tr>
-</tbody></table>
-
           
         
       
@@ -1036,7 +855,7 @@ Map接口中键和值一一映射. 可以通过键来获取值。
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1116,7 +935,7 @@ Map接口中键和值一一映射. 可以通过键来获取值。
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.2k</span>
+    <span title="Site words total count">5.3k</span>
   
 </div>
 
