@@ -79,10 +79,14 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="sterben110的博客">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta name="description" content="内部类可分为实例内部类和静态内部类。 1、实例内部类特性：  实例内部类不能有静态成员(包括属性、方法)  实例内部类对象外部创建语法:Outer.new Inner();  实例内部类访问外部类成员的格式:Outer.this.成员（包含私有成员）1234567891011121314151617181920class Outer1&amp;#123;    private String name&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内部类">
+<meta property="og:url" content="http://yoursite.com/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/index.html">
 <meta property="og:site_name" content="sterben110的博客">
+<meta property="og:description" content="内部类可分为实例内部类和静态内部类。 1、实例内部类特性：  实例内部类不能有静态成员(包括属性、方法)  实例内部类对象外部创建语法:Outer.new Inner();  实例内部类访问外部类成员的格式:Outer.this.成员（包含私有成员）1234567891011121314151617181920class Outer1&amp;#123;    private String name&#x3D;">
+<meta property="article:published_time" content="2020-07-18T05:01:13.000Z">
+<meta property="article:modified_time" content="2020-07-18T05:12:33.046Z">
 <meta property="article:author" content="chenbin">
 <meta name="twitter:card" content="summary">
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/4/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/18/Java/Java面向对象/内部类/"/>
 
 
 
 
 
-  <title>sterben110的博客</title>
+  <title>内部类 | sterben110的博客</title>
   
 
 
@@ -139,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,9 +249,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -261,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenbin">
@@ -278,9 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/08/Hexo/3%E3%80%81%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/" itemprop="url">3、本地电脑部署博客步骤</a></h1>
+          <h1 class="post-title" itemprop="name headline">内部类</h1>
         
 
         <div class="post-meta">
@@ -292,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-08T17:35:57+08:00">
-                2020-07-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-18T13:01:13+08:00">
+                2020-07-18
               </time>
             
 
@@ -315,8 +316,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">Java面向对象</span>
                   </a>
                 </span>
 
@@ -346,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  160字
+                  396字
                 </span>
               
 
@@ -383,421 +395,25 @@
       
 
       
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h1 id="一、本地安装Git"><a href="#一、本地安装Git" class="headerlink" title="一、本地安装Git"></a>一、本地安装Git</h1><p><br />在官网下载最新版本的git：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a><br /></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;查看git版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<h1 id="二、本地配置SSH并绑定至GitHub"><a href="#二、本地配置SSH并绑定至GitHub" class="headerlink" title="二、本地配置SSH并绑定至GitHub"></a>二、本地配置SSH并绑定至GitHub</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;生成本地SSH</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br><span class="line">&#x2F;&#x2F;查询本地SSH</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<h1 id="三、本地安装node-js"><a href="#三、本地安装node-js" class="headerlink" title="三、本地安装node.js"></a>三、本地安装node.js</h1><p><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">下载地址</a><br /></p>
-<h1 id="四、本地安装hexo"><a href="#四、本地安装hexo" class="headerlink" title="四、本地安装hexo"></a>四、本地安装hexo</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">查阅文档</a><br />安装完node.js之后,我们就可以安装Hexo啦，在命令行输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p><br />局部安装 hexo 包，在命令行输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="五、git-clone-到本地"><a href="#五、git-clone-到本地" class="headerlink" title="五、git clone 到本地"></a>五、git clone 到本地</h1><p>clone 远程仓库dev分支的代码到本地</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b dev 仓库地址</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/08/Hexo/2%E3%80%81Hexo%E7%9A%84%E5%BA%94%E7%94%A8/" itemprop="url">2、Hexo的应用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-08T17:33:48+08:00">
-                2020-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  244字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
-<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。</p>
-<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
-</blockquote>
-<blockquote>
-<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
-</blockquote>
-<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code></p>
-<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/08/Hexo/1%E3%80%81%E5%88%9D%E8%AF%86Hexo/" itemprop="url">1、初识Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-08T17:24:39+08:00">
-                2020-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  364字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h1 id="一、Hexo定义"><a href="#一、Hexo定义" class="headerlink" title="一、Hexo定义"></a>一、Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
-<h1 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">hexo的安装</a></p>
-<ol>
-<li>安装<strong>Node.js</strong>和<strong>Git</strong></li>
-<li>然后使用npm安装Hexo<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li>局部安装 <code>hexo</code> 包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
+        <meta name="referrer" content="no-referrer"/>
+
+<p>内部类可分为<font color=red size=5><strong>实例内部类</strong></font>和<font color=red size=5><strong>静态内部类</strong></font>。</p>
+<h2 id="1、实例内部类"><a href="#1、实例内部类" class="headerlink" title="1、实例内部类"></a>1、实例内部类</h2><p><font color=red size=4><strong>特性：</strong></font></p>
+<ul>
+<li>实例内部类不能有静态成员(包括属性、方法) </li>
+<li>实例内部类对象外部创建语法:Outer.new Inner(); </li>
+<li>实例内部类访问外部类成员的格式:Outer.this.成员（包含私有成员）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"张三"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num1=<span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner1</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name=<span class="string">"李四"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num2=<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num3=<span class="number">10</span>;<span class="comment">//静态常量在内部类中是可以的</span></span><br><span class="line">        <span class="comment">//private static int num3=30;//在成员内部类中不能声明静态的成员,包括属性和方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">            <span class="comment">//System.out.println(Outer1.this.name);</span></span><br><span class="line">            System.out.println(num2);</span><br><span class="line">            outerShow();<span class="comment">//成员内部类可以直接访问外部类的属性和方法，包括私有的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
-</ol>
-<p>安装以后，可以使用以下两种方式执行 Hexo命令：</p>
-<ol>
-<li><code>npx hexo &lt;command&gt;</code></li>
-<li>将 Hexo 所在的目录下的 node_modules 添加到环境变量之中即可直接使用 hexo ：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;PATH&#x3D;&quot;$PATH:.&#x2F;node_modules&#x2F;.bin&quot;&#39; &gt;&gt; ~&#x2F;.profile</span><br></pre></td></tr></table></figure>
+</ul>
+<h2 id="2、静态内部类"><a href="#2、静态内部类" class="headerlink" title="2、静态内部类"></a>2、静态内部类</h2><p><font color=red size=4><strong>特性：</strong></font></p>
+<ul>
+<li>静态内部类可以包含静态成员，也可以包含非静态成员</li>
+<li>静态内部类只能访问外部类的静态成员，格式为：Outer.静态成员</li>
+</ul>
+<p>如果我们声明内部类为静态内部类后，那么就可以直接调用这个内部类，不需要先实例化外部类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil;</span><br><span class="line"><span class="comment">// 静态内部类是需要单独 import 的</span></span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil.InnerTool;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtilTest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line">       <span class="keyword">int</span> sum = tool.add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">       System.out.println(sum);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<h1 id="三、创建博客文件夹"><a href="#三、创建博客文件夹" class="headerlink" title="三、创建博客文件夹"></a>三、创建博客文件夹</h1><p>进入某目录，执行如下命令创建博客文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;在当前目录下创建一个叫blog的博客文件夹</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-
-<h1 id="四、安装发布工具"><a href="#四、安装发布工具" class="headerlink" title="四、安装发布工具"></a>四、安装发布工具</h1><p>进入博客目录（<code>cd blog</code>），打开控制台，输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="五、修改配置文件"><a href="#五、修改配置文件" class="headerlink" title="五、修改配置文件"></a>五、修改配置文件</h1><p>找到blog文件夹中的<code>_config.yml</code>文件，输入如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">theme: landscape</span><br><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repository: git@github.com:sterben110&#x2F;sterben110.github.io.git  </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<h1 id="六、Hexo提交"><a href="#六、Hexo提交" class="headerlink" title="六、Hexo提交"></a>六、Hexo提交</h1><h2 id="hexo-generate"><a href="#hexo-generate" class="headerlink" title="hexo generate"></a>hexo generate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>作用是生成新的静态文件,可以简写为<code>hexo g</code></p>
-<h2 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>作用是把生成的文件部署到我们的博客上，可以简写为<code>hexo d</code>，发布后，我们就可以看到我们的博客变成了这样：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594185106908-7ab390a4-e0fc-45bc-a0c0-4b04b20d7392.png#align=left&display=inline&height=1302&margin=%5Bobject%20Object%5D&originHeight=1302&originWidth=2524&size=0&status=done&style=none&width=2524" alt=""></p>
-<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>用途是清除缓存，能让新发布的博客能快速生效</p>
-
-          
-        
       
     </div>
     
@@ -814,12 +430,32 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%BC%82%E5%B8%B8%E7%B1%BB/" rel="next" title="异常类">
+                <i class="fa fa-chevron-left"></i> 异常类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/Random%E7%B1%BB/" rel="prev" title="Random类">
+                Random类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -829,14 +465,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -844,6 +477,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -866,8 +503,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -886,7 +532,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -932,6 +578,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、实例内部类"><span class="nav-text">1、实例内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、静态内部类"><span class="nav-text">2、静态内部类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -966,7 +628,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.3k</span>
+    <span title="Site words total count">6.5k</span>
   
 </div>
 
@@ -1089,6 +751,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

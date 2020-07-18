@@ -79,10 +79,14 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="sterben110的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/07/page/3/index.html">
+<meta name="description" content="一、异常的作用域下面的程序执行会失败，这是因为 int len 这个变量是定义在 try 的代码块里，所以如果想要操作 len 这个变量，那么就需要我们提升作用域。 123456try &amp;#123;    int len &#x3D; getStrLength(null);&amp;#125; catch (NullPointerException e) &amp;#123;&amp;#125;System.out.print">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异常类">
+<meta property="og:url" content="http://yoursite.com/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%BC%82%E5%B8%B8%E7%B1%BB/index.html">
 <meta property="og:site_name" content="sterben110的博客">
+<meta property="og:description" content="一、异常的作用域下面的程序执行会失败，这是因为 int len 这个变量是定义在 try 的代码块里，所以如果想要操作 len 这个变量，那么就需要我们提升作用域。 123456try &amp;#123;    int len &#x3D; getStrLength(null);&amp;#125; catch (NullPointerException e) &amp;#123;&amp;#125;System.out.print">
+<meta property="article:published_time" content="2020-07-18T02:46:47.000Z">
+<meta property="article:modified_time" content="2020-07-18T05:12:29.601Z">
 <meta property="article:author" content="chenbin">
 <meta name="twitter:card" content="summary">
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2020/07/page/3/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/18/Java/Java面向对象/异常类/"/>
 
 
 
 
 
-  <title>归档 | sterben110的博客</title>
+  <title>异常类 | sterben110的博客</title>
   
 
 
@@ -139,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,152 +250,217 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%BC%82%E5%B8%B8%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">异常类</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-18T10:46:47+08:00">
+                2020-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 12 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">Java面向对象</span>
+                  </a>
+                </span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">生成随机数</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  334字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-15T13:51:37+08:00"
-              content="2020-07-15" >
-          07-15
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/" itemprop="url">
-              
-                <span itemprop="name">Java是如何运行的</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-15T13:44:28+08:00"
-              content="2020-07-15" >
-          07-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <meta name="referrer" content="no-referrer"/>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url">
-              
-                <span itemprop="name">动态规划</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-11T15:28:45+08:00"
-              content="2020-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<h2 id="一、异常的作用域"><a href="#一、异常的作用域" class="headerlink" title="一、异常的作用域"></a>一、异常的作用域</h2><p>下面的程序执行会失败，这是因为 <code>int len</code> 这个变量是定义在 try 的代码块里，所以如果想要操作 len 这个变量，那么就需要我们提升作用域。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">int</span> len = getStrLength(<span class="keyword">null</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"程序执行到这"</span>+len);</span><br></pre></td></tr></table></figure>
+<h2 id="二、异常的分类"><a href="#二、异常的分类" class="headerlink" title="二、异常的分类"></a>二、异常的分类</h2><p>异常分为 <code>RuntimeException</code>  和其余的 <code>Exception</code> ，两者的<font color=red><strong>不同点</strong></font>：<br />1、<br />手工抛出 <code>RuntimeException</code> 异常时，<font color=red><strong>不需要在方法上约定可能抛出的异常</strong></font>。类似 <code>IllegalArgumentException</code> 是 <code>RuntimeException</code> 子类抛出异常时就不需要在方法上声明。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getInt</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"姓名不能为空"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Integer.parseInt(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>手工抛出其余的 <code>Exception</code> 异常时，<font color=red><strong>必须在方法上约定可能抛出的异常</strong></font>。类似如下代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getInt</span><span class="params">(String str)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(str == <span class="keyword">null</span>)&#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"姓名不能为空"</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> Integer.parseInt(str);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>2、<br /><code>Exception</code> ：受检查的异常，这种异常是<font color=red><strong>强制我们catch或throw的异常</strong></font>。你遇到这种异常必须进行catch或throw，如果不处理，编译器会报错。比如：IOException。<br /><code>RuntimeException</code> ：运行时异常，<font color=red><strong>这种异常我们不需要处理，完全由虚拟机接管</strong></font>。比如我们常见的NullPointerException，我们在写程序时不会进行catch或throw。</p>
 
       
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/17/Hexo/Hexo%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="next" title="Hexo问题与解决方案">
+                <i class="fa fa-chevron-left"></i> Hexo问题与解决方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/" rel="prev" title="内部类">
+                内部类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2020/07/page/2/">上一页</a><a class="page-number" href="/archives/2020/07/">1</a><a class="page-number" href="/archives/2020/07/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2020/07/page/4/">4</a><a class="extend next" rel="next" href="/archives/2020/07/page/4/">下一页</a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -399,6 +468,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -421,8 +494,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -441,7 +523,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -487,6 +569,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、异常的作用域"><span class="nav-text">一、异常的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、异常的分类"><span class="nav-text">二、异常的分类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -521,7 +619,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.3k</span>
+    <span title="Site words total count">6.5k</span>
   
 </div>
 
@@ -644,6 +742,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

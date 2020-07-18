@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="数组初始化注意事项1int[] numbers &#x3D; new int[8]; 上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。数组初始化完后，并没有存储实际的值，int 类型的数据默认值是 0,String 类型的数据默认值是 null。 循环增强for循环增强for循环是JDK1.5以后出来的一个高级for循环，专门用来遍历数组和集合的。它的内部原理其实是">
+<meta name="description" content="1、数组初始化注意事项1int[] numbers &#x3D; new int[8]; 上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。数组初始化完后，并没有存储实际的值，int 类型的数据默认值是 0,String 类型的数据默认值是 null。 2、循环增强for循环增强for循环是JDK1.5以后出来的一个高级for循环，专门用来遍历数组和集合的。它的内部原">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java注意点">
 <meta property="og:url" content="http://yoursite.com/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%B3%A8%E6%84%8F%E7%82%B9/index.html">
 <meta property="og:site_name" content="sterben110的博客">
-<meta property="og:description" content="数组初始化注意事项1int[] numbers &#x3D; new int[8]; 上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。数组初始化完后，并没有存储实际的值，int 类型的数据默认值是 0,String 类型的数据默认值是 null。 循环增强for循环增强for循环是JDK1.5以后出来的一个高级for循环，专门用来遍历数组和集合的。它的内部原理其实是">
+<meta property="og:description" content="1、数组初始化注意事项1int[] numbers &#x3D; new int[8]; 上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。数组初始化完后，并没有存储实际的值，int 类型的数据默认值是 0,String 类型的数据默认值是 null。 2、循环增强for循环增强for循环是JDK1.5以后出来的一个高级for循环，专门用来遍历数组和集合的。它的内部原">
 <meta property="article:published_time" content="2020-07-16T02:35:49.000Z">
-<meta property="article:modified_time" content="2020-07-17T10:28:25.863Z">
+<meta property="article:modified_time" content="2020-07-18T05:00:39.861Z">
 <meta property="article:author" content="chenbin">
 <meta name="twitter:card" content="summary">
 
@@ -358,7 +358,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  577字
+                  933字
                 </span>
               
 
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2分钟
+                  3分钟
                 </span>
               
             </div>
@@ -397,24 +397,36 @@
       
         <meta name="referrer" content="no-referrer"/>
 
-<h2 id="数组初始化注意事项"><a href="#数组初始化注意事项" class="headerlink" title="数组初始化注意事项"></a>数组初始化注意事项</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="1、数组初始化注意事项"><a href="#1、数组初始化注意事项" class="headerlink" title="1、数组初始化注意事项"></a>1、数组初始化注意事项</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
 <p>上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。<strong>数组初始化完后</strong>，并没有存储实际的值，<strong>int 类型的数据默认值是 0</strong>,<strong>String 类型的数据默认值是 null</strong>。</p>
-<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>增强<code>for</code>循环是<code>JDK1.5</code>以后出来的一个高级<code>for</code>循环，专门用来遍历数组和集合的。它的内部原理其实是个<code>Iterator</code>迭代器，所以在遍历的过程中，<strong>不能对集合中的元素进行增删操作</strong>。<br />格式：</p>
+<h2 id="2、循环"><a href="#2、循环" class="headerlink" title="2、循环"></a>2、循环</h2><h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>增强<code>for</code>循环是<code>JDK1.5</code>以后出来的一个高级<code>for</code>循环，专门用来遍历数组和集合的。它的内部原理其实是个<code>Iterator</code>迭代器，所以在遍历的过程中，<strong>不能对集合中的元素进行增删操作</strong>。<br />格式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量 : Collection集合or数组)&#123;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>遍历数组的例子</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> n : arr) &#123;</span><br><span class="line">    <span class="comment">//变量n代表被遍历到的数组元素</span></span><br><span class="line">    System.out.println(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>遍历Collection集合的例子</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; coll = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">coll.add(<span class="string">"a1"</span>);</span><br><span class="line">coll.add(<span class="string">"a2"</span>);</span><br><span class="line">coll.add(<span class="string">"a3"</span>);</span><br><span class="line">coll.add(<span class="string">"a4"</span>);</span><br><span class="line"><span class="keyword">for</span>(String str : coll)&#123;</span><br><span class="line">    <span class="comment">//变量Str代表被遍历到的集合元素</span></span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="字符串分割注意点"><a href="#字符串分割注意点" class="headerlink" title="字符串分割注意点"></a>字符串分割注意点</h2><h3 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h3><p>这里要强调一下特殊字符的分割</p>
+<h2 id="3、字符串分割注意点"><a href="#3、字符串分割注意点" class="headerlink" title="3、字符串分割注意点"></a>3、字符串分割注意点</h2><h3 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h3><p>这里要强调一下特殊字符的分割</p>
 <blockquote>
 <p><code>.</code> <code>|</code> <code>*</code>  这三个字符如果作为分割符，那么就需要加上 <code>\\</code>,比如 <code>str.split(&quot;\\|&quot;)</code> </p>
 </blockquote>
-<h2 id="静态变量使用场景"><a href="#静态变量使用场景" class="headerlink" title="静态变量使用场景"></a>静态变量使用场景</h2><p>有些时间我们还是需要在多个对象里共享一些数据，这个时候就需要引入<strong>常量</strong>了，常量也可以叫做<strong>静态变量</strong>。常量的特点是不需要实例化，在 <strong>Java 当中实际上是创建了一个全局唯一的内存空间并且分配给了这个变量</strong>。所以常量的值只会随 Java 的销毁才会被销毁，这样也就方便我们存储一些数据到内存中，否则会随着对象的销毁被销毁掉的。</p>
+<h2 id="4、静态变量使用场景"><a href="#4、静态变量使用场景" class="headerlink" title="4、静态变量使用场景"></a>4、静态变量使用场景</h2><p>有些时间我们还是需要在多个对象里共享一些数据，这个时候就需要引入<strong>常量</strong>了，常量也可以叫做<strong>静态变量</strong>。常量的特点是不需要实例化，在 <strong>Java 当中实际上是创建了一个全局唯一的内存空间并且分配给了这个变量</strong>。所以常量的值只会随 Java 的销毁才会被销毁，这样也就方便我们存储一些数据到内存中，否则会随着对象的销毁被销毁掉的。</p>
 <h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><blockquote>
 <p>1、常用的字符串值<br>2、需要在内存做缓存的值</p>
 </blockquote>
-<h2 id="子类继承了父类的私有属性及方法吗？"><a href="#子类继承了父类的私有属性及方法吗？" class="headerlink" title="子类继承了父类的私有属性及方法吗？"></a>子类继承了父类的私有属性及方法吗？</h2><p><strong>子类对象确实拥有父类对象中所有的属性和方法</strong>，但是父类对象中的私有属性和方法，<strong>子类是无法访问到的</strong>，只是拥有，但不能使用。<br /></p>
+<h2 id="5、子类继承了父类的私有属性及方法吗？"><a href="#5、子类继承了父类的私有属性及方法吗？" class="headerlink" title="5、子类继承了父类的私有属性及方法吗？"></a>5、子类继承了父类的私有属性及方法吗？</h2><p><strong>子类对象确实拥有父类对象中所有的属性和方法</strong>，但是父类对象中的私有属性和方法，<strong>子类是无法访问到的</strong>，只是拥有，但不能使用。<br /></p>
+<h2 id="6、Exception和RuntimeException的区别"><a href="#6、Exception和RuntimeException的区别" class="headerlink" title="6、Exception和RuntimeException的区别"></a>6、Exception和RuntimeException的区别</h2><ul>
+<li><code>Exception</code> ：受检查的异常，<font color=red><strong>这种异常是强制我们catch或throw的异常。</strong></font>你遇到这种异常必须进行catch或throw，如果不处理，编译器会报错。比如：IOException。手工抛出其余的 <code>Exception</code> 异常时，<font color=red><strong>必须在方法上约定可能抛出的异常。</strong></font></li>
+<li><code>RuntimeException</code>：运行时异常，<font color=red><strong>这种异常我们不需要处理，完全由虚拟机接管。</strong></font>比如我们常见的NullPointerException，我们在写程序时不会进行catch或throw。手工抛出 <code>RuntimeException</code> 异常时，<font color=red><strong>不需要在方法上约定可能抛出的异常。</strong></font></li>
+</ul>
+<h2 id="7、实例内部类注意事项"><a href="#7、实例内部类注意事项" class="headerlink" title="7、实例内部类注意事项"></a>7、实例内部类注意事项</h2><p><font color=red size=5><strong>特性：</strong></font></p>
+<ul>
+<li>实例内部类不能有静态成员(包括属性、方法) </li>
+<li>实例内部类对象外部创建语法:Outer.new Inner(); </li>
+<li>实例方法访问外部类实例成员:Outer.this.成员（包含私有成员）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"张三"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num1=<span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner1</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name=<span class="string">"李四"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num2=<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num3=<span class="number">10</span>;<span class="comment">//静态常量在内部类中是可以的</span></span><br><span class="line">        <span class="comment">//private static int num3=30;//在成员内部类中不能声明静态的成员,包括属性和方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">            <span class="comment">//System.out.println(Outer1.this.name);</span></span><br><span class="line">            System.out.println(num2);</span><br><span class="line">            outerShow();<span class="comment">//成员内部类可以直接访问外部类的属性和方法，包括私有的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 
       
     </div>
@@ -439,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0/" rel="next" title="生成随机数">
-                <i class="fa fa-chevron-left"></i> 生成随机数
+              <a href="/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Math%E7%B1%BB/" rel="next" title="Math类">
+                <i class="fa fa-chevron-left"></i> Math类
               </a>
             
           </div>
@@ -534,7 +546,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -589,7 +601,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组初始化注意事项"><span class="nav-text">数组初始化注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环"><span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增强for循环"><span class="nav-text">增强for循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串分割注意点"><span class="nav-text">字符串分割注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串分割split"><span class="nav-text">字符串分割split()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态变量使用场景"><span class="nav-text">静态变量使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用场景"><span class="nav-text">使用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子类继承了父类的私有属性及方法吗？"><span class="nav-text">子类继承了父类的私有属性及方法吗？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、数组初始化注意事项"><span class="nav-text">1、数组初始化注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、循环"><span class="nav-text">2、循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增强for循环"><span class="nav-text">增强for循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、字符串分割注意点"><span class="nav-text">3、字符串分割注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串分割split"><span class="nav-text">字符串分割split()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、静态变量使用场景"><span class="nav-text">4、静态变量使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用场景"><span class="nav-text">使用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、子类继承了父类的私有属性及方法吗？"><span class="nav-text">5、子类继承了父类的私有属性及方法吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、Exception和RuntimeException的区别"><span class="nav-text">6、Exception和RuntimeException的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、实例内部类注意事项"><span class="nav-text">7、实例内部类注意事项</span></a></li></ol></div>
             
 
           </div>
@@ -630,7 +642,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">5.3k</span>
+    <span title="Site words total count">6.5k</span>
   
 </div>
 
