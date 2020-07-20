@@ -79,18 +79,16 @@
 
 
 
-<meta name="description" content="1、分析Map接口中键和值一一映射. 可以通过键来获取值。  给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。 当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常. 当对象的类型和Map里元素类型不兼容的时候，就会抛出一个 ClassCastException异常。 当在不允许使用Null对象的Map中使用Null">
+<meta name="description" content="int nextInt(int n)方法int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: [0,n) 1234567891011&#x2F;&#x2F; 实例化随机数Random r &#x3D; new Random();&#x2F;&#x2F; 得到0-7之间的随机数int num &#x3D; r.nextInt(8);&#x2F;&#x2F; 如果想得到 0-8 之间的随机数int num &#x3D; r.nextInt(9);&#x2F;&#x2F; 如果想">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Map接口">
-<meta property="og:url" content="http://yoursite.com/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/Map%E6%8E%A5%E5%8F%A3/index.html">
+<meta property="og:title" content="Random类">
+<meta property="og:url" content="http://yoursite.com/2020/07/18/Java/Java%E7%B1%BB/java.util/Random%E7%B1%BB/index.html">
 <meta property="og:site_name" content="sterben110的博客">
-<meta property="og:description" content="1、分析Map接口中键和值一一映射. 可以通过键来获取值。  给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。 当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常. 当对象的类型和Map里元素类型不兼容的时候，就会抛出一个 ClassCastException异常。 当在不允许使用Null对象的Map中使用Null">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/437282/1594976617431-376ad1cc-79fb-4b3f-ad89-1d32572c7580.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&originHeight=259&originWidth=441&size=0&status=done&style=none&width=441">
-<meta property="article:published_time" content="2020-07-17T09:08:00.000Z">
-<meta property="article:modified_time" content="2020-07-17T10:28:15.845Z">
+<meta property="og:description" content="int nextInt(int n)方法int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: [0,n) 1234567891011&#x2F;&#x2F; 实例化随机数Random r &#x3D; new Random();&#x2F;&#x2F; 得到0-7之间的随机数int num &#x3D; r.nextInt(8);&#x2F;&#x2F; 如果想得到 0-8 之间的随机数int num &#x3D; r.nextInt(9);&#x2F;&#x2F; 如果想">
+<meta property="article:published_time" content="2020-07-18T05:13:28.000Z">
+<meta property="article:modified_time" content="2020-07-20T04:15:02.746Z">
 <meta property="article:author" content="chenbin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2020/png/437282/1594976617431-376ad1cc-79fb-4b3f-ad89-1d32572c7580.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&originHeight=259&originWidth=441&size=0&status=done&style=none&width=441">
 
 
 
@@ -120,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/17/Java/Java面向对象/Map接口/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/18/Java/Java类/java.util/Random类/"/>
 
 
 
 
 
-  <title>Map接口 | sterben110的博客</title>
+  <title>Random类 | sterben110的博客</title>
   
 
 
@@ -266,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/Map%E6%8E%A5%E5%8F%A3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/Java/Java%E7%B1%BB/java.util/Random%E7%B1%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenbin">
@@ -283,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Map接口</h1>
+          <h1 class="post-title" itemprop="name headline">Random类</h1>
         
 
         <div class="post-meta">
@@ -295,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-17T17:08:00+08:00">
-                2020-07-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-18T13:13:28+08:00">
+                2020-07-18
               </time>
             
 
@@ -329,8 +327,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">Java面向对象</span>
+                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
+                    <span itemprop="name">Java类</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%B1%BB/java-util/" itemprop="url" rel="index">
+                    <span itemprop="name">java.util</span>
                   </a>
                 </span>
 
@@ -360,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  475字
+                  95字
                 </span>
               
 
@@ -399,33 +408,8 @@
       
         <meta name="referrer" content="no-referrer"/>
 
-<h2 id="1、分析"><a href="#1、分析" class="headerlink" title="1、分析"></a>1、分析</h2><p>Map接口中键和值一一映射. 可以通过键来获取值。</p>
-<ul>
-<li>给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。<br /></li>
-<li>当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常.<br /></li>
-<li>当对象的类型和Map里元素类型不兼容的时候，就会抛出一个 ClassCastException异常。<br /></li>
-<li>当在不允许使用Null对象的Map中使用Null对象，会抛出一个NullPointerException 异常。<br /></li>
-<li>当尝试修改一个只读的Map时，会抛出一个UnsupportedOperationException异常。</li>
-</ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594976617431-376ad1cc-79fb-4b3f-ad89-1d32572c7580.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&originHeight=259&originWidth=441&size=0&status=done&style=none&width=441" alt=""></p>
-<h2 id="2、Map遍历"><a href="#2、Map遍历" class="headerlink" title="2、Map遍历"></a>2、Map遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer,String&gt; entry : map.entrySet())&#123; </span><br><span class="line"></span><br><span class="line">  System.out.println(<span class="string">"Key = "</span> + entry.getKey() + </span><br><span class="line">                 <span class="string">", Value = "</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、方法列表"><a href="#3、方法列表" class="headerlink" title="3、方法列表"></a>3、方法列表</h2><ul>
-<li><font color=red><strong>void clear( )</strong></font><br /><em>从此映射中移除所有映射关系（可选操作）。</em><br /></li>
-<li><font color=red><strong>boolean containsKey(Object k)</strong></font><br /><em>如果此映射包含指定键的映射关系，则返回 true。</em><br /></li>
-<li><font color=red><strong>boolean containsValue(Object v)</strong></font><br /><em>如果此映射将一个或多个键映射到指定值，则返回 true。</em><br /></li>
-<li><font color=red><strong>Set entrySet( )</strong></font><br />返回此映射中包含的映射关系的 Set 视图。<br /></li>
-<li>boolean equals(Object obj)<br />比较指定的对象与此映射是否相等。<br /></li>
-<li><font color=red><strong>Object get(Object k)</strong></font><br />返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 null。<br /></li>
-<li>boolean isEmpty( )<br />如果此映射未包含键-值映射关系，则返回 true。<br /></li>
-<li>Set keySet( )<br />返回此映射中包含的键的 Set 视图。<br /></li>
-<li><font color=red><strong>Object put(Object k, Object v)</strong></font><br />将指定的值与此映射中的指定键关联（可选操作）。<br /></li>
-<li>void putAll(Map m)<br />从指定映射中将所有映射关系复制到此映射中（可选操作）。<br /></li>
-<li>Object remove(Object k)<br />如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。<br /></li>
-<li><font color=red><strong>int size( )</strong></font><br />返回此映射中的键-值映射关系数。<br /></li>
-<li><font color=red><strong>Collection values( )</strong></font><br />返回此映射中包含的值的 Collection 视图。<br /></li>
-</ul>
-
+<h2 id="int-nextInt-int-n-方法"><a href="#int-nextInt-int-n-方法" class="headerlink" title="int nextInt(int n)方法"></a>int nextInt(int n)方法</h2><p>int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: <font color=red><strong>[0,n)</strong></font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化随机数</span></span><br><span class="line">Random r = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="comment">// 得到0-7之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到 0-8 之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到50-100之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">51</span>)+<span class="number">50</span>;</span><br><span class="line"><span class="comment">// 这个 51 = 100 - 50 + 1</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -449,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E7%B1%BB%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" rel="next" title="类之间的关系">
-                <i class="fa fa-chevron-left"></i> 类之间的关系
+              <a href="/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/" rel="next" title="内部类">
+                <i class="fa fa-chevron-left"></i> 内部类
               </a>
             
           </div>
@@ -459,8 +443,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/17/Hexo/Hexo%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="prev" title="Hexo问题与解决方案">
-                Hexo问题与解决方案 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/" rel="prev" title="Arrays类">
+                Arrays类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -544,7 +528,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -555,7 +539,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -599,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、分析"><span class="nav-text">1、分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Map遍历"><span class="nav-text">2、Map遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、方法列表"><span class="nav-text">3、方法列表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-nextInt-int-n-方法"><span class="nav-text">int nextInt(int n)方法</span></a></li></ol></div>
             
 
           </div>
@@ -640,7 +624,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.5k</span>
+    <span title="Site words total count">8.3k</span>
   
 </div>
 

@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="int nextInt(int n)方法int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: [0,n) 1234567891011&#x2F;&#x2F; 实例化随机数Random r &#x3D; new Random();&#x2F;&#x2F; 得到0-7之间的随机数int num &#x3D; r.nextInt(8);&#x2F;&#x2F; 如果想得到 0-8 之间的随机数int num &#x3D; r.nextInt(9);&#x2F;&#x2F; 如果想">
+<meta name="description" content="1、构造函数 Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。  File(File parent, String child) 通过给定的 parent 父文件对象和 child 子路径名字符串创建一个新的File实例。  File(String pat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Random类">
-<meta property="og:url" content="http://yoursite.com/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/Random%E7%B1%BB/index.html">
+<meta property="og:title" content="File类">
+<meta property="og:url" content="http://yoursite.com/2020/07/16/Java/Java%E7%B1%BB/java.io/File%E7%B1%BB/index.html">
 <meta property="og:site_name" content="sterben110的博客">
-<meta property="og:description" content="int nextInt(int n)方法int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: [0,n) 1234567891011&#x2F;&#x2F; 实例化随机数Random r &#x3D; new Random();&#x2F;&#x2F; 得到0-7之间的随机数int num &#x3D; r.nextInt(8);&#x2F;&#x2F; 如果想得到 0-8 之间的随机数int num &#x3D; r.nextInt(9);&#x2F;&#x2F; 如果想">
-<meta property="article:published_time" content="2020-07-18T05:13:28.000Z">
-<meta property="article:modified_time" content="2020-07-18T05:27:10.115Z">
+<meta property="og:description" content="1、构造函数 Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。  File(File parent, String child) 通过给定的 parent 父文件对象和 child 子路径名字符串创建一个新的File实例。  File(String pat">
+<meta property="article:published_time" content="2020-07-16T09:12:48.000Z">
+<meta property="article:modified_time" content="2020-07-20T02:48:19.684Z">
 <meta property="article:author" content="chenbin">
 <meta name="twitter:card" content="summary">
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/18/Java/Java面向对象/Random类/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/16/Java/Java类/java.io/File类/"/>
 
 
 
 
 
-  <title>Random类 | sterben110的博客</title>
+  <title>File类 | sterben110的博客</title>
   
 
 
@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/Random%E7%B1%BB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/16/Java/Java%E7%B1%BB/java.io/File%E7%B1%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenbin">
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Random类</h1>
+          <h1 class="post-title" itemprop="name headline">File类</h1>
         
 
         <div class="post-meta">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-18T13:13:28+08:00">
-                2020-07-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-16T17:12:48+08:00">
+                2020-07-16
               </time>
             
 
@@ -327,8 +327,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">Java面向对象</span>
+                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
+                    <span itemprop="name">Java类</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%B1%BB/java-io/" itemprop="url" rel="index">
+                    <span itemprop="name">java.io</span>
                   </a>
                 </span>
 
@@ -358,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  95字
+                  1.1k字
                 </span>
               
 
@@ -374,7 +385,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  4分钟
                 </span>
               
             </div>
@@ -397,8 +408,154 @@
       
         <meta name="referrer" content="no-referrer"/>
 
-<h2 id="int-nextInt-int-n-方法"><a href="#int-nextInt-int-n-方法" class="headerlink" title="int nextInt(int n)方法"></a>int nextInt(int n)方法</h2><p>int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: <font color=red><strong>[0,n)</strong></font></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化随机数</span></span><br><span class="line">Random r = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="comment">// 得到0-7之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到 0-8 之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到50-100之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">51</span>)+<span class="number">50</span>;</span><br><span class="line"><span class="comment">// 这个 51 = 100 - 50 + 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="1、构造函数"><a href="#1、构造函数" class="headerlink" title="1、构造函数"></a>1、构造函数</h2><blockquote>
+<p>Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。<br>File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。</p>
+</blockquote>
+<h3 id="File-File-parent-String-child"><a href="#File-File-parent-String-child" class="headerlink" title="File(File parent, String child)"></a>File(File parent, String child)</h3><blockquote>
+<p>通过给定的 <code>parent</code> 父文件对象和 <code>child</code> 子路径名字符串创建一个新的File实例。</p>
+</blockquote>
+<h3 id="File-String-pathname"><a href="#File-String-pathname" class="headerlink" title="File(String pathname)"></a>File(String pathname)</h3><blockquote>
+<p>通过将给定路径名字符串 <code>pathname</code> 转换成抽象路径名来创建一个新 File 实例。</p>
+</blockquote>
+<h3 id="File-String-parent-String-child"><a href="#File-String-parent-String-child" class="headerlink" title="File(String parent, String child)"></a>File(String parent, String child)</h3><blockquote>
+<p>根据 <code>parent</code>  路径名字符串和 <code>child</code>  路径名字符串创建一个新 File 实例。</p>
+</blockquote>
+<h3 id="File-URI-uri"><a href="#File-URI-uri" class="headerlink" title="File(URI uri)"></a>File(URI uri)</h3><blockquote>
+<p>通过将给定的 <code>file: URI</code>  转换成一个抽象路径名来创建一个新的 File 实例。</p>
+</blockquote>
+<h2 id="2、方法列表"><a href="#2、方法列表" class="headerlink" title="2、方法列表"></a>2、方法列表</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><font color=red><strong>public String getName()</strong></font></td>
+<td align="left">返回由此抽象路径名表示的文件或目录的名称。</td>
+</tr>
+<tr>
+<td align="left"><strong>public String getParent()</strong></td>
+<td align="left">返回此抽象路径名的父路径名的路径名字符串，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
+</tr>
+<tr>
+<td align="left"><strong>public File getParentFile()</strong></td>
+<td align="left">返回此抽象路径名的父路径名的抽象路径名，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public String getPath()</strong></font></td>
+<td align="left">将此抽象路径名转换为一个路径名字符串。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean isAbsolute()</strong></td>
+<td align="left">测试此抽象路径名是否为绝对路径名。</td>
+</tr>
+<tr>
+<td align="left"><strong>public String getAbsolutePath()</strong></td>
+<td align="left">返回抽象路径名的绝对路径名字符串。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean canRead()</strong></td>
+<td align="left">测试应用程序是否可以读取此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean canWrite()</strong></td>
+<td align="left">测试应用程序是否可以修改此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean exists()</strong></font></td>
+<td align="left">测试此抽象路径名表示的文件或目录是否存在。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean isDirectory()</strong></td>
+<td align="left">测试此抽象路径名表示的文件是否是一个目录。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean isFile()</strong></td>
+<td align="left">测试此抽象路径名表示的文件是否是一个标准文件。</td>
+</tr>
+<tr>
+<td align="left"><strong>public long lastModified()</strong></td>
+<td align="left">返回此抽象路径名表示的文件最后一次被修改的时间。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public long length()</strong></font></td>
+<td align="left">返回由此抽象路径名表示的文件的长度。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean createNewFile() throws IOException</strong></font></td>
+<td align="left">当且仅当不存在具有此抽象路径名指定的名称的文件时，原子地创建由此抽象路径名指定的一个新的空文件。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean delete()</strong></font></td>
+<td align="left">删除此抽象路径名表示的文件或目录。</td>
+</tr>
+<tr>
+<td align="left"><strong>public void deleteOnExit()</strong></td>
+<td align="left">在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public String[] list()</strong></font></td>
+<td align="left">返回由此抽象路径名所表示的目录中的文件和目录的名称所组成字符串数组。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public String[] list(FilenameFilter filter)</strong></font></td>
+<td align="left">返回由包含在目录中的文件和目录的名称所组成的字符串数组，这一目录是通过满足指定过滤器的抽象路径名来表示的。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public File[] listFiles()</strong></font></td>
+<td align="left">返回一个抽象路径名数组，这些路径名表示此抽象路径名所表示目录中的文件。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public File[] listFiles(FileFilter filter)</strong></font></td>
+<td align="left">返回表示此抽象路径名所表示目录中的文件和目录的抽象路径名数组，这些路径名满足特定过滤器。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean mkdir()</strong></td>
+<td align="left">创建此抽象路径名指定的目录。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean mkdirs()</strong></font></td>
+<td align="left">创建此抽象路径名指定的目录，包括创建必需但不存在的父目录。创建整个目录树。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean renameTo(File dest)</strong></font></td>
+<td align="left">重新命名此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean setLastModified(long time)</strong></td>
+<td align="left">设置由此抽象路径名所指定的文件或目录的最后一次修改时间。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean setReadOnly()</strong></td>
+<td align="left">标记此抽象路径名指定的文件或目录，以便只可对其进行读操作。</td>
+</tr>
+<tr>
+<td align="left"><strong>public static File createTempFile(String prefix, String suffix, File directory) throws IOException</strong></td>
+<td align="left">在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。</td>
+</tr>
+<tr>
+<td align="left"><strong>public static File createTempFile(String prefix, String suffix) throws IOException</strong></td>
+<td align="left">在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。</td>
+</tr>
+<tr>
+<td align="left"><strong>public int compareTo(File pathname)</strong></td>
+<td align="left">按字母顺序比较两个抽象路径名。</td>
+</tr>
+<tr>
+<td align="left"><strong>public int compareTo(Object o)</strong></td>
+<td align="left">按字母顺序比较抽象路径名与给定对象。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean equals(Object obj)</strong></td>
+<td align="left">测试此抽象路径名与给定对象是否相等。</td>
+</tr>
+<tr>
+<td align="left"><strong>public String toString()</strong></td>
+<td align="left">返回此抽象路径名的路径名字符串。</td>
+</tr>
+</tbody></table>
+
       
     </div>
     
@@ -422,8 +579,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/" rel="next" title="内部类">
-                <i class="fa fa-chevron-left"></i> 内部类
+              <a href="/2020/07/16/Java/Java%E7%B1%BB/java.time/LocalDate%E7%B1%BB/" rel="next" title="LocalDate类">
+                <i class="fa fa-chevron-left"></i> LocalDate类
               </a>
             
           </div>
@@ -431,6 +588,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E7%B1%BB%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" rel="prev" title="类之间的关系">
+                类之间的关系 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -513,7 +674,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +685,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -568,7 +729,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-nextInt-int-n-方法"><span class="nav-text">int nextInt(int n)方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、构造函数"><span class="nav-text">1、构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#File-File-parent-String-child"><span class="nav-text">File(File parent, String child)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-String-pathname"><span class="nav-text">File(String pathname)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-String-parent-String-child"><span class="nav-text">File(String parent, String child)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-URI-uri"><span class="nav-text">File(URI uri)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、方法列表"><span class="nav-text">2、方法列表</span></a></li></ol></div>
             
 
           </div>
@@ -609,7 +770,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.5k</span>
+    <span title="Site words total count">8.3k</span>
   
 </div>
 
