@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo的应用</title>
+    <url>/2020/07/08/Hexo/Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
+<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。</p>
+<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
+</blockquote>
+<blockquote>
+<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
+</blockquote>
+<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code></p>
+<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hexo问题与解决方案</title>
     <url>/2020/07/17/Hexo/Hexo%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
@@ -51,120 +74,28 @@
       </categories>
   </entry>
   <entry>
-    <title>异常类</title>
-    <url>/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%BC%82%E5%B8%B8%E7%B1%BB/</url>
+    <title>本地电脑部署博客步骤</title>
+    <url>/2020/07/08/Hexo/%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
 
-<h2 id="一、异常的作用域"><a href="#一、异常的作用域" class="headerlink" title="一、异常的作用域"></a>一、异常的作用域</h2><p>下面的程序执行会失败，这是因为 <code>int len</code> 这个变量是定义在 try 的代码块里，所以如果想要操作 len 这个变量，那么就需要我们提升作用域。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">int</span> len = getStrLength(<span class="keyword">null</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"程序执行到这"</span>+len);</span><br></pre></td></tr></table></figure>
-<h2 id="二、异常的分类"><a href="#二、异常的分类" class="headerlink" title="二、异常的分类"></a>二、异常的分类</h2><p>异常分为 <code>RuntimeException</code>  和其余的 <code>Exception</code> ，两者的<font color=red><strong>不同点</strong></font>：<br />1、<br />手工抛出 <code>RuntimeException</code> 异常时，<font color=red><strong>不需要在方法上约定可能抛出的异常</strong></font>。类似 <code>IllegalArgumentException</code> 是 <code>RuntimeException</code> 子类抛出异常时就不需要在方法上声明。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getInt</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"姓名不能为空"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Integer.parseInt(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>手工抛出其余的 <code>Exception</code> 异常时，<font color=red><strong>必须在方法上约定可能抛出的异常</strong></font>。类似如下代码</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getInt</span><span class="params">(String str)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(str == <span class="keyword">null</span>)&#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"姓名不能为空"</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> Integer.parseInt(str);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>2、<br /><code>Exception</code> ：受检查的异常，这种异常是<font color=red><strong>强制我们catch或throw的异常</strong></font>。你遇到这种异常必须进行catch或throw，如果不处理，编译器会报错。比如：IOException。<br /><code>RuntimeException</code> ：运行时异常，<font color=red><strong>这种异常我们不需要处理，完全由虚拟机接管</strong></font>。比如我们常见的NullPointerException，我们在写程序时不会进行catch或throw。</p>
+<h1 id="一、本地安装Git"><a href="#一、本地安装Git" class="headerlink" title="一、本地安装Git"></a>一、本地安装Git</h1><p><br />在官网下载最新版本的git：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a><br /></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;查看git版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、本地配置SSH并绑定至GitHub"><a href="#二、本地配置SSH并绑定至GitHub" class="headerlink" title="二、本地配置SSH并绑定至GitHub"></a>二、本地配置SSH并绑定至GitHub</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;生成本地SSH</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br><span class="line">&#x2F;&#x2F;查询本地SSH</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、本地安装node-js"><a href="#三、本地安装node-js" class="headerlink" title="三、本地安装node.js"></a>三、本地安装node.js</h1><p><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">下载地址</a><br /></p>
+<h1 id="四、本地安装hexo"><a href="#四、本地安装hexo" class="headerlink" title="四、本地安装hexo"></a>四、本地安装hexo</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">查阅文档</a><br />安装完node.js之后,我们就可以安装Hexo啦，在命令行输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p><br />局部安装 hexo 包，在命令行输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="五、git-clone-到本地"><a href="#五、git-clone-到本地" class="headerlink" title="五、git clone 到本地"></a>五、git clone 到本地</h1><p>clone 远程仓库dev分支的代码到本地</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b dev 仓库地址</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Java</category>
-        <category>Java面向对象</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>类之间的关系</title>
-    <url>/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E7%B1%BB%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、关联"><a href="#1、关联" class="headerlink" title="1、关联"></a>1、关联</h2><p><strong>下图表示 <font color=red>Student  类关联  Major  类</font>，即表示Major类为Student类的属性（成员变量）</strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594970231959-d7c25130-3788-43c5-b795-ad0d0004fa51.svg#align=left&display=inline&height=427&margin=%5Bobject%20Object%5D&originHeight=427&originWidth=197&size=0&status=done&style=none&width=197" alt=""></p>
-<h2 id="2、依赖"><a href="#2、依赖" class="headerlink" title="2、依赖"></a>2、依赖</h2><p>代码体现为 <code>电脑</code> 作为 <code>现代人</code> 的局部变量、方法的参数或者对静态方法的调用<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1595049747827-a0c1365a-85ea-4b5b-bbe9-30e05ea9d20b.png#align=left&display=inline&height=93&margin=%5Bobject%20Object%5D&name=image.png&originHeight=106&originWidth=269&size=3785&status=done&style=none&width=236" alt="image.png"></p>
-<h2 id="3、聚集"><a href="#3、聚集" class="headerlink" title="3、聚集"></a>3、聚集</h2><h2 id="4、泛化"><a href="#4、泛化" class="headerlink" title="4、泛化"></a>4、泛化</h2><p><strong>泛化等同于<font color=red>继承</font></strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594974464425-cdbdcdc4-c055-40e4-bdd5-107807d78647.svg#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&originHeight=222&originWidth=266&size=0&status=done&style=none&width=266" alt=""><br><a name="Z6NTj"></a></p>
-<h2 id="5、实现"><a href="#5、实现" class="headerlink" title="5、实现"></a>5、实现</h2>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java面向对象</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java注意点</title>
-    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、数组初始化注意事项"><a href="#1、数组初始化注意事项" class="headerlink" title="1、数组初始化注意事项"></a>1、数组初始化注意事项</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
-<p>上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。<strong>数组初始化完后</strong>，并没有存储实际的值，<strong>int 类型的数据默认值是 0</strong>,<strong>String 类型的数据默认值是 null</strong>。</p>
-<h2 id="2、循环"><a href="#2、循环" class="headerlink" title="2、循环"></a>2、循环</h2><h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>增强<code>for</code>循环是<code>JDK1.5</code>以后出来的一个高级<code>for</code>循环，专门用来遍历数组和集合的。它的内部原理其实是个<code>Iterator</code>迭代器，所以在遍历的过程中，<strong>不能对集合中的元素进行增删操作</strong>。<br />格式：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量 : Collection集合or数组)&#123;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>遍历数组的例子</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> n : arr) &#123;</span><br><span class="line">    <span class="comment">//变量n代表被遍历到的数组元素</span></span><br><span class="line">    System.out.println(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>遍历Collection集合的例子</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection&lt;String&gt; coll = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">coll.add(<span class="string">"a1"</span>);</span><br><span class="line">coll.add(<span class="string">"a2"</span>);</span><br><span class="line">coll.add(<span class="string">"a3"</span>);</span><br><span class="line">coll.add(<span class="string">"a4"</span>);</span><br><span class="line"><span class="keyword">for</span>(String str : coll)&#123;</span><br><span class="line">    <span class="comment">//变量Str代表被遍历到的集合元素</span></span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、字符串分割注意点"><a href="#3、字符串分割注意点" class="headerlink" title="3、字符串分割注意点"></a>3、字符串分割注意点</h2><h3 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h3><p>这里要强调一下特殊字符的分割</p>
-<blockquote>
-<p><code>.</code> <code>|</code> <code>*</code>  这三个字符如果作为分割符，那么就需要加上 <code>\\</code>,比如 <code>str.split(&quot;\\|&quot;)</code> </p>
-</blockquote>
-<h2 id="4、静态变量使用场景"><a href="#4、静态变量使用场景" class="headerlink" title="4、静态变量使用场景"></a>4、静态变量使用场景</h2><p>有些时间我们还是需要在多个对象里共享一些数据，这个时候就需要引入<strong>常量</strong>了，常量也可以叫做<strong>静态变量</strong>。常量的特点是不需要实例化，在 <strong>Java 当中实际上是创建了一个全局唯一的内存空间并且分配给了这个变量</strong>。所以常量的值只会随 Java 的销毁才会被销毁，这样也就方便我们存储一些数据到内存中，否则会随着对象的销毁被销毁掉的。</p>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><blockquote>
-<p>1、常用的字符串值<br>2、需要在内存做缓存的值</p>
-</blockquote>
-<h2 id="5、子类继承了父类的私有属性及方法吗？"><a href="#5、子类继承了父类的私有属性及方法吗？" class="headerlink" title="5、子类继承了父类的私有属性及方法吗？"></a>5、子类继承了父类的私有属性及方法吗？</h2><p><strong>子类对象确实拥有父类对象中所有的属性和方法</strong>，但是父类对象中的私有属性和方法，<strong>子类是无法访问到的</strong>，只是拥有，但不能使用。<br /></p>
-<h2 id="6、Exception和RuntimeException的区别"><a href="#6、Exception和RuntimeException的区别" class="headerlink" title="6、Exception和RuntimeException的区别"></a>6、Exception和RuntimeException的区别</h2><ul>
-<li><code>Exception</code> ：受检查的异常，<font color=red><strong>这种异常是强制我们catch或throw的异常。</strong></font>你遇到这种异常必须进行catch或throw，如果不处理，编译器会报错。比如：IOException。手工抛出其余的 <code>Exception</code> 异常时，<font color=red><strong>必须在方法上约定可能抛出的异常。</strong></font></li>
-<li><code>RuntimeException</code>：运行时异常，<font color=red><strong>这种异常我们不需要处理，完全由虚拟机接管。</strong></font>比如我们常见的NullPointerException，我们在写程序时不会进行catch或throw。手工抛出 <code>RuntimeException</code> 异常时，<font color=red><strong>不需要在方法上约定可能抛出的异常。</strong></font></li>
-</ul>
-<h2 id="7、实例内部类注意事项"><a href="#7、实例内部类注意事项" class="headerlink" title="7、实例内部类注意事项"></a>7、实例内部类注意事项</h2><p><font color=red size=5><strong>特性：</strong></font></p>
-<ul>
-<li>实例内部类不能有静态成员(包括属性、方法) </li>
-<li>实例内部类对象外部创建语法:Outer.new Inner(); </li>
-<li>实例方法访问外部类实例成员:Outer.this.成员（包含私有成员）<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"张三"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num1=<span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner1</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name=<span class="string">"李四"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num2=<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num3=<span class="number">10</span>;<span class="comment">//静态常量在内部类中是可以的</span></span><br><span class="line">        <span class="comment">//private static int num3=30;//在成员内部类中不能声明静态的成员,包括属性和方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">            <span class="comment">//System.out.println(Outer1.this.name);</span></span><br><span class="line">            System.out.println(num2);</span><br><span class="line">            outerShow();<span class="comment">//成员内部类可以直接访问外部类的属性和方法，包括私有的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java语言入门</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java是如何运行的</title>
-    <url>/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="一、什么是编程语言"><a href="#一、什么是编程语言" class="headerlink" title="一、什么是编程语言"></a>一、什么是编程语言</h2><p>Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color=red><strong>只能运行低级语言</strong></font>，所以<font color=red><strong>高级语言编写的程序必须先被翻译成低级语言才能运行</strong></font>。<br /><font color=red><strong>高级语言的优点</strong></font>有很多：更容易编程、更容易阅读和修改、<font color=red><strong>可移植性高</strong></font>；低级语言只能在一种计算机上运行。</p>
-<h2 id="二、Java语言的执行"><a href="#二、Java语言的执行" class="headerlink" title="二、Java语言的执行"></a>二、Java语言的执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765" alt=""><br />Java 既可以被编译也可以被解释，不同的是<font color=red><strong>Java 编译</strong></font>过程并不生成机器语言，而是<font color=red><strong>生成字节码</strong></font>。<font color=red><strong>字节码</strong></font>和机器语言一样，但是它<font color=red><strong>具备高级语言的可移植性</strong></font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color=red><strong>字节码的解释运行</strong></font>。</p>
-<h2 id="三、Java代码的注释"><a href="#三、Java代码的注释" class="headerlink" title="三、Java代码的注释"></a>三、Java代码的注释</h2><h3 id="1、块注释"><a href="#1、块注释" class="headerlink" title="1、块注释"></a>1、块注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2、行注释"><a href="#2、行注释" class="headerlink" title="2、行注释"></a>2、行注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java语言入门</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>内部类</title>
-    <url>/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<p>内部类可分为<font color=red size=5><strong>实例内部类</strong></font>和<font color=red size=5><strong>静态内部类</strong></font>。</p>
-<h2 id="1、实例内部类"><a href="#1、实例内部类" class="headerlink" title="1、实例内部类"></a>1、实例内部类</h2><p><font color=red size=4><strong>特性：</strong></font></p>
-<ul>
-<li>实例内部类不能有静态成员(包括属性、方法) </li>
-<li>实例内部类对象外部创建语法:Outer.new Inner(); </li>
-<li>实例内部类访问外部类成员的格式:Outer.this.成员（包含私有成员）<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"张三"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num1=<span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner1</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name=<span class="string">"李四"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num2=<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num3=<span class="number">10</span>;<span class="comment">//静态常量在内部类中是可以的</span></span><br><span class="line">        <span class="comment">//private static int num3=30;//在成员内部类中不能声明静态的成员,包括属性和方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">            <span class="comment">//System.out.println(Outer1.this.name);</span></span><br><span class="line">            System.out.println(num2);</span><br><span class="line">            outerShow();<span class="comment">//成员内部类可以直接访问外部类的属性和方法，包括私有的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="2、静态内部类"><a href="#2、静态内部类" class="headerlink" title="2、静态内部类"></a>2、静态内部类</h2><p><font color=red size=4><strong>特性：</strong></font></p>
-<ul>
-<li>静态内部类可以包含静态成员，也可以包含非静态成员</li>
-<li>静态内部类只能访问外部类的静态成员，格式为：Outer.静态成员</li>
-</ul>
-<p>如果我们声明内部类为静态内部类后，那么就可以直接调用这个内部类，不需要先实例化外部类。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil;</span><br><span class="line"><span class="comment">// 静态内部类是需要单独 import 的</span></span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil.InnerTool;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtilTest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line">       <span class="keyword">int</span> sum = tool.add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">       System.out.println(sum);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java面向对象</category>
+        <category>Hexo</category>
       </categories>
   </entry>
   <entry>
@@ -210,454 +141,120 @@
       </categories>
   </entry>
   <entry>
-    <title>本地电脑部署博客步骤</title>
-    <url>/2020/07/08/Hexo/%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/</url>
+    <title>Java是如何运行的</title>
+    <url>/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
 
-<h1 id="一、本地安装Git"><a href="#一、本地安装Git" class="headerlink" title="一、本地安装Git"></a>一、本地安装Git</h1><p><br />在官网下载最新版本的git：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">下载地址</a><br /></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;查看git版本号</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<h2 id="一、什么是编程语言"><a href="#一、什么是编程语言" class="headerlink" title="一、什么是编程语言"></a>一、什么是编程语言</h2><p>Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color=red><strong>只能运行低级语言</strong></font>，所以<font color=red><strong>高级语言编写的程序必须先被翻译成低级语言才能运行</strong></font>。<br /><font color=red><strong>高级语言的优点</strong></font>有很多：更容易编程、更容易阅读和修改、<font color=red><strong>可移植性高</strong></font>；低级语言只能在一种计算机上运行。</p>
+<h2 id="二、Java语言的执行"><a href="#二、Java语言的执行" class="headerlink" title="二、Java语言的执行"></a>二、Java语言的执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765" alt=""><br />Java 既可以被编译也可以被解释，不同的是<font color=red><strong>Java 编译</strong></font>过程并不生成机器语言，而是<font color=red><strong>生成字节码</strong></font>。<font color=red><strong>字节码</strong></font>和机器语言一样，但是它<font color=red><strong>具备高级语言的可移植性</strong></font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color=red><strong>字节码的解释运行</strong></font>。</p>
+<h2 id="三、Java代码的注释"><a href="#三、Java代码的注释" class="headerlink" title="三、Java代码的注释"></a>三、Java代码的注释</h2><h3 id="1、块注释"><a href="#1、块注释" class="headerlink" title="1、块注释"></a>1、块注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="二、本地配置SSH并绑定至GitHub"><a href="#二、本地配置SSH并绑定至GitHub" class="headerlink" title="二、本地配置SSH并绑定至GitHub"></a>二、本地配置SSH并绑定至GitHub</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;生成本地SSH</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br><span class="line">&#x2F;&#x2F;查询本地SSH</span><br><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<h1 id="三、本地安装node-js"><a href="#三、本地安装node-js" class="headerlink" title="三、本地安装node.js"></a>三、本地安装node.js</h1><p><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">下载地址</a><br /></p>
-<h1 id="四、本地安装hexo"><a href="#四、本地安装hexo" class="headerlink" title="四、本地安装hexo"></a>四、本地安装hexo</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">查阅文档</a><br />安装完node.js之后,我们就可以安装Hexo啦，在命令行输入：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p><br />局部安装 hexo 包，在命令行输入：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="五、git-clone-到本地"><a href="#五、git-clone-到本地" class="headerlink" title="五、git clone 到本地"></a>五、git clone 到本地</h1><p>clone 远程仓库dev分支的代码到本地</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b dev 仓库地址</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo的应用</title>
-    <url>/2020/07/08/Hexo/Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
-<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br />那么框架就会自动替我们创建一个叫做hello.md的文。<br />创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。</p>
-<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
-</blockquote>
-<blockquote>
-<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
-</blockquote>
-<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code></p>
-<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Arrays类</title>
-    <url>/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><p>sort()方法</p>
-<h2 id="2、Arrays类的相关应用"><a href="#2、Arrays类的相关应用" class="headerlink" title="2、Arrays类的相关应用"></a>2、Arrays类的相关应用</h2><h3 id="数组转为List"><a href="#数组转为List" class="headerlink" title="数组转为List"></a>数组转为List</h3><p>利用<code>java.util.Arrays</code>类的<code>asList()</code>方法,该方法无法对<font color=red><strong>基本类型数组</strong></font>进行转换。<font color=red><strong>只能转换对象数组</strong></font>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 数字数组</span></span><br><span class="line">  Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;Integer&gt; lists = Arrays.asList(intArr);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;String&gt; lists = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转化数组为 list2</span></span><br><span class="line">  List&lt;String&gt; lists2 = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>,<span class="string">"小李"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合2的长度是: "</span> + lists2.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h3><p>利用<code>java.util.Arrays</code>类的<code>sort()</code>方法就可以实现数组的自定义排序，默认是升序排序。</p>
-<blockquote>
-<p>static <T> void sort(T[] a, Comparator&lt; super T&gt; c):</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 自定义排序</span></span><br><span class="line">    Arrays.sort(intArr, <span class="keyword">new</span> Comparator&lt;Integer&gt;()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span></span>&#123;</span><br><span class="line">            <span class="comment">// 判断 o2&gt;o1，执行降序排序</span></span><br><span class="line">            <span class="keyword">return</span> o2-o1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"Integer Array: "</span></span><br><span class="line">                       + Arrays.toString(intArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组转为字符串"><a href="#数组转为字符串" class="headerlink" title="数组转为字符串"></a>数组转为字符串</h3><p>利用<code>java.util.Arrays</code>类的<code>toString()</code>方法用于转换数组（包含基本类型数组）为字符串</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span>[] boolArr = <span class="keyword">new</span> <span class="keyword">boolean</span>[] &#123; <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> &#125;;</span><br><span class="line">    <span class="keyword">byte</span>[] byteArr = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line">    <span class="keyword">char</span>[] charArr = <span class="keyword">new</span> <span class="keyword">char</span>[] &#123; <span class="string">'g'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'k'</span>, <span class="string">'s'</span> &#125;;</span><br><span class="line">    <span class="keyword">double</span>[] dblArr = <span class="keyword">new</span> <span class="keyword">double</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">float</span>[] floatArr = <span class="keyword">new</span> <span class="keyword">float</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span>[] intArr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">long</span>[] lomgArr = <span class="keyword">new</span> <span class="keyword">long</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    Object[] objArr = <span class="keyword">new</span> Object[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">short</span>[] shortArr = <span class="keyword">new</span> <span class="keyword">short</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line">    System.out.println(Arrays.toString(boolArr));</span><br><span class="line">    System.out.println(Arrays.toString(byteArr));</span><br><span class="line">    System.out.println(Arrays.toString(charArr));</span><br><span class="line">    System.out.println(Arrays.toString(dblArr));</span><br><span class="line">    System.out.println(Arrays.toString(floatArr));</span><br><span class="line">    System.out.println(Arrays.toString(intArr));</span><br><span class="line">    System.out.println(Arrays.toString(lomgArr));</span><br><span class="line">    System.out.println(Arrays.toString(objArr));</span><br><span class="line">    System.out.println(Arrays.toString(shortArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="2、行注释"><a href="#2、行注释" class="headerlink" title="2、行注释"></a>2、行注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
         <category>Java</category>
-        <category>Java类</category>
-        <category>java.util</category>
+        <category>Java语言入门</category>
       </categories>
   </entry>
   <entry>
-    <title>List接口</title>
-    <url>/2020/07/19/Java/Java%E7%B1%BB/java.util/List%E6%8E%A5%E5%8F%A3/</url>
+    <title>Java注意点</title>
+    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
 
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><font color=red><strong>boolean add(E o)</strong></font></td>
-<td align="left">向列表的尾部追加指定的元素</td>
-</tr>
-<tr>
-<td align="left"><strong>void add(int index,E element)</strong></td>
-<td align="left">在列表的指定位置插入指定元素。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>boolean addAll(Collection&lt;? extends E&gt; c)</strong></font></td>
-<td align="left">追加指定 collection中的所有元素到此列表的结尾，顺序是指定collection的迭代器返回这些元素的顺序。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean addAll(int index,Collection&lt;? extends E&gt; c)</strong></td>
-<td align="left">将指定collection中的所有元素都插入到列表中的指定位置。</td>
-</tr>
-<tr>
-<td align="left"><strong>void clear()</strong></td>
-<td align="left">从列表中移除所有元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean contains(Object o)</strong></td>
-<td align="left">如果列表包含指定的元素，则返回true。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean containsAll(Collection&lt;?&gt; c)</strong></td>
-<td align="left">如果列表包含指定collection的所有元素，则返回true。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean equals(Object c)</strong></td>
-<td align="left">比较指定的对象与列表是否相等。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>E get(int index)</strong></font></td>
-<td align="left">返回列表中指定位置的元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>int hashCode()</strong></td>
-<td align="left">返回列表的哈希码值。</td>
-</tr>
-<tr>
-<td align="left"><strong>int indexOf(Object o)</strong></td>
-<td align="left">返回列表中首次出现指定元素的索引，如果列表不包含此元素，则返回-1。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean isEmpty()</strong></td>
-<td align="left">判断集合是否为空 如果为空 则返回true,否则返回false</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Iterator<E> iterator()</strong></font></td>
-<td align="left">返回以正确顺序在列表的元素上进行迭代的迭代器。</td>
-</tr>
-<tr>
-<td align="left"><strong>int lastIndexOf(Object o)</strong></td>
-<td align="left">返回列表中最后出现指定元素的索引，如果列表不包含此元素，则返回-1。</td>
-</tr>
-<tr>
-<td align="left"><strong>ListIterator<E> listIterator()</strong></td>
-<td align="left">返回列表中元素的列表迭代器（以正确的顺序）。</td>
-</tr>
-<tr>
-<td align="left"><strong>ListIterator<E> listIterator(int index)</strong></td>
-<td align="left">返回列表中元素的列表迭代器（以正确的顺序），从列表的指定位置开始。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>E remove(int index)</strong></font></td>
-<td align="left">移除列表中指定位置的元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean remove(Object o)</strong></td>
-<td align="left">移除列表中出现的首个指定元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean removeAll(Collection&lt;?&gt; c)</strong></td>
-<td align="left">从列表中移除指定collection中包含的所有元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean retainAll(Collection&lt;?&gt; c)</strong></td>
-<td align="left">仅在列表中保留指定collection中所包含的元素。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>E set(int index,E element)</strong></font></td>
-<td align="left">用指定元素替换列表中指定位置的元素。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>int size()</strong></font></td>
-<td align="left">返回列表中的元素数。</td>
-</tr>
-<tr>
-<td align="left"><strong>List<E> subList(int forIndex,int toIndex)</strong></td>
-<td align="left">返回列表中指定的formIndex(包括) 和toIndex(不包括)之间的部分视图。</td>
-</tr>
-<tr>
-<td align="left"><strong>Object toArray()</strong></td>
-<td align="left">返回以正确顺序包含列表中的所有元素的数组。</td>
-</tr>
-</tbody></table>
-<h2 id="2、List类相关的应用"><a href="#2、List类相关的应用" class="headerlink" title="2、List类相关的应用"></a>2、List类相关的应用</h2><h3 id="List转为数组"><a href="#List转为数组" class="headerlink" title="List转为数组"></a>List转为数组</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; al = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    al.add(<span class="number">10</span>);</span><br><span class="line">    al.add(<span class="number">20</span>);</span><br><span class="line">    al.add(<span class="number">30</span>);</span><br><span class="line">    al.add(<span class="number">40</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 转化为数组</span></span><br><span class="line">    Integer[] arr = al.toArray(<span class="keyword">new</span> Integer[] &#123;&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Integer x : arr) &#123;</span><br><span class="line">        System.out.println(x + <span class="string">" "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="List转为字符串"><a href="#List转为字符串" class="headerlink" title="List转为字符串"></a>List转为字符串</h3><p>利用<code>String</code>类的<code>String.join(&quot;,&quot;,list)</code>方法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建字符串集合</span></span><br><span class="line">    List&lt;String&gt; list = Arrays.asList(<span class="string">"Geeks"</span>, <span class="string">"ForGeeks"</span>, <span class="string">"GeeksForGeeks"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 转化集合为字符串， 使用 `,` 分割</span></span><br><span class="line">    String string = String.join(<span class="string">","</span>, list);</span><br><span class="line">    <span class="comment">// 打印结果</span></span><br><span class="line">    System.out.println(<span class="string">"字符串是: "</span> + string);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="List的排序"><a href="#List的排序" class="headerlink" title="List的排序"></a>List的排序</h3><p>利用<code>java.util.Collection</code>类中的<code>sort()</code>方法</p>
+<h2 id="1、数组初始化注意事项"><a href="#1、数组初始化注意事项" class="headerlink" title="1、数组初始化注意事项"></a>1、数组初始化注意事项</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
+<p>上面的代码的目的就是做了一个数组的初始化，这个初始化的作用就是开辟了该长度的存储空间。<strong>数组初始化完后</strong>，并没有存储实际的值，<strong>int 类型的数据默认值是 0</strong>,<strong>String 类型的数据默认值是 null</strong>。</p>
+<h2 id="2、循环"><a href="#2、循环" class="headerlink" title="2、循环"></a>2、循环</h2><h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>增强<code>for</code>循环是<code>JDK1.5</code>以后出来的一个高级<code>for</code>循环，专门用来遍历数组和集合的。它的内部原理其实是个<code>Iterator</code>迭代器，所以在遍历的过程中，<strong>不能对集合中的元素进行增删操作</strong>。<br />格式：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(元素的数据类型 变量 : Collection集合or数组)&#123;</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>遍历数组的例子</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> n : arr) &#123;</span><br><span class="line">    <span class="comment">//变量n代表被遍历到的数组元素</span></span><br><span class="line">    System.out.println(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>遍历Collection集合的例子</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection&lt;String&gt; coll = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">coll.add(<span class="string">"a1"</span>);</span><br><span class="line">coll.add(<span class="string">"a2"</span>);</span><br><span class="line">coll.add(<span class="string">"a3"</span>);</span><br><span class="line">coll.add(<span class="string">"a4"</span>);</span><br><span class="line"><span class="keyword">for</span>(String str : coll)&#123;</span><br><span class="line">    <span class="comment">//变量Str代表被遍历到的集合元素</span></span><br><span class="line">    System.out.println(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、字符串分割注意点"><a href="#3、字符串分割注意点" class="headerlink" title="3、字符串分割注意点"></a>3、字符串分割注意点</h2><h3 id="字符串分割split"><a href="#字符串分割split" class="headerlink" title="字符串分割split()"></a>字符串分割split()</h3><p>这里要强调一下特殊字符的分割</p>
 <blockquote>
-<p>static <T> void sort(List<T> list, Comparator&lt;? super T&gt; c)</p>
+<p><code>.</code> <code>|</code> <code>*</code>  这三个字符如果作为分割符，那么就需要加上 <code>\\</code>,比如 <code>str.split(&quot;\\|&quot;)</code> </p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   List&lt;Student&gt; ar = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">111</span>, <span class="string">"bbbb"</span>, <span class="string">"london"</span>));</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">131</span>, <span class="string">"aaaa"</span>, <span class="string">"nyc"</span>));</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">121</span>, <span class="string">"cccc"</span>, <span class="string">"jaipur"</span>));</span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"原始集合"</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ar.size(); i++) &#123;</span><br><span class="line">     System.out.println(ar.get(i));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 实现升序排序</span></span><br><span class="line">   Collections.sort(ar, <span class="keyword">new</span> Comparator&lt;Student&gt;()&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student a, Student b)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 第一个参数的学号 &gt; 第二个参数的学号</span></span><br><span class="line">       <span class="keyword">return</span> a.getRollNo() - b.getRollNo();</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"\n排序后的集合"</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ar.size(); i++) &#123;</span><br><span class="line">     System.out.println(ar.get(i));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java类</category>
-        <category>java.util</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Map接口</title>
-    <url>/2020/07/17/Java/Java%E7%B1%BB/java.util/Map%E6%8E%A5%E5%8F%A3/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、分析"><a href="#1、分析" class="headerlink" title="1、分析"></a>1、分析</h2><p>Map接口中键和值一一映射. 可以通过键来获取值。</p>
-<ul>
-<li>给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。 </li>
-<li>当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常. </li>
-<li>当对象的类型和Map里元素类型不兼容的时候，就会抛出一个 ClassCastException异常。 </li>
-<li>当在不允许使用Null对象的Map中使用Null对象，会抛出一个NullPointerException 异常。 </li>
-<li>当尝试修改一个只读的Map时，会抛出一个UnsupportedOperationException异常。</li>
+<h2 id="4、静态变量使用场景"><a href="#4、静态变量使用场景" class="headerlink" title="4、静态变量使用场景"></a>4、静态变量使用场景</h2><p>有些时间我们还是需要在多个对象里共享一些数据，这个时候就需要引入<strong>常量</strong>了，常量也可以叫做<strong>静态变量</strong>。常量的特点是不需要实例化，在 <strong>Java 当中实际上是创建了一个全局唯一的内存空间并且分配给了这个变量</strong>。所以常量的值只会随 Java 的销毁才会被销毁，这样也就方便我们存储一些数据到内存中，否则会随着对象的销毁被销毁掉的。</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><blockquote>
+<p>1、常用的字符串值<br>2、需要在内存做缓存的值</p>
+</blockquote>
+<h2 id="5、子类继承了父类的私有属性及方法吗？"><a href="#5、子类继承了父类的私有属性及方法吗？" class="headerlink" title="5、子类继承了父类的私有属性及方法吗？"></a>5、子类继承了父类的私有属性及方法吗？</h2><p><strong>子类对象确实拥有父类对象中所有的属性和方法</strong>，但是父类对象中的私有属性和方法，<strong>子类是无法访问到的</strong>，只是拥有，但不能使用。<br /></p>
+<h2 id="6、Exception和RuntimeException的区别"><a href="#6、Exception和RuntimeException的区别" class="headerlink" title="6、Exception和RuntimeException的区别"></a>6、Exception和RuntimeException的区别</h2><ul>
+<li><code>Exception</code> ：受检查的异常，<font color=red><strong>这种异常是强制我们catch或throw的异常。</strong></font>你遇到这种异常必须进行catch或throw，如果不处理，编译器会报错。比如：IOException。手工抛出其余的 <code>Exception</code> 异常时，<font color=red><strong>必须在方法上约定可能抛出的异常。</strong></font></li>
+<li><code>RuntimeException</code>：运行时异常，<font color=red><strong>这种异常我们不需要处理，完全由虚拟机接管。</strong></font>比如我们常见的NullPointerException，我们在写程序时不会进行catch或throw。手工抛出 <code>RuntimeException</code> 异常时，<font color=red><strong>不需要在方法上约定可能抛出的异常。</strong></font></li>
 </ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594976617431-376ad1cc-79fb-4b3f-ad89-1d32572c7580.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&originHeight=259&originWidth=441&size=0&status=done&style=none&width=441" alt=""></p>
-<h2 id="2、方法列表"><a href="#2、方法列表" class="headerlink" title="2、方法列表"></a>2、方法列表</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><font color=red><strong>void clear( )</strong></font></td>
-<td align="left"><em>从此映射中移除所有映射关系（可选操作）。</em></td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>boolean containsKey(Object k)</strong></font></td>
-<td align="left"><em>如果此映射包含指定键的映射关系，则返回 true。</em></td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>boolean containsValue(Object v)</strong></font></td>
-<td align="left"><em>如果此映射将一个或多个键映射到指定值，则返回 true。</em></td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Set entrySet( )</strong></font></td>
-<td align="left">返回此映射中包含的映射关系的 Set 视图。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean equals(Object obj)</strong></td>
-<td align="left">比较指定的对象与此映射是否相等。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Object get(Object k)</strong></font></td>
-<td align="left">返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 null。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean isEmpty( )</strong></td>
-<td align="left">如果此映射未包含键-值映射关系，则返回 true。</td>
-</tr>
-<tr>
-<td align="left"><strong>Set keySet( )</strong></td>
-<td align="left">返回此映射中包含的键的 Set 视图。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Object put(Object k, Object v)</strong></font></td>
-<td align="left">将指定的值与此映射中的指定键关联（可选操作）。</td>
-</tr>
-<tr>
-<td align="left"><strong>void putAll(Map m)</strong></td>
-<td align="left">从指定映射中将所有映射关系复制到此映射中（可选操作）。</td>
-</tr>
-<tr>
-<td align="left"><strong>Object remove(Object k)</strong></td>
-<td align="left">如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>int size( )</strong></font></td>
-<td align="left">返回此映射中的键-值映射关系数。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Collection values( )</strong></font></td>
-<td align="left">返回此映射中包含的值的 Collection 视图。</td>
-</tr>
-</tbody></table>
-<h2 id="3、Map接口的相关应用"><a href="#3、Map接口的相关应用" class="headerlink" title="3、Map接口的相关应用"></a>3、Map接口的相关应用</h2><h3 id="Map的遍历"><a href="#Map的遍历" class="headerlink" title="Map的遍历"></a>Map的遍历</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer,String&gt; entry : map.entrySet())&#123; </span><br><span class="line"></span><br><span class="line">  System.out.println(<span class="string">"Key = "</span> + entry.getKey() + </span><br><span class="line">                 <span class="string">", Value = "</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java类</category>
-        <category>java.util</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Random类</title>
-    <url>/2020/07/18/Java/Java%E7%B1%BB/java.util/Random%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+<h2 id="7、实例内部类注意事项"><a href="#7、实例内部类注意事项" class="headerlink" title="7、实例内部类注意事项"></a>7、实例内部类注意事项</h2><p><font color=red size=5><strong>特性：</strong></font></p>
+<ul>
+<li>实例内部类不能有静态成员(包括属性、方法) </li>
+<li>实例内部类对象外部创建语法:Outer.new Inner(); </li>
+<li>实例方法访问外部类实例成员:Outer.this.成员（包含私有成员）<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"张三"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num1=<span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner1</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name=<span class="string">"李四"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num2=<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num3=<span class="number">10</span>;<span class="comment">//静态常量在内部类中是可以的</span></span><br><span class="line">        <span class="comment">//private static int num3=30;//在成员内部类中不能声明静态的成员,包括属性和方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">            <span class="comment">//System.out.println(Outer1.this.name);</span></span><br><span class="line">            System.out.println(num2);</span><br><span class="line">            outerShow();<span class="comment">//成员内部类可以直接访问外部类的属性和方法，包括私有的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="int-nextInt-int-n-方法"><a href="#int-nextInt-int-n-方法" class="headerlink" title="int nextInt(int n)方法"></a>int nextInt(int n)方法</h2><p>int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: <font color=red><strong>[0,n)</strong></font></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 实例化随机数</span></span><br><span class="line">Random r = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="comment">// 得到0-7之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到 0-8 之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到50-100之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">51</span>)+<span class="number">50</span>;</span><br><span class="line"><span class="comment">// 这个 51 = 100 - 50 + 1</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java类</category>
-        <category>java.util</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>File类</title>
-    <url>/2020/07/16/Java/Java%E7%B1%BB/java.io/File%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、构造函数"><a href="#1、构造函数" class="headerlink" title="1、构造函数"></a>1、构造函数</h2><blockquote>
-<p>Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。<br>File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。</p>
-</blockquote>
-<h3 id="File-File-parent-String-child"><a href="#File-File-parent-String-child" class="headerlink" title="File(File parent, String child)"></a>File(File parent, String child)</h3><blockquote>
-<p>通过给定的 <code>parent</code> 父文件对象和 <code>child</code> 子路径名字符串创建一个新的File实例。</p>
-</blockquote>
-<h3 id="File-String-pathname"><a href="#File-String-pathname" class="headerlink" title="File(String pathname)"></a>File(String pathname)</h3><blockquote>
-<p>通过将给定路径名字符串 <code>pathname</code> 转换成抽象路径名来创建一个新 File 实例。</p>
-</blockquote>
-<h3 id="File-String-parent-String-child"><a href="#File-String-parent-String-child" class="headerlink" title="File(String parent, String child)"></a>File(String parent, String child)</h3><blockquote>
-<p>根据 <code>parent</code>  路径名字符串和 <code>child</code>  路径名字符串创建一个新 File 实例。</p>
-</blockquote>
-<h3 id="File-URI-uri"><a href="#File-URI-uri" class="headerlink" title="File(URI uri)"></a>File(URI uri)</h3><blockquote>
-<p>通过将给定的 <code>file: URI</code>  转换成一个抽象路径名来创建一个新的 File 实例。</p>
-</blockquote>
-<h2 id="2、方法列表"><a href="#2、方法列表" class="headerlink" title="2、方法列表"></a>2、方法列表</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><font color=red><strong>public String getName()</strong></font></td>
-<td align="left">返回由此抽象路径名表示的文件或目录的名称。</td>
-</tr>
-<tr>
-<td align="left"><strong>public String getParent()</strong></td>
-<td align="left">返回此抽象路径名的父路径名的路径名字符串，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
-</tr>
-<tr>
-<td align="left"><strong>public File getParentFile()</strong></td>
-<td align="left">返回此抽象路径名的父路径名的抽象路径名，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public String getPath()</strong></font></td>
-<td align="left">将此抽象路径名转换为一个路径名字符串。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean isAbsolute()</strong></td>
-<td align="left">测试此抽象路径名是否为绝对路径名。</td>
-</tr>
-<tr>
-<td align="left"><strong>public String getAbsolutePath()</strong></td>
-<td align="left">返回抽象路径名的绝对路径名字符串。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean canRead()</strong></td>
-<td align="left">测试应用程序是否可以读取此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean canWrite()</strong></td>
-<td align="left">测试应用程序是否可以修改此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean exists()</strong></font></td>
-<td align="left">测试此抽象路径名表示的文件或目录是否存在。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean isDirectory()</strong></td>
-<td align="left">测试此抽象路径名表示的文件是否是一个目录。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean isFile()</strong></td>
-<td align="left">测试此抽象路径名表示的文件是否是一个标准文件。</td>
-</tr>
-<tr>
-<td align="left"><strong>public long lastModified()</strong></td>
-<td align="left">返回此抽象路径名表示的文件最后一次被修改的时间。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public long length()</strong></font></td>
-<td align="left">返回由此抽象路径名表示的文件的长度。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean createNewFile() throws IOException</strong></font></td>
-<td align="left">当且仅当不存在具有此抽象路径名指定的名称的文件时，原子地创建由此抽象路径名指定的一个新的空文件。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean delete()</strong></font></td>
-<td align="left">删除此抽象路径名表示的文件或目录。</td>
-</tr>
-<tr>
-<td align="left"><strong>public void deleteOnExit()</strong></td>
-<td align="left">在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public String[] list()</strong></font></td>
-<td align="left">返回由此抽象路径名所表示的目录中的文件和目录的名称所组成字符串数组。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public String[] list(FilenameFilter filter)</strong></font></td>
-<td align="left">返回由包含在目录中的文件和目录的名称所组成的字符串数组，这一目录是通过满足指定过滤器的抽象路径名来表示的。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public File[] listFiles()</strong></font></td>
-<td align="left">返回一个抽象路径名数组，这些路径名表示此抽象路径名所表示目录中的文件。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public File[] listFiles(FileFilter filter)</strong></font></td>
-<td align="left">返回表示此抽象路径名所表示目录中的文件和目录的抽象路径名数组，这些路径名满足特定过滤器。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean mkdir()</strong></td>
-<td align="left">创建此抽象路径名指定的目录。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean mkdirs()</strong></font></td>
-<td align="left">创建此抽象路径名指定的目录，包括创建必需但不存在的父目录。创建整个目录树。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean renameTo(File dest)</strong></font></td>
-<td align="left">重新命名此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean setLastModified(long time)</strong></td>
-<td align="left">设置由此抽象路径名所指定的文件或目录的最后一次修改时间。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean setReadOnly()</strong></td>
-<td align="left">标记此抽象路径名指定的文件或目录，以便只可对其进行读操作。</td>
-</tr>
-<tr>
-<td align="left"><strong>public static File createTempFile(String prefix, String suffix, File directory) throws IOException</strong></td>
-<td align="left">在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。</td>
-</tr>
-<tr>
-<td align="left"><strong>public static File createTempFile(String prefix, String suffix) throws IOException</strong></td>
-<td align="left">在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。</td>
-</tr>
-<tr>
-<td align="left"><strong>public int compareTo(File pathname)</strong></td>
-<td align="left">按字母顺序比较两个抽象路径名。</td>
-</tr>
-<tr>
-<td align="left"><strong>public int compareTo(Object o)</strong></td>
-<td align="left">按字母顺序比较抽象路径名与给定对象。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean equals(Object obj)</strong></td>
-<td align="left">测试此抽象路径名与给定对象是否相等。</td>
-</tr>
-<tr>
-<td align="left"><strong>public String toString()</strong></td>
-<td align="left">返回此抽象路径名的路径名字符串。</td>
-</tr>
-</tbody></table>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>Java</category>
-        <category>Java类</category>
-        <category>java.io</category>
+        <category>Java语言入门</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>类之间的关系</title>
+    <url>/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E7%B1%BB%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、关联"><a href="#1、关联" class="headerlink" title="1、关联"></a>1、关联</h2><p><strong>下图表示 <font color=red>Student  类关联  Major  类</font>，即表示Major类为Student类的属性（成员变量）</strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594970231959-d7c25130-3788-43c5-b795-ad0d0004fa51.svg#align=left&display=inline&height=427&margin=%5Bobject%20Object%5D&originHeight=427&originWidth=197&size=0&status=done&style=none&width=197" alt=""></p>
+<h2 id="2、依赖"><a href="#2、依赖" class="headerlink" title="2、依赖"></a>2、依赖</h2><p>代码体现为 <code>电脑</code> 作为 <code>现代人</code> 的局部变量、方法的参数或者对静态方法的调用<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1595049747827-a0c1365a-85ea-4b5b-bbe9-30e05ea9d20b.png#align=left&display=inline&height=93&margin=%5Bobject%20Object%5D&name=image.png&originHeight=106&originWidth=269&size=3785&status=done&style=none&width=236" alt="image.png"></p>
+<h2 id="3、聚集"><a href="#3、聚集" class="headerlink" title="3、聚集"></a>3、聚集</h2><h2 id="4、泛化"><a href="#4、泛化" class="headerlink" title="4、泛化"></a>4、泛化</h2><p><strong>泛化等同于<font color=red>继承</font></strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594974464425-cdbdcdc4-c055-40e4-bdd5-107807d78647.svg#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&originHeight=222&originWidth=266&size=0&status=done&style=none&width=266" alt=""><br><a name="Z6NTj"></a></p>
+<h2 id="5、实现"><a href="#5、实现" class="headerlink" title="5、实现"></a>5、实现</h2>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java面向对象</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>异常类</title>
+    <url>/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%BC%82%E5%B8%B8%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="一、异常的作用域"><a href="#一、异常的作用域" class="headerlink" title="一、异常的作用域"></a>一、异常的作用域</h2><p>下面的程序执行会失败，这是因为 <code>int len</code> 这个变量是定义在 try 的代码块里，所以如果想要操作 len 这个变量，那么就需要我们提升作用域。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">int</span> len = getStrLength(<span class="keyword">null</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"程序执行到这"</span>+len);</span><br></pre></td></tr></table></figure>
+<h2 id="二、异常的分类"><a href="#二、异常的分类" class="headerlink" title="二、异常的分类"></a>二、异常的分类</h2><p>异常分为 <code>RuntimeException</code>  和其余的 <code>Exception</code> ，两者的<font color=red><strong>不同点</strong></font>：<br />1、<br />手工抛出 <code>RuntimeException</code> 异常时，<font color=red><strong>不需要在方法上约定可能抛出的异常</strong></font>。类似 <code>IllegalArgumentException</code> 是 <code>RuntimeException</code> 子类抛出异常时就不需要在方法上声明。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getInt</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"姓名不能为空"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Integer.parseInt(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>手工抛出其余的 <code>Exception</code> 异常时，<font color=red><strong>必须在方法上约定可能抛出的异常</strong></font>。类似如下代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getInt</span><span class="params">(String str)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(str == <span class="keyword">null</span>)&#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"姓名不能为空"</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> Integer.parseInt(str);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>2、<br /><code>Exception</code> ：受检查的异常，这种异常是<font color=red><strong>强制我们catch或throw的异常</strong></font>。你遇到这种异常必须进行catch或throw，如果不处理，编译器会报错。比如：IOException。<br /><code>RuntimeException</code> ：运行时异常，<font color=red><strong>这种异常我们不需要处理，完全由虚拟机接管</strong></font>。比如我们常见的NullPointerException，我们在写程序时不会进行catch或throw。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java面向对象</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>内部类</title>
+    <url>/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<p>内部类可分为<font color=red size=5><strong>实例内部类</strong></font>和<font color=red size=5><strong>静态内部类</strong></font>。</p>
+<h2 id="1、实例内部类"><a href="#1、实例内部类" class="headerlink" title="1、实例内部类"></a>1、实例内部类</h2><p><font color=red size=4><strong>特性：</strong></font></p>
+<ul>
+<li>实例内部类不能有静态成员(包括属性、方法) </li>
+<li>实例内部类对象外部创建语法:Outer.new Inner(); </li>
+<li>实例内部类访问外部类成员的格式:Outer.this.成员（包含私有成员）<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"张三"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num1=<span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner1</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name=<span class="string">"李四"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num2=<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num3=<span class="number">10</span>;<span class="comment">//静态常量在内部类中是可以的</span></span><br><span class="line">        <span class="comment">//private static int num3=30;//在成员内部类中不能声明静态的成员,包括属性和方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">            <span class="comment">//System.out.println(Outer1.this.name);</span></span><br><span class="line">            System.out.println(num2);</span><br><span class="line">            outerShow();<span class="comment">//成员内部类可以直接访问外部类的属性和方法，包括私有的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2、静态内部类"><a href="#2、静态内部类" class="headerlink" title="2、静态内部类"></a>2、静态内部类</h2><p><font color=red size=4><strong>特性：</strong></font></p>
+<ul>
+<li>静态内部类可以包含静态成员，也可以包含非静态成员</li>
+<li>静态内部类只能访问外部类的静态成员，格式为：Outer.静态成员</li>
+</ul>
+<p>如果我们声明内部类为静态内部类后，那么就可以直接调用这个内部类，不需要先实例化外部类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil;</span><br><span class="line"><span class="comment">// 静态内部类是需要单独 import 的</span></span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil.InnerTool;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtilTest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line">       <span class="keyword">int</span> sum = tool.add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">       System.out.println(sum);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java面向对象</category>
       </categories>
   </entry>
   <entry>
@@ -843,6 +440,165 @@
       </categories>
   </entry>
   <entry>
+    <title>File类</title>
+    <url>/2020/07/16/Java/Java%E7%B1%BB/java.io/File%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、构造函数"><a href="#1、构造函数" class="headerlink" title="1、构造函数"></a>1、构造函数</h2><blockquote>
+<p>Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。<br>File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。</p>
+</blockquote>
+<h3 id="File-File-parent-String-child"><a href="#File-File-parent-String-child" class="headerlink" title="File(File parent, String child)"></a>File(File parent, String child)</h3><blockquote>
+<p>通过给定的 <code>parent</code> 父文件对象和 <code>child</code> 子路径名字符串创建一个新的File实例。</p>
+</blockquote>
+<h3 id="File-String-pathname"><a href="#File-String-pathname" class="headerlink" title="File(String pathname)"></a>File(String pathname)</h3><blockquote>
+<p>通过将给定路径名字符串 <code>pathname</code> 转换成抽象路径名来创建一个新 File 实例。</p>
+</blockquote>
+<h3 id="File-String-parent-String-child"><a href="#File-String-parent-String-child" class="headerlink" title="File(String parent, String child)"></a>File(String parent, String child)</h3><blockquote>
+<p>根据 <code>parent</code>  路径名字符串和 <code>child</code>  路径名字符串创建一个新 File 实例。</p>
+</blockquote>
+<h3 id="File-URI-uri"><a href="#File-URI-uri" class="headerlink" title="File(URI uri)"></a>File(URI uri)</h3><blockquote>
+<p>通过将给定的 <code>file: URI</code>  转换成一个抽象路径名来创建一个新的 File 实例。</p>
+</blockquote>
+<h2 id="2、方法列表"><a href="#2、方法列表" class="headerlink" title="2、方法列表"></a>2、方法列表</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><font color=red><strong>public String getName()</strong></font></td>
+<td align="left">返回由此抽象路径名表示的文件或目录的名称。</td>
+</tr>
+<tr>
+<td align="left"><strong>public String getParent()</strong></td>
+<td align="left">返回此抽象路径名的父路径名的路径名字符串，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
+</tr>
+<tr>
+<td align="left"><strong>public File getParentFile()</strong></td>
+<td align="left">返回此抽象路径名的父路径名的抽象路径名，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public String getPath()</strong></font></td>
+<td align="left">将此抽象路径名转换为一个路径名字符串。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean isAbsolute()</strong></td>
+<td align="left">测试此抽象路径名是否为绝对路径名。</td>
+</tr>
+<tr>
+<td align="left"><strong>public String getAbsolutePath()</strong></td>
+<td align="left">返回抽象路径名的绝对路径名字符串。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean canRead()</strong></td>
+<td align="left">测试应用程序是否可以读取此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean canWrite()</strong></td>
+<td align="left">测试应用程序是否可以修改此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean exists()</strong></font></td>
+<td align="left">测试此抽象路径名表示的文件或目录是否存在。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean isDirectory()</strong></td>
+<td align="left">测试此抽象路径名表示的文件是否是一个目录。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean isFile()</strong></td>
+<td align="left">测试此抽象路径名表示的文件是否是一个标准文件。</td>
+</tr>
+<tr>
+<td align="left"><strong>public long lastModified()</strong></td>
+<td align="left">返回此抽象路径名表示的文件最后一次被修改的时间。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public long length()</strong></font></td>
+<td align="left">返回由此抽象路径名表示的文件的长度。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean createNewFile() throws IOException</strong></font></td>
+<td align="left">当且仅当不存在具有此抽象路径名指定的名称的文件时，原子地创建由此抽象路径名指定的一个新的空文件。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean delete()</strong></font></td>
+<td align="left">删除此抽象路径名表示的文件或目录。</td>
+</tr>
+<tr>
+<td align="left"><strong>public void deleteOnExit()</strong></td>
+<td align="left">在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public String[] list()</strong></font></td>
+<td align="left">返回由此抽象路径名所表示的目录中的文件和目录的名称所组成字符串数组。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public String[] list(FilenameFilter filter)</strong></font></td>
+<td align="left">返回由包含在目录中的文件和目录的名称所组成的字符串数组，这一目录是通过满足指定过滤器的抽象路径名来表示的。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public File[] listFiles()</strong></font></td>
+<td align="left">返回一个抽象路径名数组，这些路径名表示此抽象路径名所表示目录中的文件。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public File[] listFiles(FileFilter filter)</strong></font></td>
+<td align="left">返回表示此抽象路径名所表示目录中的文件和目录的抽象路径名数组，这些路径名满足特定过滤器。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean mkdir()</strong></td>
+<td align="left">创建此抽象路径名指定的目录。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean mkdirs()</strong></font></td>
+<td align="left">创建此抽象路径名指定的目录，包括创建必需但不存在的父目录。创建整个目录树。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>public boolean renameTo(File dest)</strong></font></td>
+<td align="left">重新命名此抽象路径名表示的文件。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean setLastModified(long time)</strong></td>
+<td align="left">设置由此抽象路径名所指定的文件或目录的最后一次修改时间。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean setReadOnly()</strong></td>
+<td align="left">标记此抽象路径名指定的文件或目录，以便只可对其进行读操作。</td>
+</tr>
+<tr>
+<td align="left"><strong>public static File createTempFile(String prefix, String suffix, File directory) throws IOException</strong></td>
+<td align="left">在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。</td>
+</tr>
+<tr>
+<td align="left"><strong>public static File createTempFile(String prefix, String suffix) throws IOException</strong></td>
+<td align="left">在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。</td>
+</tr>
+<tr>
+<td align="left"><strong>public int compareTo(File pathname)</strong></td>
+<td align="left">按字母顺序比较两个抽象路径名。</td>
+</tr>
+<tr>
+<td align="left"><strong>public int compareTo(Object o)</strong></td>
+<td align="left">按字母顺序比较抽象路径名与给定对象。</td>
+</tr>
+<tr>
+<td align="left"><strong>public boolean equals(Object obj)</strong></td>
+<td align="left">测试此抽象路径名与给定对象是否相等。</td>
+</tr>
+<tr>
+<td align="left"><strong>public String toString()</strong></td>
+<td align="left">返回此抽象路径名的路径名字符串。</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java类</category>
+        <category>java.io</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Math类</title>
     <url>/2020/07/15/Java/Java%E7%B1%BB/java.lang/Math%E7%B1%BB/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer"/>
@@ -879,6 +635,251 @@
         <category>Java</category>
         <category>Java类</category>
         <category>java.time</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Arrays类</title>
+    <url>/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><p>sort()方法</p>
+<h2 id="2、Arrays类的相关应用"><a href="#2、Arrays类的相关应用" class="headerlink" title="2、Arrays类的相关应用"></a>2、Arrays类的相关应用</h2><h3 id="数组转为List"><a href="#数组转为List" class="headerlink" title="数组转为List"></a>数组转为List</h3><p>利用<code>java.util.Arrays</code>类的<code>asList()</code>方法,该方法无法对<font color=red><strong>基本类型数组</strong></font>进行转换。<font color=red><strong>只能转换对象数组</strong></font>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 数字数组</span></span><br><span class="line">  Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;Integer&gt; lists = Arrays.asList(intArr);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;String&gt; lists = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转化数组为 list2</span></span><br><span class="line">  List&lt;String&gt; lists2 = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>,<span class="string">"小李"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合2的长度是: "</span> + lists2.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h3><p>利用<code>java.util.Arrays</code>类的<code>sort()</code>方法就可以实现数组的自定义排序，默认是升序排序。</p>
+<blockquote>
+<p>static <T> void sort(T[] a, Comparator&lt; super T&gt; c):</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 自定义排序</span></span><br><span class="line">    Arrays.sort(intArr, <span class="keyword">new</span> Comparator&lt;Integer&gt;()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span></span>&#123;</span><br><span class="line">            <span class="comment">// 判断 o2&gt;o1，执行降序排序</span></span><br><span class="line">            <span class="keyword">return</span> o2-o1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"Integer Array: "</span></span><br><span class="line">                       + Arrays.toString(intArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组转为字符串"><a href="#数组转为字符串" class="headerlink" title="数组转为字符串"></a>数组转为字符串</h3><p>利用<code>java.util.Arrays</code>类的<code>toString()</code>方法用于转换数组（包含基本类型数组）为字符串</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span>[] boolArr = <span class="keyword">new</span> <span class="keyword">boolean</span>[] &#123; <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> &#125;;</span><br><span class="line">    <span class="keyword">byte</span>[] byteArr = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line">    <span class="keyword">char</span>[] charArr = <span class="keyword">new</span> <span class="keyword">char</span>[] &#123; <span class="string">'g'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'k'</span>, <span class="string">'s'</span> &#125;;</span><br><span class="line">    <span class="keyword">double</span>[] dblArr = <span class="keyword">new</span> <span class="keyword">double</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">float</span>[] floatArr = <span class="keyword">new</span> <span class="keyword">float</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span>[] intArr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">long</span>[] lomgArr = <span class="keyword">new</span> <span class="keyword">long</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    Object[] objArr = <span class="keyword">new</span> Object[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">short</span>[] shortArr = <span class="keyword">new</span> <span class="keyword">short</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line">    System.out.println(Arrays.toString(boolArr));</span><br><span class="line">    System.out.println(Arrays.toString(byteArr));</span><br><span class="line">    System.out.println(Arrays.toString(charArr));</span><br><span class="line">    System.out.println(Arrays.toString(dblArr));</span><br><span class="line">    System.out.println(Arrays.toString(floatArr));</span><br><span class="line">    System.out.println(Arrays.toString(intArr));</span><br><span class="line">    System.out.println(Arrays.toString(lomgArr));</span><br><span class="line">    System.out.println(Arrays.toString(objArr));</span><br><span class="line">    System.out.println(Arrays.toString(shortArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java类</category>
+        <category>java.util</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>List接口</title>
+    <url>/2020/07/19/Java/Java%E7%B1%BB/java.util/List%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><font color=red><strong>boolean add(E o)</strong></font></td>
+<td align="left">向列表的尾部追加指定的元素</td>
+</tr>
+<tr>
+<td align="left"><strong>void add(int index,E element)</strong></td>
+<td align="left">在列表的指定位置插入指定元素。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>boolean addAll(Collection&lt;? extends E&gt; c)</strong></font></td>
+<td align="left">追加指定 collection中的所有元素到此列表的结尾，顺序是指定collection的迭代器返回这些元素的顺序。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean addAll(int index,Collection&lt;? extends E&gt; c)</strong></td>
+<td align="left">将指定collection中的所有元素都插入到列表中的指定位置。</td>
+</tr>
+<tr>
+<td align="left"><strong>void clear()</strong></td>
+<td align="left">从列表中移除所有元素。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean contains(Object o)</strong></td>
+<td align="left">如果列表包含指定的元素，则返回true。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean containsAll(Collection&lt;?&gt; c)</strong></td>
+<td align="left">如果列表包含指定collection的所有元素，则返回true。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean equals(Object c)</strong></td>
+<td align="left">比较指定的对象与列表是否相等。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>E get(int index)</strong></font></td>
+<td align="left">返回列表中指定位置的元素。</td>
+</tr>
+<tr>
+<td align="left"><strong>int hashCode()</strong></td>
+<td align="left">返回列表的哈希码值。</td>
+</tr>
+<tr>
+<td align="left"><strong>int indexOf(Object o)</strong></td>
+<td align="left">返回列表中首次出现指定元素的索引，如果列表不包含此元素，则返回-1。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean isEmpty()</strong></td>
+<td align="left">判断集合是否为空 如果为空 则返回true,否则返回false</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>Iterator<E> iterator()</strong></font></td>
+<td align="left">返回以正确顺序在列表的元素上进行迭代的迭代器。</td>
+</tr>
+<tr>
+<td align="left"><strong>int lastIndexOf(Object o)</strong></td>
+<td align="left">返回列表中最后出现指定元素的索引，如果列表不包含此元素，则返回-1。</td>
+</tr>
+<tr>
+<td align="left"><strong>ListIterator<E> listIterator()</strong></td>
+<td align="left">返回列表中元素的列表迭代器（以正确的顺序）。</td>
+</tr>
+<tr>
+<td align="left"><strong>ListIterator<E> listIterator(int index)</strong></td>
+<td align="left">返回列表中元素的列表迭代器（以正确的顺序），从列表的指定位置开始。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>E remove(int index)</strong></font></td>
+<td align="left">移除列表中指定位置的元素。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean remove(Object o)</strong></td>
+<td align="left">移除列表中出现的首个指定元素。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean removeAll(Collection&lt;?&gt; c)</strong></td>
+<td align="left">从列表中移除指定collection中包含的所有元素。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean retainAll(Collection&lt;?&gt; c)</strong></td>
+<td align="left">仅在列表中保留指定collection中所包含的元素。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>E set(int index,E element)</strong></font></td>
+<td align="left">用指定元素替换列表中指定位置的元素。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>int size()</strong></font></td>
+<td align="left">返回列表中的元素数。</td>
+</tr>
+<tr>
+<td align="left"><strong>List<E> subList(int forIndex,int toIndex)</strong></td>
+<td align="left">返回列表中指定的formIndex(包括) 和toIndex(不包括)之间的部分视图。</td>
+</tr>
+<tr>
+<td align="left"><strong>Object toArray()</strong></td>
+<td align="left">返回以正确顺序包含列表中的所有元素的数组。</td>
+</tr>
+</tbody></table>
+<h2 id="2、List类相关的应用"><a href="#2、List类相关的应用" class="headerlink" title="2、List类相关的应用"></a>2、List类相关的应用</h2><h3 id="List转为数组"><a href="#List转为数组" class="headerlink" title="List转为数组"></a>List转为数组</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; al = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    al.add(<span class="number">10</span>);</span><br><span class="line">    al.add(<span class="number">20</span>);</span><br><span class="line">    al.add(<span class="number">30</span>);</span><br><span class="line">    al.add(<span class="number">40</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 转化为数组</span></span><br><span class="line">    Integer[] arr = al.toArray(<span class="keyword">new</span> Integer[] &#123;&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Integer x : arr) &#123;</span><br><span class="line">        System.out.println(x + <span class="string">" "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="List转为字符串"><a href="#List转为字符串" class="headerlink" title="List转为字符串"></a>List转为字符串</h3><p>利用<code>String</code>类的<code>String.join(&quot;,&quot;,list)</code>方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建字符串集合</span></span><br><span class="line">    List&lt;String&gt; list = Arrays.asList(<span class="string">"Geeks"</span>, <span class="string">"ForGeeks"</span>, <span class="string">"GeeksForGeeks"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 转化集合为字符串， 使用 `,` 分割</span></span><br><span class="line">    String string = String.join(<span class="string">","</span>, list);</span><br><span class="line">    <span class="comment">// 打印结果</span></span><br><span class="line">    System.out.println(<span class="string">"字符串是: "</span> + string);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="List的排序"><a href="#List的排序" class="headerlink" title="List的排序"></a>List的排序</h3><p>利用<code>java.util.Collection</code>类中的<code>sort()</code>方法</p>
+<blockquote>
+<p>static <T> void sort(List<T> list, Comparator&lt;? super T&gt; c)</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   List&lt;Student&gt; ar = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">111</span>, <span class="string">"bbbb"</span>, <span class="string">"london"</span>));</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">131</span>, <span class="string">"aaaa"</span>, <span class="string">"nyc"</span>));</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">121</span>, <span class="string">"cccc"</span>, <span class="string">"jaipur"</span>));</span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"原始集合"</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ar.size(); i++) &#123;</span><br><span class="line">     System.out.println(ar.get(i));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 实现升序排序</span></span><br><span class="line">   Collections.sort(ar, <span class="keyword">new</span> Comparator&lt;Student&gt;()&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student a, Student b)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 第一个参数的学号 &gt; 第二个参数的学号</span></span><br><span class="line">       <span class="keyword">return</span> a.getRollNo() - b.getRollNo();</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"\n排序后的集合"</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ar.size(); i++) &#123;</span><br><span class="line">     System.out.println(ar.get(i));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="List的过滤"><a href="#List的过滤" class="headerlink" title="List的过滤"></a>List的过滤</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountingRecord</span> </span>&#123;</span><br><span class="line">  <span class="comment">//创建时间</span></span><br><span class="line">  <span class="keyword">private</span> String createTime;</span><br><span class="line">  <span class="comment">//记录时间</span></span><br><span class="line">  <span class="keyword">private</span> Date time;</span><br><span class="line">  <span class="comment">//金额</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> amount;</span><br><span class="line">  <span class="comment">//收入或支出</span></span><br><span class="line">  <span class="keyword">private</span> String type;</span><br><span class="line">  <span class="comment">//分类</span></span><br><span class="line">  <span class="keyword">private</span> String category;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//List&lt;AccountingRecord&gt; records=new ArrayList();</span></span><br><span class="line">  List&lt;AccountingRecord&gt; filterd=records.stream().filter(str-&gt;str.getAmount()&gt;amount).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java类</category>
+        <category>java.util</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Map接口</title>
+    <url>/2020/07/17/Java/Java%E7%B1%BB/java.util/Map%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、分析"><a href="#1、分析" class="headerlink" title="1、分析"></a>1、分析</h2><p>Map接口中键和值一一映射. 可以通过键来获取值。</p>
+<ul>
+<li>给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。 </li>
+<li>当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常. </li>
+<li>当对象的类型和Map里元素类型不兼容的时候，就会抛出一个 ClassCastException异常。 </li>
+<li>当在不允许使用Null对象的Map中使用Null对象，会抛出一个NullPointerException 异常。 </li>
+<li>当尝试修改一个只读的Map时，会抛出一个UnsupportedOperationException异常。</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594976617431-376ad1cc-79fb-4b3f-ad89-1d32572c7580.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&originHeight=259&originWidth=441&size=0&status=done&style=none&width=441" alt=""></p>
+<h2 id="2、方法列表"><a href="#2、方法列表" class="headerlink" title="2、方法列表"></a>2、方法列表</h2><table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><font color=red><strong>void clear( )</strong></font></td>
+<td align="left"><em>从此映射中移除所有映射关系（可选操作）。</em></td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>boolean containsKey(Object k)</strong></font></td>
+<td align="left"><em>如果此映射包含指定键的映射关系，则返回 true。</em></td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>boolean containsValue(Object v)</strong></font></td>
+<td align="left"><em>如果此映射将一个或多个键映射到指定值，则返回 true。</em></td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>Set entrySet( )</strong></font></td>
+<td align="left">返回此映射中包含的映射关系的 Set 视图。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean equals(Object obj)</strong></td>
+<td align="left">比较指定的对象与此映射是否相等。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>Object get(Object k)</strong></font></td>
+<td align="left">返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 null。</td>
+</tr>
+<tr>
+<td align="left"><strong>boolean isEmpty( )</strong></td>
+<td align="left">如果此映射未包含键-值映射关系，则返回 true。</td>
+</tr>
+<tr>
+<td align="left"><strong>Set keySet( )</strong></td>
+<td align="left">返回此映射中包含的键的 Set 视图。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>Object put(Object k, Object v)</strong></font></td>
+<td align="left">将指定的值与此映射中的指定键关联（可选操作）。</td>
+</tr>
+<tr>
+<td align="left"><strong>void putAll(Map m)</strong></td>
+<td align="left">从指定映射中将所有映射关系复制到此映射中（可选操作）。</td>
+</tr>
+<tr>
+<td align="left"><strong>Object remove(Object k)</strong></td>
+<td align="left">如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>int size( )</strong></font></td>
+<td align="left">返回此映射中的键-值映射关系数。</td>
+</tr>
+<tr>
+<td align="left"><font color=red><strong>Collection values( )</strong></font></td>
+<td align="left">返回此映射中包含的值的 Collection 视图。</td>
+</tr>
+</tbody></table>
+<h2 id="3、Map接口的相关应用"><a href="#3、Map接口的相关应用" class="headerlink" title="3、Map接口的相关应用"></a>3、Map接口的相关应用</h2><h3 id="Map的遍历"><a href="#Map的遍历" class="headerlink" title="Map的遍历"></a>Map的遍历</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer,String&gt; entry : map.entrySet())&#123; </span><br><span class="line"></span><br><span class="line">  System.out.println(<span class="string">"Key = "</span> + entry.getKey() + </span><br><span class="line">                 <span class="string">", Value = "</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java类</category>
+        <category>java.util</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Random类</title>
+    <url>/2020/07/18/Java/Java%E7%B1%BB/java.util/Random%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer"/>
+
+<h2 id="int-nextInt-int-n-方法"><a href="#int-nextInt-int-n-方法" class="headerlink" title="int nextInt(int n)方法"></a>int nextInt(int n)方法</h2><p>int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: <font color=red><strong>[0,n)</strong></font></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 实例化随机数</span></span><br><span class="line">Random r = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="comment">// 得到0-7之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到 0-8 之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到50-100之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">51</span>)+<span class="number">50</span>;</span><br><span class="line"><span class="comment">// 这个 51 = 100 - 50 + 1</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java类</category>
+        <category>java.util</category>
       </categories>
   </entry>
 </search>
