@@ -261,6 +261,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/21/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/21/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" itemprop="url">Java网络编程问题与解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-21T14:05:15+08:00">
+                2020-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  900字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、User-Agent-解决请求-HTTP-失败"><a href="#1、User-Agent-解决请求-HTTP-失败" class="headerlink" title="1、User-Agent 解决请求 HTTP 失败"></a>1、User-Agent 解决请求 HTTP 失败</h2><p>不一定任何请求都能成功，例如我们在浏览器中输入 <code>IP</code>  地址详情信息查询的 <code>API</code>  ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;ip.taobao.com&#x2F;service&#x2F;getIpInfo.php?ip&#x3D;117.89.35.58&amp;format&#x3D;json</span><br></pre></td></tr></table></figure>
+<p>该 <code>API</code> 在浏览器中是可以看到结果的，但是下述 <code>Java</code> 程序调用却不行：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// okHttpClient 实例</span></span><br><span class="line">  OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">  <span class="comment">// 定义一个request</span></span><br><span class="line">  Request request = <span class="keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">  <span class="comment">// 返回结果字符串</span></span><br><span class="line">  String result = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 执行请求</span></span><br><span class="line">    Response response = okHttpClient.newCall(request).execute();</span><br><span class="line">    <span class="comment">// 获取响应内容</span></span><br><span class="line">    result = response.body().string();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    <span class="comment">// 抓取异常</span></span><br><span class="line">    System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是因为像 <code>taobao.com</code>  这样的大型网站，处于安全等各种因素考虑，会对请求进行比较严格的校验，其中一个重要的校验，是判断请求是否真的来自于一个真实的浏览器。若不是来自浏览器，例如 <code>Java</code>  程序请求， <code>API</code>  服务器认为不是真实的浏览器访问，就直接拒绝掉了。<br /><br><font color=red><strong>解决方法：</strong></font><br /><br>判断请求是否真的来自于一个真实的浏览器，需要从 <code>HTTP</code>  消息头（ <code>Headers</code> ）中取得 <code>User-Agent</code>  信息后，才能判断。 <br /><br><code>User-Agent</code>  是存放在 <code>Headers</code>  中的一种数据信息。作用是，在指定 <code>URL</code>  发送请求的时候，告诉服务端当前用户的浏览器类型、版本，甚至操作系统、CPU等非隐私的技术信息。服务器从 <code>Headers</code>  中的 <code>User-Agent</code>  信息获取到浏览器类型、版本等数据后，就认为是一个浏览器请求的环境了，就会给出响应。<br /><br><font color=red><strong>模拟一个 <code>win7+chrome</code> 环境：</strong></font></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla&#x2F;5.0 (Windows NT 6.1; WOW64) AppleWebKit&#x2F;535.1 (KHTML, like Gecko) Chrome&#x2F;14.0.835.163 Safari&#x2F;535.1</span><br></pre></td></tr></table></figure>
+<h2 id="2、Referer解决“图片防盗链”"><a href="#2、Referer解决“图片防盗链”" class="headerlink" title="2、Referer解决“图片防盗链”"></a>2、Referer解决“图片防盗链”</h2><p><code>https://ham.youkeda.com/course/j14/3/1/0</code> 页面中的下述 <code>img</code> 元素图片无法正常显示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://cdn.nlark.com/yuque/0/2019/</span></span></span><br><span class="line"><span class="tag"><span class="string">          png/93870/1571386626984-2462f7f9-d397-4e50-91e4-e4b688dd3410.png</span></span></span><br><span class="line"><span class="tag"><span class="string">          ?_t=41516115"</span> </span></span><br><span class="line"><span class="tag">     <span class="attr">alt</span>=<span class="string">"此处应有图片"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>但拷贝图片网址贴到浏览器地址栏，是可以访问的。<br />因为在<code>https://ham.youkeda.com/course/j14/3/1/0</code>页面下，浏览器在请求网页中的图片（或其它任何文件）时，会<font color=red><strong>自动</strong></font>在  <code>HTTP</code>  消息头 <code>Headers</code>  中，加一个 <code>Referer</code>  信息，表示<font color=red><strong>请求的来源</strong></font>。<br />即浏览器<font color=red><strong>自动</strong></font>告诉图片服务器，从当前 <code>youkeda.com</code>  请求此图片，这时图片服务器拒绝了访问，因为图片服务器的规则是不允许其它网站（非 <code>nlark.com</code> ）访问图片。<br /><font color=red><strong>解决方法：</strong></font><br />把 <code>Referer</code>  信息设置为图片原始使用的网站即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// okHttpClient 实例</span></span><br><span class="line">  OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">  <span class="comment">// 定义一个request</span></span><br><span class="line">  Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">    .url(url)</span><br><span class="line">    .addHeader(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1"</span>)</span><br><span class="line">    .addHeader(<span class="string">"Referer"</span>, <span class="string">"http://sug.qianqian.com/"</span>)</span><br><span class="line">    .addHeader(<span class="string">"Host"</span>, <span class="string">"sug.qianqian.com"</span>)</span><br><span class="line">    .build();</span><br><span class="line">  <span class="comment">// 返回结果字符串</span></span><br><span class="line">  String result = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 执行请求</span></span><br><span class="line">    Response response = okHttpClient.newCall(request).execute();</span><br><span class="line">    <span class="comment">// 获取响应内容</span></span><br><span class="line">    result = response.body().string();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  String url = <span class="string">"http://sug.qianqian.com/info/suggestion?format=json&amp;version=2&amp;from=0&amp;word=刺心&amp;third_type=0&amp;client_type=0"</span>;</span><br><span class="line">  ApiAsker asker = <span class="keyword">new</span> ApiAsker();</span><br><span class="line">  String content = asker.getContent(url);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 解析结果</span></span><br><span class="line">  Map contentObj = JSON.parseObject(content, Map<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  Map data = (Map) contentObj.get(<span class="string">"data"</span>);</span><br><span class="line">  List list = (List) data.get(<span class="string">"song"</span>);</span><br><span class="line">  <span class="keyword">int</span> length = list.size();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">    Map song = (Map)list.get(i);</span><br><span class="line">    String songname = song.get(<span class="string">"songname"</span>).toString();</span><br><span class="line">    String artistname = song.get(<span class="string">"artistname"</span>).toString();</span><br><span class="line">    System.out.println(songname+ <span class="string">"-"</span>+ artistname);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/19/Java/Java%E7%B1%BB/java.util/List%E6%8E%A5%E5%8F%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2520,212 +2714,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/08/Hexo/%E5%88%9D%E8%AF%86Hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/08/Hexo/%E5%88%9D%E8%AF%86Hexo/" itemprop="url">初识Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-08T17:24:39+08:00">
-                2020-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  364字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h1 id="一、Hexo定义"><a href="#一、Hexo定义" class="headerlink" title="一、Hexo定义"></a>一、Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
-<h1 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">hexo的安装</a></p>
-<ol>
-<li>安装<strong>Node.js</strong>和<strong>Git</strong></li>
-<li>然后使用npm安装Hexo<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li>局部安装 <code>hexo</code> 包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>安装以后，可以使用以下两种方式执行 Hexo命令：</p>
-<ol>
-<li><code>npx hexo &lt;command&gt;</code></li>
-<li>将 Hexo 所在的目录下的 node_modules 添加到环境变量之中即可直接使用 hexo ：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;PATH&#x3D;&quot;$PATH:.&#x2F;node_modules&#x2F;.bin&quot;&#39; &gt;&gt; ~&#x2F;.profile</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="三、创建博客文件夹"><a href="#三、创建博客文件夹" class="headerlink" title="三、创建博客文件夹"></a>三、创建博客文件夹</h1><p>进入某目录，执行如下命令创建博客文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;在当前目录下创建一个叫blog的博客文件夹</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-
-<h1 id="四、安装发布工具"><a href="#四、安装发布工具" class="headerlink" title="四、安装发布工具"></a>四、安装发布工具</h1><p>进入博客目录（<code>cd blog</code>），打开控制台，输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="五、修改配置文件"><a href="#五、修改配置文件" class="headerlink" title="五、修改配置文件"></a>五、修改配置文件</h1><p>找到blog文件夹中的<code>_config.yml</code>文件，输入如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">theme: landscape</span><br><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repository: git@github.com:sterben110&#x2F;sterben110.github.io.git  </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<h1 id="六、Hexo提交"><a href="#六、Hexo提交" class="headerlink" title="六、Hexo提交"></a>六、Hexo提交</h1><h2 id="hexo-generate"><a href="#hexo-generate" class="headerlink" title="hexo generate"></a>hexo generate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>作用是生成新的静态文件,可以简写为<code>hexo g</code></p>
-<h2 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>作用是把生成的文件部署到我们的博客上，可以简写为<code>hexo d</code>，发布后，我们就可以看到我们的博客变成了这样：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594185106908-7ab390a4-e0fc-45bc-a0c0-4b04b20d7392.png#align=left&display=inline&height=1302&margin=%5Bobject%20Object%5D&originHeight=1302&originWidth=2524&size=0&status=done&style=none&width=2524" alt=""></p>
-<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>用途是清除缓存，能让新发布的博客能快速生效</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2782,7 +2770,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2793,7 +2781,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2862,7 +2850,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.4k</span>
+    <span title="Site words total count">9.3k</span>
   
 </div>
 
