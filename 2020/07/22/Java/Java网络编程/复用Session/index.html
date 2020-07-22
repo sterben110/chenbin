@@ -79,10 +79,14 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="sterben110的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/07/page/2/index.html">
+<meta name="description" content="经典案例1、登录复用我们把 OkHttpClient  对象进行重构，不再定义为 postContent()  方法的变量。而是改为类变量： private static final OkHttpClient okHttpClient ，目的就是在整个类中，使用同一个 okHttpClient 执行 HTTP 请求，提升效率。重构在本节课就派上用场了。分析执行两次请求的过程，实际上过程是类似的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复用Session">
+<meta property="og:url" content="http://yoursite.com/2020/07/22/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%A4%8D%E7%94%A8Session/index.html">
 <meta property="og:site_name" content="sterben110的博客">
+<meta property="og:description" content="经典案例1、登录复用我们把 OkHttpClient  对象进行重构，不再定义为 postContent()  方法的变量。而是改为类变量： private static final OkHttpClient okHttpClient ，目的就是在整个类中，使用同一个 okHttpClient 执行 HTTP 请求，提升效率。重构在本节课就派上用场了。分析执行两次请求的过程，实际上过程是类似的">
+<meta property="article:published_time" content="2020-07-22T07:51:25.000Z">
+<meta property="article:modified_time" content="2020-07-22T07:52:25.030Z">
 <meta property="article:author" content="chenbin">
 <meta name="twitter:card" content="summary">
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2020/07/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/22/Java/Java网络编程/复用Session/"/>
 
 
 
 
 
-  <title>归档 | sterben110的博客</title>
+  <title>复用Session | sterben110的博客</title>
   
 
 
@@ -139,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,411 +250,208 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%A4%8D%E7%94%A8Session/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">复用Session</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-22T15:51:25+08:00">
+                2020-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 20 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2020">2020</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/17/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E7%B1%BB%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">类之间的关系</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  717字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-17T16:20:06+08:00"
-              content="2020-07-17" >
-          07-17
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/16/Java/Java%E7%B1%BB/java.io/File%E7%B1%BB/" itemprop="url">
-              
-                <span itemprop="name">File类</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-16T17:12:48+08:00"
-              content="2020-07-16" >
-          07-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <meta name="referrer" content="no-referrer"/>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/16/Java/Java%E7%B1%BB/java.time/LocalDate%E7%B1%BB/" itemprop="url">
-              
-                <span itemprop="name">LocalDate类</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-16T16:23:58+08:00"
-              content="2020-07-16" >
-          07-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<h2 id="经典案例"><a href="#经典案例" class="headerlink" title="经典案例"></a>经典案例</h2><h3 id="1、登录复用"><a href="#1、登录复用" class="headerlink" title="1、登录复用"></a>1、登录复用</h3><p>我们把 <code>OkHttpClient</code>  对象进行重构，不再定义为 <code>postContent()</code>  方法的变量。而是改为类变量： <code>private static final OkHttpClient okHttpClient</code> ，目的就是在整个类中，使用同一个 okHttpClient 执行 HTTP 请求，提升效率。重构在本节课就派上用场了。<br />分析执行两次请求的过程，实际上过程是类似的，区别是 <code>Request</code> 不同，所以，又做了一次重构，把真正执行的过程封装成一个方法： <code>doExcute</code>  ，被其它 <code>postContent()</code>  和 <code>getContent()</code>  方法调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.test.http;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> okhttp3.Cookie;</span><br><span class="line"><span class="keyword">import</span> okhttp3.CookieJar;</span><br><span class="line"><span class="keyword">import</span> okhttp3.FormBody;</span><br><span class="line"><span class="keyword">import</span> okhttp3.FormBody.Builder;</span><br><span class="line"><span class="keyword">import</span> okhttp3.HttpUrl;</span><br><span class="line"><span class="keyword">import</span> okhttp3.OkHttpClient;</span><br><span class="line"><span class="keyword">import</span> okhttp3.Request;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PageLoginer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 用 CookieJar 实现 cookie 的存储，便于登录后请求其它 URL 可以复用</span></span><br><span class="line">  <span class="comment">// 在登录成功后返回Response对象时，会有拦截器链判断Response的Headers中是否有Cookie，若有则保存</span></span><br><span class="line">  <span class="comment">// 登录后请求其它URL过程中，会有拦截器链调用loadForRequest()方法来获得内存中的Cookie</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient.Builder()</span><br><span class="line">      .cookieJar(<span class="keyword">new</span> CookieJar() &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> HashMap&lt;String, List&lt;Cookie&gt;&gt; cookieStore = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveFromResponse</span><span class="params">(HttpUrl url, List&lt;Cookie&gt; cookies)</span> </span>&#123;</span><br><span class="line">          cookieStore.put(<span class="string">"mtime.com"</span>, cookies);</span><br><span class="line">          <span class="comment">//System.out.println("[saveFromResponse]url.host()=" + url.host());</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> List&lt;Cookie&gt; <span class="title">loadForRequest</span><span class="params">(HttpUrl url)</span> </span>&#123;</span><br><span class="line">          <span class="comment">//System.out.println("[loadForRequest]url.host()=" + url.host());</span></span><br><span class="line">          List&lt;Cookie&gt; cookies = cookieStore.get(<span class="string">"mtime.com"</span>);</span><br><span class="line">          <span class="keyword">return</span> cookies != <span class="keyword">null</span> ? cookies : <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .build();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 向指定的 URL 提交数据，并返回提交后的结果</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">postContent</span><span class="params">(String url, Map&lt;String, String&gt; formData)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//post方式提交的数据</span></span><br><span class="line">    Builder builder = <span class="keyword">new</span> FormBody.Builder();</span><br><span class="line">    <span class="comment">// 放入表单数据</span></span><br><span class="line">    <span class="keyword">for</span> (String key : formData.keySet()) &#123;</span><br><span class="line">      builder.add(key, formData.get(key));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 构建 FormBody 对象</span></span><br><span class="line">    FormBody formBody = builder.build();</span><br><span class="line">    <span class="comment">// 指定 post 方式提交FormBody</span></span><br><span class="line">    Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">        .url(url)</span><br><span class="line">        .post(formBody)</span><br><span class="line">        .addHeader(<span class="string">"User-Agent"</span>,</span><br><span class="line">            <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"</span>)</span><br><span class="line">        .addHeader(<span class="string">"Referer"</span>,</span><br><span class="line">            <span class="string">"https://passport.mtime.com/member/signin/?redirectUrl=http%3A%2F%2Fwww.mtime.com%2F"</span>)</span><br><span class="line">        .addHeader(<span class="string">"Host"</span>, <span class="string">"passport.mtime.com"</span>)</span><br><span class="line">        .build();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> doExcute(request);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 根据输入的url，读取页面内容并返回</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 定义一个request</span></span><br><span class="line">    Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">        .url(url)</span><br><span class="line">        .addHeader(<span class="string">"User-Agent"</span>,</span><br><span class="line">            <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"</span>)</span><br><span class="line">        .addHeader(<span class="string">"Host"</span>, <span class="string">"my.mtime.com"</span>)</span><br><span class="line">        .build();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> doExcute(request);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> String <span class="title">doExcute</span><span class="params">(Request request)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 返回结果字符串</span></span><br><span class="line">    String result = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      result = okHttpClient.newCall(request).execute().body().string();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">      <span class="comment">// 抓取异常</span></span><br><span class="line">      System.out.println(<span class="string">"request "</span> + request.url() + <span class="string">" error . "</span>);</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    PageLoginer asker = <span class="keyword">new</span> PageLoginer();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 完成登录</span></span><br><span class="line">    String url = <span class="string">"https://passport.mtime.com/member/signinLogin"</span>;</span><br><span class="line">    <span class="comment">// 登录表单数据</span></span><br><span class="line">    Map&lt;String, String&gt; formData = <span class="keyword">new</span> HashMap();</span><br><span class="line">    formData.put(<span class="string">"loginEmailText"</span>, <span class="string">"15195960267"</span>);</span><br><span class="line">    formData.put(<span class="string">"loginPasswordText"</span>, <span class="string">"6b22c167fc289650b968021ba3cdee70"</span>);</span><br><span class="line">    formData.put(<span class="string">"isvcode"</span>, <span class="string">"true"</span>);</span><br><span class="line">    formData.put(<span class="string">"isAutoSign"</span>, <span class="string">"false"</span>);</span><br><span class="line">    String content = asker.postContent(url, formData);</span><br><span class="line">    System.out.println(<span class="string">"login result:"</span>);</span><br><span class="line">    System.out.println(content);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 请求我的订单</span></span><br><span class="line">    String myOrderUrl = <span class="string">"http://my.mtime.com/account/"</span>;</span><br><span class="line">    String myOrderContent = asker.getContent(myOrderUrl);</span><br><span class="line">    System.out.println(<span class="string">"orderList result:"</span>);</span><br><span class="line">    System.out.println(myOrderContent);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%B3%A8%E6%84%8F%E7%82%B9/" itemprop="url">
-              
-                <span itemprop="name">Java注意点</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-16T10:35:49+08:00"
-              content="2020-07-16" >
-          07-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/15/Java/Java%E7%B1%BB/java.lang/Math%E7%B1%BB/" itemprop="url">
-              
-                <span itemprop="name">Math类</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-15T13:51:37+08:00"
-              content="2020-07-15" >
-          07-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/" itemprop="url">
-              
-                <span itemprop="name">Java是如何运行的</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-15T13:44:28+08:00"
-              content="2020-07-15" >
-          07-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url">
-              
-                <span itemprop="name">动态规划</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-11T15:28:45+08:00"
-              content="2020-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/08/Hexo/%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/" itemprop="url">
-              
-                <span itemprop="name">本地电脑部署博客步骤</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-08T17:35:57+08:00"
-              content="2020-07-08" >
-          07-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/08/Hexo/Hexo%E7%9A%84%E5%BA%94%E7%94%A8/" itemprop="url">
-              
-                <span itemprop="name">Hexo的应用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-08T17:33:48+08:00"
-              content="2020-07-08" >
-          07-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/07/08/Hexo/%E5%88%9D%E8%AF%86Hexo/" itemprop="url">
-              
-                <span itemprop="name">初识Hexo</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2020-07-08T17:24:39+08:00"
-              content="2020-07-08" >
-          07-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/21/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="next" title="Java网络编程问题与解决方案">
+                <i class="fa fa-chevron-left"></i> Java网络编程问题与解决方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2020/07/">上一页</a><a class="page-number" href="/archives/2020/07/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -658,6 +459,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -680,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -745,6 +559,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经典案例"><span class="nav-text">经典案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、登录复用"><span class="nav-text">1、登录复用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -903,6 +733,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
