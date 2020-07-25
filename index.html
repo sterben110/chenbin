@@ -261,6 +261,1169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/25/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/25/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" itemprop="url">排序算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-25T14:41:06+08:00">
+                2020-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a>1、冒泡排序</h2><blockquote>
+<p>对于一个数组，在每次循环中，遍历<font color=red><strong>剩余数组</strong></font>时，对比两个相邻的元素，前大后小则交换位置，遍历结束时<font color=red><strong>最大值</strong></font>就会冒泡排至最后面。然后缩短剩余数组继续遍历</p>
+</blockquote>
+<p>如下图，剩余数组为【2,4,7,5,3】,每次比较相邻元素，大的交换至后面直至遍历结束，得到缩短后的剩余数组为【2,4,5,3】。<br /><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1595657732836-ebfe8873-1bec-4287-87ac-3ade5db4047a.svg#align=left&display=inline&height=150&margin=%5Bobject%20Object%5D&originHeight=252&originWidth=362&size=0&status=done&style=none&width=215" alt=""><br><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1595657840279-46b935ac-c917-4e60-82e5-aa047d96b461.svg#align=left&display=inline&height=150&margin=%5Bobject%20Object%5D&originHeight=252&originWidth=362&size=0&status=done&style=none&width=215" alt=""><br><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1595657871852-06cae7a6-195c-42f5-90ae-a0972d9d8588.svg#align=left&display=inline&height=150&margin=%5Bobject%20Object%5D&originHeight=297&originWidth=362&size=0&status=done&style=none&width=183" alt=""><br><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1595657900975-7a13d800-a1ad-4f47-957a-f05e36c4a0d7.svg#align=left&display=inline&height=250&margin=%5Bobject%20Object%5D&originHeight=392&originWidth=371&size=0&status=done&style=none&width=237" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 冒泡排序(升序)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 每次循环，都能冒泡出剩余元素中最大的元素，因此需要循环 array.length 次</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="comment">// 2. 每次遍历，只需要遍历 0 到 array.length - i - 1中元素，因此之后的元素都已经是最大的了</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; array.length - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="comment">//3. 交换元素</span></span><br><span class="line">            <span class="keyword">if</span> (array[j] &gt; array[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = array[j + <span class="number">1</span>];</span><br><span class="line">                array[j + <span class="number">1</span>] = array[j];</span><br><span class="line">                array[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、选择排序"><a href="#2、选择排序" class="headerlink" title="2、选择排序"></a>2、选择排序</h2><blockquote>
+<p>重点在<font color=red><strong>选择</strong></font>，在每次循环中，遍历<font color=red><strong>剩余数组</strong></font>获取<font color=red><strong>最大值</strong></font>，放在数组最后。然后缩短剩余数组继续遍历</p>
+</blockquote>
+<p>如下图，剩余数组为【3,2,4,7,5】，遍历该数组，得到最大值为 7 ,交换7、5（数组末尾元素），得到缩短后的剩余数组为【3,2,4,5】。<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1595656929528-0fef4a12-0bde-48b7-b3f3-dd4a9a8a03b3.png#align=left&display=inline&height=140&margin=%5Bobject%20Object%5D&name=image.png&originHeight=140&originWidth=262&size=9238&status=done&style=none&width=262" alt="image.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选择排序(升序)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    <span class="comment">//最大值索引</span></span><br><span class="line">    <span class="keyword">int</span> maxIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 注意 j 从 索引1 开始，到 array.length - i 截止</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; array.length - i; j++) &#123;</span><br><span class="line">      <span class="comment">//若当前元素大于最大值，则替换最大值</span></span><br><span class="line">      <span class="keyword">if</span> (array[j] &gt; array[maxIndex]) &#123;</span><br><span class="line">        maxIndex = j;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 交换最大值元素 和 数组末尾元素</span></span><br><span class="line">    <span class="keyword">int</span> temp = array[maxIndex];</span><br><span class="line">    array[maxIndex] = array[array.length - i - <span class="number">1</span>];</span><br><span class="line">    array[array.length - i - <span class="number">1</span>] = temp;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、插入排序"><a href="#3、插入排序" class="headerlink" title="3、插入排序"></a>3、插入排序</h2><p>时间复杂度徘徊在 <code>O(N)~O(N^2)</code> </p>
+<blockquote>
+<p>重点在<font color=red><strong>插入</strong></font>，在每次循环中，抽离出一个<font color=red><strong>临时元素</strong></font>，遍历临时元素的<font color=red><strong>右侧数组</strong></font>，寻找插入位置。</p>
+</blockquote>
+<p>如下图，临时元素为4，遍历【3,5,7】数组寻找到插入位置为3、5之间，3左移一位，5、7不动。<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1595656477902-26d815df-ba62-45fa-8e83-3ba86f22ca60.png#align=left&display=inline&height=88&margin=%5Bobject%20Object%5D&name=image.png&originHeight=91&originWidth=309&size=9491&status=done&style=none&width=300" alt="image.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入排序(升序)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 从倒数第二位开始，遍历到底0位，遍历 N-1 次</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = array.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="comment">// 存储当前抽离的临时元素</span></span><br><span class="line">    <span class="keyword">int</span> temp = array[i];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="comment">//遍历抽离元素的右侧数组，寻找插入位置</span></span><br><span class="line">    <span class="keyword">for</span>(j = i+<span class="number">1</span>;j&lt;array.length;j++)&#123;</span><br><span class="line">        <span class="comment">// 若临时元素大于当前元素，则这个元素左移</span></span><br><span class="line">      <span class="keyword">if</span> (array[j] &lt; temp) &#123;</span><br><span class="line">        array[j - <span class="number">1</span>] = array[j];</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 如果临时元素小于当前元素，则将临时元素插入该元素之前，然后退出循环。</span></span><br><span class="line">        array[j - <span class="number">1</span>] = temp;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 处理到达尾部的情况</span></span><br><span class="line">    <span class="keyword">if</span> (j == array.length) &#123;</span><br><span class="line">      array[j - <span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-1、二分插入排序"><a href="#3-1、二分插入排序" class="headerlink" title="3.1、二分插入排序"></a>3.1、二分插入排序</h3><blockquote>
+<p>与普通插入排序的区别在于，普通的插入排序在寻找4的插入位置采用的是<font color=red><strong>遍历数组</strong></font>，二分插入排序在寻找4的插入位置时用的是<font color=red><strong>二分查找法。</strong></font></p>
+</blockquote>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1595656477902-26d815df-ba62-45fa-8e83-3ba86f22ca60.png#align=left&display=inline&height=88&margin=%5Bobject%20Object%5D&name=image.png&originHeight=91&originWidth=309&size=9491&status=done&style=none&width=300" alt="image.png"><br /></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入排序</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 从倒数第二位开始，遍历到底0位，遍历 N-1 次</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = array.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="comment">// 存储当前抽离的元素</span></span><br><span class="line">        <span class="keyword">int</span> temp = array[i];</span><br><span class="line">        <span class="keyword">int</span> index = searchIndex(array, i + <span class="number">1</span>, array.length - <span class="number">1</span>, temp);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// #1. 根据插入的索引位置，进行数组的移动和插入</span></span><br><span class="line">        <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt;= index) &#123;</span><br><span class="line">            array[j - <span class="number">1</span>] = array[j];</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        array[j - <span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1595658546381-4fc14a85-fc95-4b2c-9efe-2a1865430c58.svg#align=left&display=inline&height=301&margin=%5Bobject%20Object%5D&originHeight=301&originWidth=635&size=0&status=done&style=none&width=635" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查找应该插入的索引位置</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">searchIndex</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> aim)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 循环查找节点位置</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="keyword">int</span> middle = (left + right) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> value = array[middle];</span><br><span class="line">        <span class="keyword">if</span> (value &lt; aim) &#123;</span><br><span class="line">            left = middle + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right = middle - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// #1. 如果最终元素仍然大于目标元素，则将索引位置往左边移动一个</span></span><br><span class="line">    <span class="keyword">if</span>(array[left] &gt; aim)&#123;</span><br><span class="line">        <span class="keyword">return</span> left -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 否则就是当前位置</span></span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4、冒泡排序VS选择排序VS插入排序"><a href="#4、冒泡排序VS选择排序VS插入排序" class="headerlink" title="4、冒泡排序VS选择排序VS插入排序"></a>4、冒泡排序VS选择排序VS插入排序</h2><blockquote>
+<p>冒泡排序相比较而言肯定是较差的。<br>选择排序和插入排序得分情况而定，如果<font color=red><strong>原始数组本身有很多元素按希望的顺序排好序</strong></font>，则选择<font color=red><strong>插入排序</strong></font>，否则选择<font color=red><strong>选择排序</strong></font>。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/25/%E7%AE%97%E6%B3%95/%E5%A4%8D%E6%9D%82%E5%BA%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/25/%E7%AE%97%E6%B3%95/%E5%A4%8D%E6%9D%82%E5%BA%A6/" itemprop="url">复杂度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-25T12:07:45+08:00">
+                2020-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  199字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+
+<h2 id="1、大O记法（复杂度）"><a href="#1、大O记法（复杂度）" class="headerlink" title="1、大O记法（复杂度）"></a>1、大O记法（复杂度）</h2><p>复杂度，又被称为<font color=red><strong>大O记法</strong></font>，用于在进行测试之前粗略<font color=red><strong>估计算法执行效率</strong></font>的方法。<br />在测试结果能判断算法执行效率的情况下，使用复杂度的原因：</p>
+<ul>
+<li>测试结果受硬件条件影响很大</li>
+<li>测试结果必须在程序可运行时才能拿到</li>
+<li>测试数据不够多，不具有统计学上的意义</li>
+</ul>
+<h2 id="2、时间复杂度"><a href="#2、时间复杂度" class="headerlink" title="2、时间复杂度"></a>2、时间复杂度</h2><p><font color=red size=4><strong>大 O 记法，只保留最大趋势公式，指数 &gt; 线性 &gt; 对数 &gt; 常数。</strong></font><br /><br />计算<font color=red size=4><strong>时间复杂度</strong></font>，只需要<font color=red size=4><strong>关注for 循环嵌套情况</strong></font>。<br />写代码的时候，如果能用<strong>线性复杂度</strong>的代码，替换<strong>指数复杂度</strong>的代码，那就是大大的优化。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Okhttp3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Okhttp3/" itemprop="url">Okhttp3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T15:28:16+08:00">
+                2020-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  505字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<p><strong>用途</strong></p>
+<blockquote>
+<ol>
+<li>PUT，DELETE，POST，GET等请求</li>
+<li>文件的上传下载</li>
+<li>加载图片(内部会图片大小自动压缩)</li>
+<li>支持请求回调，直接返回对象、对象集合</li>
+<li>支持session的保持</li>
+</ol>
+</blockquote>
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.squareup.okhttp3<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>okhttp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><h3 id="2-1、get请求"><a href="#2-1、get请求" class="headerlink" title="2.1、get请求"></a>2.1、get请求</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 根据输入的url，读取页面内容并返回</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// okHttpClient 实例</span></span><br><span class="line">  OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">  <span class="comment">// 定义一个request</span></span><br><span class="line">  Request request = <span class="keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">  <span class="comment">// 使用client去请求</span></span><br><span class="line">  Call call = okHttpClient.newCall(request);</span><br><span class="line">  <span class="comment">// 返回结果字符串</span></span><br><span class="line">  String result = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 获得返回结果</span></span><br><span class="line">    result = call.execute().body().string();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    <span class="comment">// 抓取异常</span></span><br><span class="line">    System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2、post请求"><a href="#2-2、post请求" class="headerlink" title="2.2、post请求"></a>2.2、post请求</h3><h4 id="2-2-1、post-表单数据"><a href="#2-2-1、post-表单数据" class="headerlink" title="2.2.1、post 表单数据"></a>2.2.1、post 表单数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">postContent</span><span class="params">(String url, Map&lt;String, String&gt; formData)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// okHttpClient 实例</span></span><br><span class="line">    OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//post方式提交的数据</span></span><br><span class="line">    Builder builder = <span class="keyword">new</span> FormBody.Builder();</span><br><span class="line">    <span class="comment">// 放入表单数据</span></span><br><span class="line">    <span class="keyword">for</span>(String key : formData.keySet())&#123;</span><br><span class="line">      builder.add(key,formData.get(key));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 构建 FormBody 对象</span></span><br><span class="line">    FormBody formBody = builder.build();</span><br><span class="line">    <span class="comment">// 指定 post 方式提交FormBody</span></span><br><span class="line">    Request request = <span class="keyword">new</span> Request.Builder().url(url).post(formBody).build();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用client去请求</span></span><br><span class="line">    Call call = okHttpClient.newCall(request);</span><br><span class="line">    <span class="comment">// 返回结果字符串</span></span><br><span class="line">    String result = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// 获得返回结果</span></span><br><span class="line">      result = call.execute().body().string();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">      <span class="comment">// 抓取异常</span></span><br><span class="line">      System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-2、post-JSON数据"><a href="#2-2-2、post-JSON数据" class="headerlink" title="2.2.2、post JSON数据"></a>2.2.2、post JSON数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义提交数据的类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> MediaType JSON_TYPE = MediaType.parse(<span class="string">"application/json; charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 向指定的 url 提交数据，以 json 的方式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">postContent</span><span class="params">(String url, Map&lt;String, String&gt; datas)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// okHttpClient 实例</span></span><br><span class="line">  OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 数据对象转换成 json 格式字符串</span></span><br><span class="line">  String param = JSON.toJSONString(datas);</span><br><span class="line">  <span class="comment">//post方式提交的数据</span></span><br><span class="line">  RequestBody requestBody = RequestBody.create(JSON_TYPE, param);</span><br><span class="line">  Request request = <span class="keyword">new</span> Request.Builder().url(url).post(requestBody).build();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用client去请求</span></span><br><span class="line">  Call call = okHttpClient.newCall(request);</span><br><span class="line">  <span class="comment">// 返回结果字符串</span></span><br><span class="line">  String result = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 获得返回结果</span></span><br><span class="line">    result = call.execute().body().string();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    <span class="comment">// 抓取异常</span></span><br><span class="line">    System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/JavaMail/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/JavaMail/" itemprop="url">JavaMail</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T15:33:03+08:00">
+                2020-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  318字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.security.Security;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Authenticator;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Message;</span><br><span class="line"><span class="keyword">import</span> javax.mail.PasswordAuthentication;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Session;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Transport;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.InternetAddress;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"><span class="keyword">import</span> com.sun.net.ssl.internal.ssl.Provider;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MailClient</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">//设置SSL连接、邮件环境</span></span><br><span class="line">      Security.addProvider(<span class="keyword">new</span> Provider());</span><br><span class="line">      <span class="keyword">final</span> String SSL_FACTORY = <span class="string">"javax.net.ssl.SSLSocketFactory"</span>;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//配置邮箱信息</span></span><br><span class="line">      Properties props = System.getProperties();</span><br><span class="line">      <span class="comment">//邮件服务器</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.host"</span>, <span class="string">"smtp.qq.com"</span>);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.class"</span>, SSL_FACTORY);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.fallback"</span>, <span class="string">"false"</span>);</span><br><span class="line">      <span class="comment">//邮件服务器端口</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">      <span class="comment">//鉴权信息</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</span><br><span class="line">      <span class="comment">//建立邮件会话</span></span><br><span class="line">      Session session = Session.getDefaultInstance(props, <span class="keyword">new</span> Authenticator() &#123;</span><br><span class="line">        <span class="comment">//身份认证</span></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> PasswordAuthentication <span class="title">getPasswordAuthentication</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="comment">//1.账户 授权码</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> PasswordAuthentication(<span class="string">"987454568@qq.com"</span>, <span class="string">"rzuqttyyhwpabead"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">//建立邮件对象</span></span><br><span class="line">      MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</span><br><span class="line">      <span class="comment">//设置邮件的发件人</span></span><br><span class="line">      message.setFrom(<span class="keyword">new</span> InternetAddress(<span class="string">"987454568@qq.com"</span>));</span><br><span class="line">      <span class="comment">//2.设置邮件的单（多）个收件人</span></span><br><span class="line">      message.setRecipients(Message.RecipientType.TO, <span class="string">"xxxx@qq.com,xxxx@126.com"</span>);</span><br><span class="line">      <span class="comment">//设置邮件的主题</span></span><br><span class="line">      message.setSubject(<span class="string">"通过javamail发出！！！"</span>);</span><br><span class="line">      <span class="comment">//文本部分</span></span><br><span class="line">      message.setContent(<span class="string">"文本邮件测试"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">      message.saveChanges();</span><br><span class="line">      <span class="comment">//发送邮件</span></span><br><span class="line">      Transport.send(message);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/fastjson/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/fastjson/" itemprop="url">fastjson</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T15:29:02+08:00">
+                2020-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  375字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- JSON 操作库 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.62<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><blockquote>
+<p>Fastjson 是一个 Java 库，可以将 Java 对象转换为 JSON 格式，当然它也可以将 JSON 字符串转换为 Java 对象。</p>
+</blockquote>
+<h3 id="2-1、序列化对象"><a href="#2-1、序列化对象" class="headerlink" title="2.1、序列化对象"></a>2.1、序列化对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Building b = <span class="keyword">new</span> Building();</span><br><span class="line">    b.setName(<span class="string">"创业大厦"</span>);</span><br><span class="line">    b.setAddress(<span class="string">"天宁兰陵兰陵路26号 "</span>);</span><br><span class="line"></span><br><span class="line">    String content = JSON.toJSONString(b);</span><br><span class="line">    System.out.println(content);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2、反序列化对象"><a href="#2-2、反序列化对象" class="headerlink" title="2.2、反序列化对象"></a>2.2、反序列化对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  Building b = <span class="keyword">new</span> Building();</span><br><span class="line">  b.setName(<span class="string">"创业大厦"</span>);</span><br><span class="line">  b.setAddress(<span class="string">"天宁兰陵兰陵路26号 "</span>);</span><br><span class="line"></span><br><span class="line">  String content = JSON.toJSONString(b);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转换为一个具体的对象</span></span><br><span class="line">  Building b2 = JSON.parseObject(content, Building<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  String name = b2.getName();</span><br><span class="line">  System.out.println(name);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 特殊情况下，java系统里没有具体对象的 class ，可以反序列化为 Map</span></span><br><span class="line">  Building bInfo = JSON.parseObject(content, Building<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  String name2 = bInfo.getName();</span><br><span class="line">  System.out.println(name2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3、解析JSON对象"><a href="#2-3、解析JSON对象" class="headerlink" title="2.3、解析JSON对象"></a>2.3、解析JSON对象</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"data"</span>: &#123;</span><br><span class="line">    <span class="attr">"keyword"</span>: <span class="string">"西海情歌"</span>,</span><br><span class="line">    <span class="attr">"priority"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"qc"</span>: [</span><br><span class="line"></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"semantic"</span>: &#123;</span><br><span class="line">      <span class="attr">"curnum"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"curpage"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"list"</span>: [],</span><br><span class="line">      <span class="attr">"totalnum"</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"song"</span>: &#123;</span><br><span class="line">      <span class="attr">"curnum"</span>: <span class="number">50</span>,</span><br><span class="line">      <span class="attr">"curpage"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"list"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"albumid"</span>: <span class="number">14880</span>,</span><br><span class="line">          <span class="attr">"albummid"</span>: <span class="string">"0024RXz94OSKCa"</span>,</span><br><span class="line">          <span class="attr">"albumname"</span>: <span class="string">"刀郎Ⅲ"</span>,</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   String url = <span class="string">"https://c.y.qq.com/soso/fcgi-bin/client_search_cp?aggr=1&amp;cr=1&amp;flag_qc=0&amp;p=1&amp;n=30&amp;w=西海情歌&amp;format=json"</span>;</span><br><span class="line">   ApiAsker asker = <span class="keyword">new</span> ApiAsker();</span><br><span class="line">   String content = asker.getContent(url);</span><br><span class="line"></span><br><span class="line">   Map contentObj = JSON.parseObject(content, Map<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">   <span class="comment">// 解析嵌套的对象，获取数据</span></span><br><span class="line">   Map data = (Map) contentObj.get(<span class="string">"data"</span>);</span><br><span class="line">   Map song = (Map) data.get(<span class="string">"song"</span>);</span><br><span class="line">   List list = (List) song.get(<span class="string">"list"</span>);</span><br><span class="line"></span><br><span class="line">   String albumname = ((Map)list.get(<span class="number">0</span>)).get(<span class="string">"albumname"</span>)+<span class="string">""</span>;</span><br><span class="line">   System.out.println(<span class="string">"albumname = "</span> + albumname);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/easyexcel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/easyexcel/" itemprop="url">easyexcel</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T15:31:23+08:00">
+                2020-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  183字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><blockquote>
+<p>easyexcel 是一个 JAVA 解析 Excel 工具。</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- excel 操作库 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>easyexcel<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><h3 id="2-1、不转化为类"><a href="#2-1、不转化为类" class="headerlink" title="2.1、不转化为类"></a>2.1、不转化为类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 读取第一个sheet</span></span><br><span class="line">List&lt;Map&lt;Integer, String&gt;&gt; sheetDatas = EasyExcel.read(<span class="string">"xzq_201907.xlsx"</span>).sheet(<span class="number">0</span>).doReadSync();</span><br><span class="line"><span class="comment">// List 中每个元素表示一行</span></span><br><span class="line"><span class="keyword">for</span> (Map&lt;Integer, String&gt; rowData : sheetDatas) &#123;</span><br><span class="line">  <span class="comment">// Map 中用序号指代每一列</span></span><br><span class="line">  <span class="keyword">for</span> (Integer index : rowData.keySet()) &#123;</span><br><span class="line">    <span class="comment">// 列值</span></span><br><span class="line">    String columnValue = rowData.get(index);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2、自动转化为类"><a href="#2-2、自动转化为类" class="headerlink" title="2.2、自动转化为类"></a>2.2、自动转化为类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;DemoData&gt; sheetDatas = EasyExcel.read(<span class="string">"xzq_201907.xlsx"</span>).head(DemoData<span class="class">.<span class="keyword">class</span>).<span class="title">sheet</span>(0).<span class="title">doReadSync</span>()</span>;</span><br><span class="line">  <span class="keyword">for</span> (DemoData rowData : sheetDatas) &#123;</span><br><span class="line">    System.out.println(JSON.toJSONString(rowData));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoData</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> String code1;</span><br><span class="line">  <span class="keyword">private</span> String city1;</span><br><span class="line">  <span class="keyword">private</span> String code2;</span><br><span class="line">  <span class="keyword">private</span> String city2;</span><br><span class="line">  <span class="keyword">private</span> String code3;</span><br><span class="line">  <span class="keyword">private</span> String city3;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%A4%8D%E7%94%A8Session/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1134,1603 +2297,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/Java/Java%E7%B1%BB/java.time/Duration%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/20/Java/Java%E7%B1%BB/java.time/Duration%E7%B1%BB/" itemprop="url">Duration类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-20T11:55:22+08:00">
-                2020-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-time/" itemprop="url" rel="index">
-                    <span itemprop="name">java.time</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  89字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><table>
-<thead>
-<tr>
-<th align="center"><strong>方法</strong></th>
-<th align="center"><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>static Duration between(Temporal startInclusive, Temporal endExclusive)</strong></td>
-<td align="center">获取表示两个临时对象之间的持续时间的Duration</td>
-</tr>
-</tbody></table>
-<h2 id="2、Duration类的应用"><a href="#2、Duration类的应用" class="headerlink" title="2、Duration类的应用"></a>2、Duration类的应用</h2><h3 id="获取两个日期的间隔天数"><a href="#获取两个日期的间隔天数" class="headerlink" title="获取两个日期的间隔天数"></a>获取两个日期的间隔天数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LocalDateTime startDay = LocalDateTime.of(<span class="number">2019</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">LocalDateTime endDay = LocalDateTime.of(<span class="number">2020</span>, <span class="number">1</span>, <span class="number">15</span>, <span class="number">18</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//得到两个日期的间隔天数</span></span><br><span class="line"><span class="keyword">long</span> days = Duration.between(startDay,endDay).toDays();</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/17/Java/Java%E7%B1%BB/java.util/Map%E6%8E%A5%E5%8F%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/17/Java/Java%E7%B1%BB/java.util/Map%E6%8E%A5%E5%8F%A3/" itemprop="url">Map接口</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-17T17:08:00+08:00">
-                2020-07-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-util/" itemprop="url" rel="index">
-                    <span itemprop="name">java.util</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  487字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、分析"><a href="#1、分析" class="headerlink" title="1、分析"></a>1、分析</h2><p>Map接口中键和值一一映射. 可以通过键来获取值。</p>
-<ul>
-<li>给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。 </li>
-<li>当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常. </li>
-<li>当对象的类型和Map里元素类型不兼容的时候，就会抛出一个 ClassCastException异常。 </li>
-<li>当在不允许使用Null对象的Map中使用Null对象，会抛出一个NullPointerException 异常。 </li>
-<li>当尝试修改一个只读的Map时，会抛出一个UnsupportedOperationException异常。</li>
-</ul>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594976617431-376ad1cc-79fb-4b3f-ad89-1d32572c7580.png#align=left&display=inline&height=259&margin=%5Bobject%20Object%5D&originHeight=259&originWidth=441&size=0&status=done&style=none&width=441" alt=""></p>
-<h2 id="2、方法列表"><a href="#2、方法列表" class="headerlink" title="2、方法列表"></a>2、方法列表</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><font color=red><strong>void clear( )</strong></font></td>
-<td align="left"><em>从此映射中移除所有映射关系（可选操作）。</em></td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>boolean containsKey(Object k)</strong></font></td>
-<td align="left"><em>如果此映射包含指定键的映射关系，则返回 true。</em></td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>boolean containsValue(Object v)</strong></font></td>
-<td align="left"><em>如果此映射将一个或多个键映射到指定值，则返回 true。</em></td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Set entrySet( )</strong></font></td>
-<td align="left">返回此映射中包含的映射关系的 Set 视图。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean equals(Object obj)</strong></td>
-<td align="left">比较指定的对象与此映射是否相等。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Object get(Object k)</strong></font></td>
-<td align="left">返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 null。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean isEmpty( )</strong></td>
-<td align="left">如果此映射未包含键-值映射关系，则返回 true。</td>
-</tr>
-<tr>
-<td align="left"><strong>Set keySet( )</strong></td>
-<td align="left">返回此映射中包含的键的 Set 视图。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Object put(Object k, Object v)</strong></font></td>
-<td align="left">将指定的值与此映射中的指定键关联（可选操作）。</td>
-</tr>
-<tr>
-<td align="left"><strong>void putAll(Map m)</strong></td>
-<td align="left">从指定映射中将所有映射关系复制到此映射中（可选操作）。</td>
-</tr>
-<tr>
-<td align="left"><strong>Object remove(Object k)</strong></td>
-<td align="left">如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>int size( )</strong></font></td>
-<td align="left">返回此映射中的键-值映射关系数。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>Collection values( )</strong></font></td>
-<td align="left">返回此映射中包含的值的 Collection 视图。</td>
-</tr>
-</tbody></table>
-<h2 id="3、Map接口的相关应用"><a href="#3、Map接口的相关应用" class="headerlink" title="3、Map接口的相关应用"></a>3、Map接口的相关应用</h2><h3 id="Map的遍历"><a href="#Map的遍历" class="headerlink" title="Map的遍历"></a>Map的遍历</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer,String&gt; entry : map.entrySet())&#123; </span><br><span class="line"></span><br><span class="line">  System.out.println(<span class="string">"Key = "</span> + entry.getKey() + </span><br><span class="line">                 <span class="string">", Value = "</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/16/Java/Java%E7%B1%BB/java.time/LocalDate%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/16/Java/Java%E7%B1%BB/java.time/LocalDate%E7%B1%BB/" itemprop="url">LocalDate类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-16T16:23:58+08:00">
-                2020-07-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-time/" itemprop="url" rel="index">
-                    <span itemprop="name">java.time</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1k字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><h3 id="创建LocalDate"><a href="#创建LocalDate" class="headerlink" title="创建LocalDate"></a>创建LocalDate</h3><table>
-<thead>
-<tr>
-<th align="center"><strong>方法</strong></th>
-<th align="center"><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><font color=red><strong>static LocalDate now()</strong></font></td>
-<td align="center">获取默认时区的当前日期</td>
-</tr>
-<tr>
-<td align="center"><strong>static LocalDate now(Clock clock)</strong></td>
-<td align="center">从指定时钟获取当前日期</td>
-</tr>
-<tr>
-<td align="center"><strong>static LocalDate now(ZoneId zone)</strong></td>
-<td align="center">获取指定时区的当前日期</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>static LocalDate of(int year, int month, int dayOfMonth)</strong></font></td>
-<td align="center">根据指定的年、月、日获取LocalDate 实例</td>
-</tr>
-<tr>
-<td align="center"><strong>static LocalDate of(int year, Month month, int dayOfMonth)</strong></td>
-<td align="center">根据指定的年、月、日获取LocalDate 实例</td>
-</tr>
-</tbody></table>
-<h3 id="获取、修改年月日等"><a href="#获取、修改年月日等" class="headerlink" title="获取、修改年月日等"></a>获取、修改年月日等</h3><table>
-<thead>
-<tr>
-<th align="center"><strong>方法</strong></th>
-<th align="center"><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><font color=red><strong>int getYear()</strong></font></td>
-<td align="center">获取年份</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>int getMonth().getValue()</strong></font></td>
-<td align="center">获取月份</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>int getDayOfMonth()</strong></font></td>
-<td align="center">获取日期在该月是第几天</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>int getDayOfWeek().getValue()</strong></font></td>
-<td align="center">获取日期是星期几</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>int getDayOfYear()</strong></font></td>
-<td align="center">获取日期在该年是第几天</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>LocalDate withYear(int year)</strong></font></td>
-<td align="center">修改该日期的年份</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>LocalDate withMonth(int month)</strong></font></td>
-<td align="center">修改该日期的月份</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>LocalDate withDayOfMonth(int dayOfMonth)</strong></font></td>
-<td align="center">修改该日期在当月的天数</td>
-</tr>
-</tbody></table>
-<h3 id="加减天、周、月、年"><a href="#加减天、周、月、年" class="headerlink" title="加减天、周、月、年"></a>加减天、周、月、年</h3><table>
-<thead>
-<tr>
-<th align="center"><strong>方法</strong></th>
-<th align="center"><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>LocalDate plusDays(long daysToAdd)</strong></td>
-<td align="center">返回增加了*天的LocalDate副本</td>
-</tr>
-<tr>
-<td align="center"><strong>LocalDate plusWeeks(long weeksToAdd)</strong></td>
-<td align="center">返回增加了*周的LocalDate副本</td>
-</tr>
-<tr>
-<td align="center"><strong>LocalDate plusMonths(long monthsToAdd)</strong></td>
-<td align="center">返回增加了*月的LocalDate副本</td>
-</tr>
-<tr>
-<td align="center"><strong>LocalDate plusYears(long yearsToAdd)</strong></td>
-<td align="center">返回增加了*年的LocalDate副本</td>
-</tr>
-<tr>
-<td align="center"><strong>LocalDate minusDays(long daysToSubtract)</strong></td>
-<td align="center">返回减少了*天的LocalDate副本</td>
-</tr>
-<tr>
-<td align="center"><strong>LocalDate minusWeeks(long weeksToSubtract)</strong></td>
-<td align="center">返回减少了*周的LocalDate副本</td>
-</tr>
-<tr>
-<td align="center"><strong>LocalDate minusMonths(long monthsToSubtract)</strong></td>
-<td align="center">返回减少了*月的LocalDate副本</td>
-</tr>
-<tr>
-<td align="center"><strong>LocalDate minusYears(long yearsToSubtract)</strong></td>
-<td align="center">返回减少了*年的LocalDate副本</td>
-</tr>
-</tbody></table>
-<h3 id="日期判断、比较"><a href="#日期判断、比较" class="headerlink" title="日期判断、比较"></a>日期判断、比较</h3><table>
-<thead>
-<tr>
-<th align="center"><strong>方法</strong></th>
-<th align="center"><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>boolean isLeapYear()</strong></td>
-<td align="center">检查是否闰年</td>
-</tr>
-<tr>
-<td align="center"><strong>int lengthOfMonth()</strong></td>
-<td align="center">返回日期所在月份共有几天</td>
-</tr>
-<tr>
-<td align="center"><strong>int lengthOfYear()</strong></td>
-<td align="center">返回日期所在年份共有几天</td>
-</tr>
-<tr>
-<td align="center"><strong>boolean isEqual(ChronoLocalDate other)</strong></td>
-<td align="center">日期与另一个日期比较</td>
-</tr>
-<tr>
-<td align="center"><strong>boolean isAfter(ChronoLocalDate other)</strong></td>
-<td align="center">检查日期是否在指定日期之后</td>
-</tr>
-<tr>
-<td align="center"><strong>boolean isBefore(ChronoLocalDate other)</strong></td>
-<td align="center">检查日期是否在指定日期之前</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>int compareTo(ChronoLocalDate other)</strong></font></td>
-<td align="center">比较该日期与other日期的大小，返回正数，那么当前对象时间较晚（数字较大）</td>
-</tr>
-</tbody></table>
-<h3 id="日期转换"><a href="#日期转换" class="headerlink" title="日期转换"></a>日期转换</h3><table>
-<thead>
-<tr>
-<th align="center"><strong>方法</strong></th>
-<th align="center"><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><font color=red><strong>String format(DateTimeFormatter formatter)</strong></font></td>
-<td align="center">使用特定格式化形式将LocalDate转为字符串</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>static LocalDate parse(CharSequence text)</strong></font></td>
-<td align="center">从文本字符串获取LocalDate实例</td>
-</tr>
-<tr>
-<td align="center"><font color=red><strong>static LocalDate parse(CharSequence text, DateTimeFormatter formatter)</strong></font></td>
-<td align="center">使用特定格式化形式从文本字符串获取LocalDate实例</td>
-</tr>
-</tbody></table>
-<h2 id="2、LocalDate的相关应用"><a href="#2、LocalDate的相关应用" class="headerlink" title="2、LocalDate的相关应用"></a>2、LocalDate的相关应用</h2><h3 id="日期与字符串的转化"><a href="#日期与字符串的转化" class="headerlink" title="日期与字符串的转化"></a>日期与字符串的转化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line">   <span class="comment">// 打印默认的时间数据</span></span><br><span class="line">   System.out.println(time.toString());</span><br><span class="line">   <span class="comment">// 创建一个格式化方式</span></span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy年MM月dd"</span>);</span><br><span class="line">   <span class="comment">// 执行时间的格式化处理，得到期望格式的时间字符串</span></span><br><span class="line">   String timeStr = df.format(time);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="comment">// 定义一个时间字符串，日期是2019年1月1日</span></span><br><span class="line">   String date = <span class="string">"2019/01/01"</span>;</span><br><span class="line">   DateTimeFormatter df = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd"</span>);</span><br><span class="line">   <span class="comment">// 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期</span></span><br><span class="line">   LocalDate date2 = LocalDate.parse(date,df);</span><br><span class="line">   <span class="comment">// 打印出日期</span></span><br><span class="line">   System.out.println(date2.toString());</span><br></pre></td></tr></table></figure>
-<h3 id="获取年、月、日、星期"><a href="#获取年、月、日、星期" class="headerlink" title="获取年、月、日、星期"></a>获取年、月、日、星期</h3><blockquote>
-<p>获取月、星期      重点关注</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">LocalDate time = LocalDate.now();</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在年</span></span><br><span class="line">   <span class="keyword">int</span> year = time.getYear();</span><br><span class="line">   System.out.println(<span class="string">"当前年份 "</span> + year);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在月</span></span><br><span class="line">   <span class="keyword">int</span> month = time.getMonth().getValue();</span><br><span class="line">   System.out.println(<span class="string">"当前月份 "</span> + month);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间在这个月中的天数</span></span><br><span class="line">   <span class="keyword">int</span> day = time.getDayOfMonth();</span><br><span class="line">   System.out.println(<span class="string">"当前日 "</span> + day);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 得到当前时间所在星期数</span></span><br><span class="line">   <span class="keyword">int</span> dayOfWeek = time.getDayOfWeek().getValue();</span><br><span class="line">   System.out.println(<span class="string">"当前星期 "</span> + dayOfWeek);</span><br></pre></td></tr></table></figure>
-<h3 id="日期的加减运算"><a href="#日期的加减运算" class="headerlink" title="日期的加减运算"></a>日期的加减运算</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">LocalDate now = LocalDate.now();</span><br><span class="line">System.out.println(<span class="string">"当前："</span> + now.toString());</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"加法运算"</span>);</span><br><span class="line">System.out.println(<span class="string">"加1天："</span> + now.plusDays(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1周："</span> + now.plusWeeks(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1月："</span> + now.plusMonths(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"加1年："</span> + now.plusYears(<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">"减法运算"</span>);</span><br><span class="line">System.out.println(<span class="string">"减1天："</span> + now.minusDays(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1周："</span> + now.minusWeeks(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1月："</span> + now.minusMonths(<span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"减1年："</span> + now.minusYears(<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-<h3 id="日期之间的比较"><a href="#日期之间的比较" class="headerlink" title="日期之间的比较"></a>日期之间的比较</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">LocalDate now = LocalDate.now();</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 可以对两个 LocalDate 进行比较，</span></span><br><span class="line">   <span class="comment">// 可以判断一个日期是否在另一个日期之前、之后或同一天，</span></span><br><span class="line">   <span class="comment">// 或者判断两个日期是否是同年同月同日。</span></span><br><span class="line">   <span class="keyword">boolean</span> isBefore = now.minusDays(<span class="number">1</span>).isBefore(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天之前："</span> + isBefore);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">boolean</span> isAfter = now.plusDays(<span class="number">1</span>).isAfter(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天之后："</span> + isAfter);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 判断是否是当天</span></span><br><span class="line">   <span class="keyword">boolean</span> sameDate = now.isEqual(LocalDate.now());</span><br><span class="line">   System.out.println(<span class="string">"是否在当天："</span> + sameDate);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/16/Java/Java%E7%B1%BB/java.io/File%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/16/Java/Java%E7%B1%BB/java.io/File%E7%B1%BB/" itemprop="url">File类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-16T17:12:48+08:00">
-                2020-07-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-io/" itemprop="url" rel="index">
-                    <span itemprop="name">java.io</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.1k字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、构造函数"><a href="#1、构造函数" class="headerlink" title="1、构造函数"></a>1、构造函数</h2><blockquote>
-<p>Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。<br>File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。</p>
-</blockquote>
-<h3 id="File-File-parent-String-child"><a href="#File-File-parent-String-child" class="headerlink" title="File(File parent, String child)"></a>File(File parent, String child)</h3><blockquote>
-<p>通过给定的 <code>parent</code> 父文件对象和 <code>child</code> 子路径名字符串创建一个新的File实例。</p>
-</blockquote>
-<h3 id="File-String-pathname"><a href="#File-String-pathname" class="headerlink" title="File(String pathname)"></a>File(String pathname)</h3><blockquote>
-<p>通过将给定路径名字符串 <code>pathname</code> 转换成抽象路径名来创建一个新 File 实例。</p>
-</blockquote>
-<h3 id="File-String-parent-String-child"><a href="#File-String-parent-String-child" class="headerlink" title="File(String parent, String child)"></a>File(String parent, String child)</h3><blockquote>
-<p>根据 <code>parent</code>  路径名字符串和 <code>child</code>  路径名字符串创建一个新 File 实例。</p>
-</blockquote>
-<h3 id="File-URI-uri"><a href="#File-URI-uri" class="headerlink" title="File(URI uri)"></a>File(URI uri)</h3><blockquote>
-<p>通过将给定的 <code>file: URI</code>  转换成一个抽象路径名来创建一个新的 File 实例。</p>
-</blockquote>
-<h2 id="2、方法列表"><a href="#2、方法列表" class="headerlink" title="2、方法列表"></a>2、方法列表</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><font color=red><strong>public String getName()</strong></font></td>
-<td align="left">返回由此抽象路径名表示的文件或目录的名称。</td>
-</tr>
-<tr>
-<td align="left"><strong>public String getParent()</strong></td>
-<td align="left">返回此抽象路径名的父路径名的路径名字符串，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
-</tr>
-<tr>
-<td align="left"><strong>public File getParentFile()</strong></td>
-<td align="left">返回此抽象路径名的父路径名的抽象路径名，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public String getPath()</strong></font></td>
-<td align="left">将此抽象路径名转换为一个路径名字符串。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean isAbsolute()</strong></td>
-<td align="left">测试此抽象路径名是否为绝对路径名。</td>
-</tr>
-<tr>
-<td align="left"><strong>public String getAbsolutePath()</strong></td>
-<td align="left">返回抽象路径名的绝对路径名字符串。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean canRead()</strong></td>
-<td align="left">测试应用程序是否可以读取此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean canWrite()</strong></td>
-<td align="left">测试应用程序是否可以修改此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean exists()</strong></font></td>
-<td align="left">测试此抽象路径名表示的文件或目录是否存在。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean isDirectory()</strong></td>
-<td align="left">测试此抽象路径名表示的文件是否是一个目录。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean isFile()</strong></td>
-<td align="left">测试此抽象路径名表示的文件是否是一个标准文件。</td>
-</tr>
-<tr>
-<td align="left"><strong>public long lastModified()</strong></td>
-<td align="left">返回此抽象路径名表示的文件最后一次被修改的时间。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public long length()</strong></font></td>
-<td align="left">返回由此抽象路径名表示的文件的长度。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean createNewFile() throws IOException</strong></font></td>
-<td align="left">当且仅当不存在具有此抽象路径名指定的名称的文件时，原子地创建由此抽象路径名指定的一个新的空文件。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean delete()</strong></font></td>
-<td align="left">删除此抽象路径名表示的文件或目录。</td>
-</tr>
-<tr>
-<td align="left"><strong>public void deleteOnExit()</strong></td>
-<td align="left">在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public String[] list()</strong></font></td>
-<td align="left">返回由此抽象路径名所表示的目录中的文件和目录的名称所组成字符串数组。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public String[] list(FilenameFilter filter)</strong></font></td>
-<td align="left">返回由包含在目录中的文件和目录的名称所组成的字符串数组，这一目录是通过满足指定过滤器的抽象路径名来表示的。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public File[] listFiles()</strong></font></td>
-<td align="left">返回一个抽象路径名数组，这些路径名表示此抽象路径名所表示目录中的文件。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public File[] listFiles(FileFilter filter)</strong></font></td>
-<td align="left">返回表示此抽象路径名所表示目录中的文件和目录的抽象路径名数组，这些路径名满足特定过滤器。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean mkdir()</strong></td>
-<td align="left">创建此抽象路径名指定的目录。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean mkdirs()</strong></font></td>
-<td align="left">创建此抽象路径名指定的目录，包括创建必需但不存在的父目录。创建整个目录树。</td>
-</tr>
-<tr>
-<td align="left"><font color=red><strong>public boolean renameTo(File dest)</strong></font></td>
-<td align="left">重新命名此抽象路径名表示的文件。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean setLastModified(long time)</strong></td>
-<td align="left">设置由此抽象路径名所指定的文件或目录的最后一次修改时间。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean setReadOnly()</strong></td>
-<td align="left">标记此抽象路径名指定的文件或目录，以便只可对其进行读操作。</td>
-</tr>
-<tr>
-<td align="left"><strong>public static File createTempFile(String prefix, String suffix, File directory) throws IOException</strong></td>
-<td align="left">在指定目录中创建一个新的空文件，使用给定的前缀和后缀字符串生成其名称。</td>
-</tr>
-<tr>
-<td align="left"><strong>public static File createTempFile(String prefix, String suffix) throws IOException</strong></td>
-<td align="left">在默认临时文件目录中创建一个空文件，使用给定前缀和后缀生成其名称。</td>
-</tr>
-<tr>
-<td align="left"><strong>public int compareTo(File pathname)</strong></td>
-<td align="left">按字母顺序比较两个抽象路径名。</td>
-</tr>
-<tr>
-<td align="left"><strong>public int compareTo(Object o)</strong></td>
-<td align="left">按字母顺序比较抽象路径名与给定对象。</td>
-</tr>
-<tr>
-<td align="left"><strong>public boolean equals(Object obj)</strong></td>
-<td align="left">测试此抽象路径名与给定对象是否相等。</td>
-</tr>
-<tr>
-<td align="left"><strong>public String toString()</strong></td>
-<td align="left">返回此抽象路径名的路径名字符串。</td>
-</tr>
-</tbody></table>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/15/Java/Java%E7%B1%BB/java.lang/Math%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/15/Java/Java%E7%B1%BB/java.lang/Math%E7%B1%BB/" itemprop="url">Math类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-15T13:51:37+08:00">
-                2020-07-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-lang/" itemprop="url" rel="index">
-                    <span itemprop="name">java.lang</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  74字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color=red><strong>double类型</strong></font>的随机数，随机数范围为<font color=red><strong>[0,1)</strong></font>。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
-
-<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/" itemprop="url">Arrays类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-19T15:16:20+08:00">
-                2020-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-util/" itemprop="url" rel="index">
-                    <span itemprop="name">java.util</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  459字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><p>sort()方法</p>
-<h2 id="2、Arrays类的相关应用"><a href="#2、Arrays类的相关应用" class="headerlink" title="2、Arrays类的相关应用"></a>2、Arrays类的相关应用</h2><h3 id="数组转为List"><a href="#数组转为List" class="headerlink" title="数组转为List"></a>数组转为List</h3><p>利用<code>java.util.Arrays</code>类的<code>asList()</code>方法,该方法无法对<font color=red><strong>基本类型数组</strong></font>进行转换。<font color=red><strong>只能转换对象数组</strong></font>。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 数字数组</span></span><br><span class="line">  Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;Integer&gt; lists = Arrays.asList(intArr);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;String&gt; lists = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转化数组为 list2</span></span><br><span class="line">  List&lt;String&gt; lists2 = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>,<span class="string">"小李"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合2的长度是: "</span> + lists2.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h3><p>利用<code>java.util.Arrays</code>类的<code>sort()</code>方法就可以实现数组的自定义排序，默认是升序排序。</p>
-<blockquote>
-<p>static <T> void sort(T[] a, Comparator&lt; super T&gt; c):</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 自定义排序</span></span><br><span class="line">    Arrays.sort(intArr, <span class="keyword">new</span> Comparator&lt;Integer&gt;()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span></span>&#123;</span><br><span class="line">            <span class="comment">// 判断 o2&gt;o1，执行降序排序</span></span><br><span class="line">            <span class="keyword">return</span> o2-o1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"Integer Array: "</span></span><br><span class="line">                       + Arrays.toString(intArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组转为字符串"><a href="#数组转为字符串" class="headerlink" title="数组转为字符串"></a>数组转为字符串</h3><p>利用<code>java.util.Arrays</code>类的<code>toString()</code>方法用于转换数组（包含基本类型数组）为字符串</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span>[] boolArr = <span class="keyword">new</span> <span class="keyword">boolean</span>[] &#123; <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> &#125;;</span><br><span class="line">    <span class="keyword">byte</span>[] byteArr = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line">    <span class="keyword">char</span>[] charArr = <span class="keyword">new</span> <span class="keyword">char</span>[] &#123; <span class="string">'g'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'k'</span>, <span class="string">'s'</span> &#125;;</span><br><span class="line">    <span class="keyword">double</span>[] dblArr = <span class="keyword">new</span> <span class="keyword">double</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">float</span>[] floatArr = <span class="keyword">new</span> <span class="keyword">float</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span>[] intArr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">long</span>[] lomgArr = <span class="keyword">new</span> <span class="keyword">long</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    Object[] objArr = <span class="keyword">new</span> Object[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">short</span>[] shortArr = <span class="keyword">new</span> <span class="keyword">short</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line">    System.out.println(Arrays.toString(boolArr));</span><br><span class="line">    System.out.println(Arrays.toString(byteArr));</span><br><span class="line">    System.out.println(Arrays.toString(charArr));</span><br><span class="line">    System.out.println(Arrays.toString(dblArr));</span><br><span class="line">    System.out.println(Arrays.toString(floatArr));</span><br><span class="line">    System.out.println(Arrays.toString(intArr));</span><br><span class="line">    System.out.println(Arrays.toString(lomgArr));</span><br><span class="line">    System.out.println(Arrays.toString(objArr));</span><br><span class="line">    System.out.println(Arrays.toString(shortArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
   </nav>
 
 
@@ -2782,7 +2353,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2862,7 +2433,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10k</span>
+    <span title="Site words total count">12.7k</span>
   
 </div>
 
@@ -2923,6 +2494,9 @@
 
 
 
+  
+  
+
 
 
 
@@ -2962,6 +2536,16 @@
   
   
     <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
   
 
 
