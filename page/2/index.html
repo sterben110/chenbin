@@ -261,6 +261,397 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/fastjson/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/fastjson/" itemprop="url">fastjson</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T15:29:02+08:00">
+                2020-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  375字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- JSON 操作库 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.62<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><blockquote>
+<p>Fastjson 是一个 Java 库，可以将 Java 对象转换为 JSON 格式，当然它也可以将 JSON 字符串转换为 Java 对象。</p>
+</blockquote>
+<h3 id="2-1、序列化对象"><a href="#2-1、序列化对象" class="headerlink" title="2.1、序列化对象"></a>2.1、序列化对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Building b = <span class="keyword">new</span> Building();</span><br><span class="line">    b.setName(<span class="string">"创业大厦"</span>);</span><br><span class="line">    b.setAddress(<span class="string">"天宁兰陵兰陵路26号 "</span>);</span><br><span class="line"></span><br><span class="line">    String content = JSON.toJSONString(b);</span><br><span class="line">    System.out.println(content);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2、反序列化对象"><a href="#2-2、反序列化对象" class="headerlink" title="2.2、反序列化对象"></a>2.2、反序列化对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  Building b = <span class="keyword">new</span> Building();</span><br><span class="line">  b.setName(<span class="string">"创业大厦"</span>);</span><br><span class="line">  b.setAddress(<span class="string">"天宁兰陵兰陵路26号 "</span>);</span><br><span class="line"></span><br><span class="line">  String content = JSON.toJSONString(b);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转换为一个具体的对象</span></span><br><span class="line">  Building b2 = JSON.parseObject(content, Building<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  String name = b2.getName();</span><br><span class="line">  System.out.println(name);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 特殊情况下，java系统里没有具体对象的 class ，可以反序列化为 Map</span></span><br><span class="line">  Building bInfo = JSON.parseObject(content, Building<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  String name2 = bInfo.getName();</span><br><span class="line">  System.out.println(name2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3、解析JSON对象"><a href="#2-3、解析JSON对象" class="headerlink" title="2.3、解析JSON对象"></a>2.3、解析JSON对象</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"data"</span>: &#123;</span><br><span class="line">    <span class="attr">"keyword"</span>: <span class="string">"西海情歌"</span>,</span><br><span class="line">    <span class="attr">"priority"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"qc"</span>: [</span><br><span class="line"></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"semantic"</span>: &#123;</span><br><span class="line">      <span class="attr">"curnum"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"curpage"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"list"</span>: [],</span><br><span class="line">      <span class="attr">"totalnum"</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"song"</span>: &#123;</span><br><span class="line">      <span class="attr">"curnum"</span>: <span class="number">50</span>,</span><br><span class="line">      <span class="attr">"curpage"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"list"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"albumid"</span>: <span class="number">14880</span>,</span><br><span class="line">          <span class="attr">"albummid"</span>: <span class="string">"0024RXz94OSKCa"</span>,</span><br><span class="line">          <span class="attr">"albumname"</span>: <span class="string">"刀郎Ⅲ"</span>,</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   String url = <span class="string">"https://c.y.qq.com/soso/fcgi-bin/client_search_cp?aggr=1&amp;cr=1&amp;flag_qc=0&amp;p=1&amp;n=30&amp;w=西海情歌&amp;format=json"</span>;</span><br><span class="line">   ApiAsker asker = <span class="keyword">new</span> ApiAsker();</span><br><span class="line">   String content = asker.getContent(url);</span><br><span class="line"></span><br><span class="line">   Map contentObj = JSON.parseObject(content, Map<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">   <span class="comment">// 解析嵌套的对象，获取数据</span></span><br><span class="line">   Map data = (Map) contentObj.get(<span class="string">"data"</span>);</span><br><span class="line">   Map song = (Map) data.get(<span class="string">"song"</span>);</span><br><span class="line">   List list = (List) song.get(<span class="string">"list"</span>);</span><br><span class="line"></span><br><span class="line">   String albumname = ((Map)list.get(<span class="number">0</span>)).get(<span class="string">"albumname"</span>)+<span class="string">""</span>;</span><br><span class="line">   System.out.println(<span class="string">"albumname = "</span> + albumname);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/easyexcel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/easyexcel/" itemprop="url">easyexcel</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T15:31:23+08:00">
+                2020-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  183字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer"/>
+
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><blockquote>
+<p>easyexcel 是一个 JAVA 解析 Excel 工具。</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- excel 操作库 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>easyexcel<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><h3 id="2-1、不转化为类"><a href="#2-1、不转化为类" class="headerlink" title="2.1、不转化为类"></a>2.1、不转化为类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 读取第一个sheet</span></span><br><span class="line">List&lt;Map&lt;Integer, String&gt;&gt; sheetDatas = EasyExcel.read(<span class="string">"xzq_201907.xlsx"</span>).sheet(<span class="number">0</span>).doReadSync();</span><br><span class="line"><span class="comment">// List 中每个元素表示一行</span></span><br><span class="line"><span class="keyword">for</span> (Map&lt;Integer, String&gt; rowData : sheetDatas) &#123;</span><br><span class="line">  <span class="comment">// Map 中用序号指代每一列</span></span><br><span class="line">  <span class="keyword">for</span> (Integer index : rowData.keySet()) &#123;</span><br><span class="line">    <span class="comment">// 列值</span></span><br><span class="line">    String columnValue = rowData.get(index);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2、自动转化为类"><a href="#2-2、自动转化为类" class="headerlink" title="2.2、自动转化为类"></a>2.2、自动转化为类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;DemoData&gt; sheetDatas = EasyExcel.read(<span class="string">"xzq_201907.xlsx"</span>).head(DemoData<span class="class">.<span class="keyword">class</span>).<span class="title">sheet</span>(0).<span class="title">doReadSync</span>()</span>;</span><br><span class="line">  <span class="keyword">for</span> (DemoData rowData : sheetDatas) &#123;</span><br><span class="line">    System.out.println(JSON.toJSONString(rowData));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoData</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> String code1;</span><br><span class="line">  <span class="keyword">private</span> String city1;</span><br><span class="line">  <span class="keyword">private</span> String code2;</span><br><span class="line">  <span class="keyword">private</span> String city2;</span><br><span class="line">  <span class="keyword">private</span> String code3;</span><br><span class="line">  <span class="keyword">private</span> String city3;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%A4%8D%E7%94%A8Session/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -903,203 +1294,6 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   List&lt;Student&gt; ar = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">111</span>, <span class="string">"bbbb"</span>, <span class="string">"london"</span>));</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">131</span>, <span class="string">"aaaa"</span>, <span class="string">"nyc"</span>));</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">121</span>, <span class="string">"cccc"</span>, <span class="string">"jaipur"</span>));</span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"原始集合"</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ar.size(); i++) &#123;</span><br><span class="line">     System.out.println(ar.get(i));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 实现升序排序</span></span><br><span class="line">   Collections.sort(ar, <span class="keyword">new</span> Comparator&lt;Student&gt;()&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student a, Student b)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 第一个参数的学号 &gt; 第二个参数的学号</span></span><br><span class="line">       <span class="keyword">return</span> a.getRollNo() - b.getRollNo();</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"\n排序后的集合"</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ar.size(); i++) &#123;</span><br><span class="line">     System.out.println(ar.get(i));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <h3 id="List的过滤"><a href="#List的过滤" class="headerlink" title="List的过滤"></a>List的过滤</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountingRecord</span> </span>&#123;</span><br><span class="line">  <span class="comment">//创建时间</span></span><br><span class="line">  <span class="keyword">private</span> String createTime;</span><br><span class="line">  <span class="comment">//记录时间</span></span><br><span class="line">  <span class="keyword">private</span> Date time;</span><br><span class="line">  <span class="comment">//金额</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> amount;</span><br><span class="line">  <span class="comment">//收入或支出</span></span><br><span class="line">  <span class="keyword">private</span> String type;</span><br><span class="line">  <span class="comment">//分类</span></span><br><span class="line">  <span class="keyword">private</span> String category;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//List&lt;AccountingRecord&gt; records=new ArrayList();</span></span><br><span class="line">  List&lt;AccountingRecord&gt; filterd=records.stream().filter(str-&gt;str.getAmount()&gt;amount).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/Java/Java%E7%B1%BB/java.util/Random%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/18/Java/Java%E7%B1%BB/java.util/Random%E7%B1%BB/" itemprop="url">Random类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-18T13:13:28+08:00">
-                2020-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-util/" itemprop="url" rel="index">
-                    <span itemprop="name">java.util</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  95字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h2 id="int-nextInt-int-n-方法"><a href="#int-nextInt-int-n-方法" class="headerlink" title="int nextInt(int n)方法"></a>int nextInt(int n)方法</h2><p>int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: <font color=red><strong>[0,n)</strong></font></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化随机数</span></span><br><span class="line">Random r = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="comment">// 得到0-7之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到 0-8 之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到50-100之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">51</span>)+<span class="number">50</span>;</span><br><span class="line"><span class="comment">// 这个 51 = 100 - 50 + 1</span></span><br></pre></td></tr></table></figure>
           
         
       
@@ -2515,217 +2709,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/" itemprop="url">Arrays类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-19T15:16:20+08:00">
-                2020-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-util/" itemprop="url" rel="index">
-                    <span itemprop="name">java.util</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  459字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer"/>
-
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><p>sort()方法</p>
-<h2 id="2、Arrays类的相关应用"><a href="#2、Arrays类的相关应用" class="headerlink" title="2、Arrays类的相关应用"></a>2、Arrays类的相关应用</h2><h3 id="数组转为List"><a href="#数组转为List" class="headerlink" title="数组转为List"></a>数组转为List</h3><p>利用<code>java.util.Arrays</code>类的<code>asList()</code>方法,该方法无法对<font color=red><strong>基本类型数组</strong></font>进行转换。<font color=red><strong>只能转换对象数组</strong></font>。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 数字数组</span></span><br><span class="line">  Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;Integer&gt; lists = Arrays.asList(intArr);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;String&gt; lists = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转化数组为 list2</span></span><br><span class="line">  List&lt;String&gt; lists2 = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>,<span class="string">"小李"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合2的长度是: "</span> + lists2.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h3><p>利用<code>java.util.Arrays</code>类的<code>sort()</code>方法就可以实现数组的自定义排序，默认是升序排序。</p>
-<blockquote>
-<p>static <T> void sort(T[] a, Comparator&lt; super T&gt; c):</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 自定义排序</span></span><br><span class="line">    Arrays.sort(intArr, <span class="keyword">new</span> Comparator&lt;Integer&gt;()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span></span>&#123;</span><br><span class="line">            <span class="comment">// 判断 o2&gt;o1，执行降序排序</span></span><br><span class="line">            <span class="keyword">return</span> o2-o1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"Integer Array: "</span></span><br><span class="line">                       + Arrays.toString(intArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组转为字符串"><a href="#数组转为字符串" class="headerlink" title="数组转为字符串"></a>数组转为字符串</h3><p>利用<code>java.util.Arrays</code>类的<code>toString()</code>方法用于转换数组（包含基本类型数组）为字符串</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span>[] boolArr = <span class="keyword">new</span> <span class="keyword">boolean</span>[] &#123; <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> &#125;;</span><br><span class="line">    <span class="keyword">byte</span>[] byteArr = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line">    <span class="keyword">char</span>[] charArr = <span class="keyword">new</span> <span class="keyword">char</span>[] &#123; <span class="string">'g'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'k'</span>, <span class="string">'s'</span> &#125;;</span><br><span class="line">    <span class="keyword">double</span>[] dblArr = <span class="keyword">new</span> <span class="keyword">double</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">float</span>[] floatArr = <span class="keyword">new</span> <span class="keyword">float</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span>[] intArr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">long</span>[] lomgArr = <span class="keyword">new</span> <span class="keyword">long</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    Object[] objArr = <span class="keyword">new</span> Object[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">short</span>[] shortArr = <span class="keyword">new</span> <span class="keyword">short</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line">    System.out.println(Arrays.toString(boolArr));</span><br><span class="line">    System.out.println(Arrays.toString(byteArr));</span><br><span class="line">    System.out.println(Arrays.toString(charArr));</span><br><span class="line">    System.out.println(Arrays.toString(dblArr));</span><br><span class="line">    System.out.println(Arrays.toString(floatArr));</span><br><span class="line">    System.out.println(Arrays.toString(intArr));</span><br><span class="line">    System.out.println(Arrays.toString(lomgArr));</span><br><span class="line">    System.out.println(Arrays.toString(objArr));</span><br><span class="line">    System.out.println(Arrays.toString(shortArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2862,7 +2845,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.9k</span>
+    <span title="Site words total count">14.5k</span>
   
 </div>
 
