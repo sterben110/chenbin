@@ -4,7 +4,6 @@ date: 2020-07-08 17:24:39
 categories: Hexo
 toc: true
 ---
-<meta name="referrer" content="no-referrer"/>
 
 # 一、Hexo定义
 hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。
@@ -64,7 +63,7 @@ hexo generate
 hexo deploy
 ```
 作用是把生成的文件部署到我们的博客上，可以简写为`hexo d`，发布后，我们就可以看到我们的博客变成了这样：
-![](https://cdn.nlark.com/yuque/0/2020/png/437282/1594185106908-7ab390a4-e0fc-45bc-a0c0-4b04b20d7392.png#align=left&display=inline&height=1302&margin=%5Bobject%20Object%5D&originHeight=1302&originWidth=2524&size=0&status=done&style=none&width=2524)
+![](https://cdn.nlark.com/yuque/0/2020/png/437282/1594185106908-7ab390a4-e0fc-45bc-a0c0-4b04b20d7392.png#align=left&display=inline&height=326&margin=%5Bobject%20Object%5D&originHeight=1302&originWidth=2524&size=0&status=done&style=none&width=631)
 ## hexo clean
 ```
 hexo clean

@@ -6,7 +6,7 @@ categories: Hexo
 ---
 <meta name="referrer" content="no-referrer"/>
 
-## hexo引用外网的图片不显示
+## 1、hexo引用外网的图片不显示
 方法其实很简单，只需要文章的头部如下图所示位置添加`<meta name="referrer" content="no-referrer"/>`这一句话就可以完美解决问题。
 ```markdown
 ---

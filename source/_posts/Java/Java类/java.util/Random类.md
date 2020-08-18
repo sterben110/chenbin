@@ -9,7 +9,7 @@ categories:
 ---
 <meta name="referrer" content="no-referrer"/>
 
-## int nextInt(int n)方法
+## 1、int nextInt(int n)方法
 int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: <font color=red>**[0,n)**</font>
 ```java
 // 实例化随机数
