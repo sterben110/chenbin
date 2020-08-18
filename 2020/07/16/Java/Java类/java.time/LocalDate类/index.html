@@ -98,7 +98,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":20,"b2t":true,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":20,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -143,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -406,7 +406,7 @@
       
 
       
-        <meta name="referrer" content="no-referrer"/>
+        <meta name="referrer" content="no-referrer">
 
 <h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><h3 id="创建LocalDate"><a href="#创建LocalDate" class="headerlink" title="创建LocalDate"></a>创建LocalDate</h3><table>
 <thead>
@@ -416,7 +416,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><font color=red><strong>static LocalDate now()</strong></font></td>
+<td align="center"><font color="red"><strong>static LocalDate now()</strong></font></td>
 <td align="center">获取默认时区的当前日期</td>
 </tr>
 <tr>
@@ -428,7 +428,7 @@
 <td align="center">获取指定时区的当前日期</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>static LocalDate of(int year, int month, int dayOfMonth)</strong></font></td>
+<td align="center"><font color="red"><strong>static LocalDate of(int year, int month, int dayOfMonth)</strong></font></td>
 <td align="center">根据指定的年、月、日获取LocalDate 实例</td>
 </tr>
 <tr>
@@ -444,35 +444,35 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><font color=red><strong>int getYear()</strong></font></td>
+<td align="center"><font color="red"><strong>int getYear()</strong></font></td>
 <td align="center">获取年份</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>int getMonth().getValue()</strong></font></td>
+<td align="center"><font color="red"><strong>int getMonth().getValue()</strong></font></td>
 <td align="center">获取月份</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>int getDayOfMonth()</strong></font></td>
+<td align="center"><font color="red"><strong>int getDayOfMonth()</strong></font></td>
 <td align="center">获取日期在该月是第几天</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>int getDayOfWeek().getValue()</strong></font></td>
+<td align="center"><font color="red"><strong>int getDayOfWeek().getValue()</strong></font></td>
 <td align="center">获取日期是星期几</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>int getDayOfYear()</strong></font></td>
+<td align="center"><font color="red"><strong>int getDayOfYear()</strong></font></td>
 <td align="center">获取日期在该年是第几天</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>LocalDate withYear(int year)</strong></font></td>
+<td align="center"><font color="red"><strong>LocalDate withYear(int year)</strong></font></td>
 <td align="center">修改该日期的年份</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>LocalDate withMonth(int month)</strong></font></td>
+<td align="center"><font color="red"><strong>LocalDate withMonth(int month)</strong></font></td>
 <td align="center">修改该日期的月份</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>LocalDate withDayOfMonth(int dayOfMonth)</strong></font></td>
+<td align="center"><font color="red"><strong>LocalDate withDayOfMonth(int dayOfMonth)</strong></font></td>
 <td align="center">修改该日期在当月的天数</td>
 </tr>
 </tbody></table>
@@ -548,7 +548,7 @@
 <td align="center">检查日期是否在指定日期之前</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>int compareTo(ChronoLocalDate other)</strong></font></td>
+<td align="center"><font color="red"><strong>int compareTo(ChronoLocalDate other)</strong></font></td>
 <td align="center">比较该日期与other日期的大小，返回正数，那么当前对象时间较晚（数字较大）</td>
 </tr>
 </tbody></table>
@@ -560,15 +560,15 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"><font color=red><strong>String format(DateTimeFormatter formatter)</strong></font></td>
+<td align="center"><font color="red"><strong>String format(DateTimeFormatter formatter)</strong></font></td>
 <td align="center">使用特定格式化形式将LocalDate转为字符串</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>static LocalDate parse(CharSequence text)</strong></font></td>
+<td align="center"><font color="red"><strong>static LocalDate parse(CharSequence text)</strong></font></td>
 <td align="center">从文本字符串获取LocalDate实例</td>
 </tr>
 <tr>
-<td align="center"><font color=red><strong>static LocalDate parse(CharSequence text, DateTimeFormatter formatter)</strong></font></td>
+<td align="center"><font color="red"><strong>static LocalDate parse(CharSequence text, DateTimeFormatter formatter)</strong></font></td>
 <td align="center">使用特定格式化形式从文本字符串获取LocalDate实例</td>
 </tr>
 </tbody></table>
@@ -697,7 +697,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -793,7 +793,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14.5k</span>
+    <span title="Site words total count">16.1k</span>
   
 </div>
 
@@ -802,11 +802,7 @@
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1312,5 +1308,5 @@
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
 </html>

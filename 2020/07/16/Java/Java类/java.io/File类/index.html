@@ -98,7 +98,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":20,"b2t":true,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":20,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -143,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -406,7 +406,7 @@
       
 
       
-        <meta name="referrer" content="no-referrer"/>
+        <meta name="referrer" content="no-referrer">
 
 <h2 id="1、构造函数"><a href="#1、构造函数" class="headerlink" title="1、构造函数"></a>1、构造函数</h2><blockquote>
 <p>Java文件类以抽象的方式代表文件名和目录路径名。该类主要用于文件和目录的创建、文件的查找和文件的删除等。<br>File对象代表磁盘中实际存在的文件和目录。通过以下构造方法创建一个File对象。</p>
@@ -431,7 +431,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><font color=red><strong>public String getName()</strong></font></td>
+<td align="left"><font color="red"><strong>public String getName()</strong></font></td>
 <td align="left">返回由此抽象路径名表示的文件或目录的名称。</td>
 </tr>
 <tr>
@@ -443,7 +443,7 @@
 <td align="left">返回此抽象路径名的父路径名的抽象路径名，如果此路径名没有指定父目录，则返回 <code>null</code>。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public String getPath()</strong></font></td>
+<td align="left"><font color="red"><strong>public String getPath()</strong></font></td>
 <td align="left">将此抽象路径名转换为一个路径名字符串。</td>
 </tr>
 <tr>
@@ -463,7 +463,7 @@
 <td align="left">测试应用程序是否可以修改此抽象路径名表示的文件。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public boolean exists()</strong></font></td>
+<td align="left"><font color="red"><strong>public boolean exists()</strong></font></td>
 <td align="left">测试此抽象路径名表示的文件或目录是否存在。</td>
 </tr>
 <tr>
@@ -479,15 +479,15 @@
 <td align="left">返回此抽象路径名表示的文件最后一次被修改的时间。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public long length()</strong></font></td>
+<td align="left"><font color="red"><strong>public long length()</strong></font></td>
 <td align="left">返回由此抽象路径名表示的文件的长度。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public boolean createNewFile() throws IOException</strong></font></td>
+<td align="left"><font color="red"><strong>public boolean createNewFile() throws IOException</strong></font></td>
 <td align="left">当且仅当不存在具有此抽象路径名指定的名称的文件时，原子地创建由此抽象路径名指定的一个新的空文件。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public boolean delete()</strong></font></td>
+<td align="left"><font color="red"><strong>public boolean delete()</strong></font></td>
 <td align="left">删除此抽象路径名表示的文件或目录。</td>
 </tr>
 <tr>
@@ -495,19 +495,19 @@
 <td align="left">在虚拟机终止时，请求删除此抽象路径名表示的文件或目录。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public String[] list()</strong></font></td>
+<td align="left"><font color="red"><strong>public String[] list()</strong></font></td>
 <td align="left">返回由此抽象路径名所表示的目录中的文件和目录的名称所组成字符串数组。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public String[] list(FilenameFilter filter)</strong></font></td>
+<td align="left"><font color="red"><strong>public String[] list(FilenameFilter filter)</strong></font></td>
 <td align="left">返回由包含在目录中的文件和目录的名称所组成的字符串数组，这一目录是通过满足指定过滤器的抽象路径名来表示的。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public File[] listFiles()</strong></font></td>
+<td align="left"><font color="red"><strong>public File[] listFiles()</strong></font></td>
 <td align="left">返回一个抽象路径名数组，这些路径名表示此抽象路径名所表示目录中的文件。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public File[] listFiles(FileFilter filter)</strong></font></td>
+<td align="left"><font color="red"><strong>public File[] listFiles(FileFilter filter)</strong></font></td>
 <td align="left">返回表示此抽象路径名所表示目录中的文件和目录的抽象路径名数组，这些路径名满足特定过滤器。</td>
 </tr>
 <tr>
@@ -515,11 +515,11 @@
 <td align="left">创建此抽象路径名指定的目录。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public boolean mkdirs()</strong></font></td>
+<td align="left"><font color="red"><strong>public boolean mkdirs()</strong></font></td>
 <td align="left">创建此抽象路径名指定的目录，包括创建必需但不存在的父目录。创建整个目录树。</td>
 </tr>
 <tr>
-<td align="left"><font color=red><strong>public boolean renameTo(File dest)</strong></font></td>
+<td align="left"><font color="red"><strong>public boolean renameTo(File dest)</strong></font></td>
 <td align="left">重新命名此抽象路径名表示的文件。</td>
 </tr>
 <tr>
@@ -674,7 +674,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -770,7 +770,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">14.5k</span>
+    <span title="Site words total count">16.1k</span>
   
 </div>
 
@@ -779,11 +779,7 @@
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1289,5 +1285,5 @@
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
 </html>
