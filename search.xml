@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java网络通信</title>
+    <url>/2020/10/10/Java%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="1、使用URL访问网络资源"><a href="#1、使用URL访问网络资源" class="headerlink" title="1、使用URL访问网络资源"></a>1、使用URL访问网络资源</h2><blockquote>
+<p>一个<strong>URL对象</strong>表示在Internet上的一个<strong>文件名</strong>，一个<strong>URLConnection对象</strong>表示在Internet上的一个<strong>文件</strong>，文件名由URL指定<br>一个<strong>InetAddress对象</strong>表示在Internet上的<strong>一台计算机的主机名和其IP地址</strong>，提供将主机名解析为其IP地址的方法</p>
+</blockquote>
+<h3 id="URL类"><a href="#URL类" class="headerlink" title="URL类"></a>URL类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">URL</span> <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">URL</span><span class="params">(String spec)</span>		<span class="comment">//构造方法</span></span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">    <span class="comment">//获取URL对象所代表网络资源的输入流，用于读操作</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">final</span> InputStream <span class="title">openStream</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">    <span class="comment">//创建一个URLConnection对象，相对于由文件名构建一个File对象</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> URLConnection <span class="title">openConnection</span><span class="params">()</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>构造方法示例</p>
+<blockquote>
+<p>URL url1 = new URL(“file://localhost/D:/Java/test.txt”)        //使用FILE协议，表示本机】文件系统<br>URL url2 = new URL(“<a href="http://www.phei.com.cn&quot;" target="_blank" rel="noopener">http://www.phei.com.cn&quot;</a>)        //使用HTTP协议，表示网络上的某个文件</p>
+</blockquote>
+<h3 id="URLConnection类"><a href="#URLConnection类" class="headerlink" title="URLConnection类"></a>URLConnection类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">URLConnection</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getContentLength</span><span class="params">()</span>	<span class="comment">//返回资源文件的长度</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> String <span class="title">getContentType</span><span class="params">()</span>	<span class="comment">//返回资源文件的类型</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getLastModified</span><span class="params">()</span>	<span class="comment">//返回资源文件的最后修改日期</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="InetAddress类"><a href="#InetAddress类" class="headerlink" title="InetAddress类"></a>InetAddress类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InetAddress</span> <span class="keyword">extends</span> <span class="title">Object</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByName</span><span class="params">(String host)</span> <span class="keyword">throws</span> UnknownHostException</span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getByAddress</span><span class="params">(String host,<span class="keyword">byte</span>[] addr)</span> <span class="keyword">throws</span> UnknownHostException</span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">static</span> InetAddress <span class="title">getLocalHost</span><span class="params">()</span> <span class="keyword">throws</span> UnknownHostException	<span class="comment">//返回本地主机</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> String <span class="title">getHostAddress</span><span class="params">()</span>		<span class="comment">//返回IP地址字符串</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> String <span class="title">getHostName</span><span class="params">()</span>			<span class="comment">//返回主机名</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span>			<span class="comment">//返回主机名和IP地址字符串</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>示例</p>
+<blockquote>
+<p>InetAddress.getByName(url.getHost()).getHostAddress()    //返回url指定主机名的IP地址字符串<br>InetAddress.getLocalHost().getHostAddress()                    //返回本机的IP地址字符串</p>
+</blockquote>
+<h2 id="2、TCP-Socket通信"><a href="#2、TCP-Socket通信" class="headerlink" title="2、TCP Socket通信"></a>2、TCP Socket通信</h2><p>通信流程说明如下：</p>
+<blockquote>
+<ol>
+<li>服务器端创建一个<strong>指定端口号的ServerSocket对象</strong>，调用<strong>accept()方法</strong>等待接收客户端的连接请求，等待期间当前<strong>进程处于阻塞状态</strong>；</li>
+<li>客户端创建一个<strong>Socket对象</strong>，指定服务器端主机的<strong>IP地址（或域名）和端口</strong>，发出TCP请求；</li>
+<li>服务器端接收到请求，建立一条TCP连接，accept()方法<strong>返回一个Socket对象</strong>，通过该Socket对象与客户端的Socket对象实现实时通信。</li>
+<li>当一方决定结束通信时，会向对方发送结束信息，另一方接收到结束信息后，双方分别关闭各自的TCP连接。</li>
+<li>ServerSocket对象停止等待客户端的连接请求。</li>
+</ol>
+</blockquote>
+<h3 id="ServerSocket类"><a href="#ServerSocket类" class="headerlink" title="ServerSocket类"></a>ServerSocket类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServerSocket</span> <span class="keyword">extends</span> <span class="title">Object</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ServerSocket</span><span class="params">(<span class="keyword">int</span> port)</span> <span class="keyword">throws</span> IOException	<span class="comment">//构造方法指定端口</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> Socket <span class="title">accept</span><span class="params">()</span>	<span class="keyword">throws</span> IOException			<span class="comment">//等待接收客户端的连接请求</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Socket类"><a href="#Socket类" class="headerlink" title="Socket类"></a>Socket类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Socket</span> <span class="keyword">extends</span> <span class="title">Object</span></span>&#123;</span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Socket</span><span class="params">(String host, <span class="keyword">int</span> port)</span> <span class="keyword">throws</span> UnknownHostException,IOException</span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="title">Socket</span><span class="params">(InetAddress ip, <span class="keyword">int</span> port)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span>		<span class="comment">//返回远程对方的端口</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLocalPort</span><span class="params">()</span>	<span class="comment">//返回本地己方的端口</span></span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">    <span class="comment">//获取输入输出流</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> InputStream <span class="title">getInputStream</span><span class="params">()</span> <span class="keyword">throws</span> IOException		<span class="comment">//获取TCP连接提供的字节输入流</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> OutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="keyword">throws</span> IOException	<span class="comment">//获取TCP连接提供的字节输出流</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>示例<br><strong>服务器端</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Server</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            ServerSocket serverSocket=<span class="keyword">new</span> ServerSocket(<span class="number">8888</span>);</span><br><span class="line">            System.out.println(<span class="string">"服务端已启动，等待客户端连接.."</span>);</span><br><span class="line">            <span class="comment">//侦听并接受到此套接字的连接,返回一个Socket对象,进入阻塞态</span></span><br><span class="line">            Socket socket=serverSocket.accept();</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//根据输入输出流和客户端连接</span></span><br><span class="line">            InputStream inputStream=socket.getInputStream();<span class="comment">//得到一个输入流，接收客户端传递的信息</span></span><br><span class="line">            InputStreamReader inputStreamReader=<span class="keyword">new</span> InputStreamReader(inputStream);<span class="comment">//字节流转为字符流</span></span><br><span class="line">            BufferedReader bufferedReader=<span class="keyword">new</span> BufferedReader(inputStreamReader);<span class="comment">//加入缓冲区</span></span><br><span class="line">            String temp=<span class="keyword">null</span>;</span><br><span class="line">            String info=<span class="string">""</span>;</span><br><span class="line">            <span class="keyword">while</span>((temp=bufferedReader.readLine())!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                info+=temp;</span><br><span class="line">                System.out.println(<span class="string">"已接收到客户端连接"</span>);</span><br><span class="line">                System.out.println(<span class="string">"服务端接收到客户端信息："</span>+info+<span class="string">",当前客户端ip为："</span>+socket.getInetAddress().getHostAddress());</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            OutputStream outputStream=socket.getOutputStream();<span class="comment">//获取一个输出流，向服务端发送信息</span></span><br><span class="line">            PrintWriter printWriter=<span class="keyword">new</span> PrintWriter(outputStream);<span class="comment">//将输出流包装成打印流</span></span><br><span class="line">            printWriter.print(<span class="string">"你好，服务端已接收到您的信息"</span>);</span><br><span class="line">            printWriter.flush();</span><br><span class="line">            socket.shutdownOutput();<span class="comment">//关闭输出流</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">//关闭相对应的资源</span></span><br><span class="line">            printWriter.close();</span><br><span class="line">            outputStream.close();</span><br><span class="line">            bufferedReader.close();</span><br><span class="line">            inputStream.close();</span><br><span class="line">            socket.close();</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>客户端</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//创建Socket对象</span></span><br><span class="line">            Socket socket=<span class="keyword">new</span> Socket(<span class="string">"localhost"</span>,<span class="number">8888</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//根据输入输出流和服务端连接</span></span><br><span class="line">            OutputStream out=socket.getOutputStream();<span class="comment">//获取一个输出流，向服务端发送信息</span></span><br><span class="line">            PrintWriter printWriter=<span class="keyword">new</span> PrintWriter(out);<span class="comment">//将输出流包装成打印流</span></span><br><span class="line">            printWriter.print(<span class="string">"服务端你好，我是balabala"</span>);</span><br><span class="line">            printWriter.flush();</span><br><span class="line">            socket.shutdownOutput();<span class="comment">//关闭输出流</span></span><br><span class="line">            </span><br><span class="line">            InputStream in=socket.getInputStream();<span class="comment">//获取一个输入流，接收服务端的信息</span></span><br><span class="line">            InputStreamReader inputStreamReader=<span class="keyword">new</span> InputStreamReader(inputStream);<span class="comment">//包装成字符流，提高效率</span></span><br><span class="line">            BufferedReader bufferedReader=<span class="keyword">new</span> BufferedReader(inputStreamReader);<span class="comment">//缓冲区</span></span><br><span class="line">            String info=<span class="string">""</span>;</span><br><span class="line">            String temp=<span class="keyword">null</span>;<span class="comment">//临时变量</span></span><br><span class="line">            <span class="keyword">while</span>((temp=bufferedReader.readLine())!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                info+=temp;</span><br><span class="line">                System.out.println(<span class="string">"客户端接收服务端发送信息："</span>+info);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//关闭相对应的资源</span></span><br><span class="line">            bufferedReader.close();</span><br><span class="line">            inputStream.close();</span><br><span class="line">            printWriter.close();</span><br><span class="line">            outputStream.close();</span><br><span class="line">            socket.close();</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、UDP数据报通信"><a href="#3、UDP数据报通信" class="headerlink" title="3、UDP数据报通信"></a>3、UDP数据报通信</h2><h3 id="DatagramPacket-数据报包）类"><a href="#DatagramPacket-数据报包）类" class="headerlink" title="DatagramPacket(数据报包）类"></a>DatagramPacket(数据报包）类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DatagramPacket</span></span>&#123;</span><br><span class="line">    <span class="comment">//创建待发送数据报包</span></span><br><span class="line">    <span class="comment">//buffer为包数据,length为包长度,ip为目标主机,port为目标主机端口</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DatagramPacket</span><span class="params">(<span class="keyword">byte</span>[] buffer,<span class="keyword">int</span> length,InetAddress ip,<span class="keyword">int</span> port)</span></span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">    <span class="comment">//创建待接收数据报包</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="title">DatagramPacket</span><span class="params">(<span class="keyword">byte</span>[] buffer,<span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function">    <span class="comment">//获取接收到的数据报包的属性及其数据</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">byte</span>[] <span class="title">getData</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLength</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> InetAddress <span class="title">getAddress</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPort</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="DatagramSocket-数据报Socket）类"><a href="#DatagramSocket-数据报Socket）类" class="headerlink" title="DatagramSocket(数据报Socket）类"></a>DatagramSocket(数据报Socket）类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DatagramSocket</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DatagramSocket</span><span class="params">()</span> <span class="keyword">throws</span> SocketException			<span class="comment">//创建Socket,绑定一可用端口</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="title">DatagramSocket</span><span class="params">(<span class="keyword">int</span> port)</span> <span class="keyword">throws</span> SocketException	<span class="comment">//创建Socket,port指定端口</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(DatagramPacket pack)</span> <span class="keyword">throws</span> IOException	<span class="comment">//发送pack数据报包</span></span></span><br><span class="line"><span class="function">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receive</span><span class="params">(DatagramPacket pack)</span> <span class="keyword">throws</span> IOException	<span class="comment">//接收数据报包存于pack中</span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>示例**</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UDP</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//接收数据报包</span></span><br><span class="line">        DatagramSocket socket = <span class="keyword">new</span> DatagramSocket(<span class="number">8800</span>);</span><br><span class="line">        <span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];<span class="comment">// 创建字节数组，指定接收的数据包的大小</span></span><br><span class="line">        DatagramPacket packet = <span class="keyword">new</span> DatagramPacket(data, data.length);</span><br><span class="line">        socket.receive(packet);<span class="comment">// 此方法在接收到数据报之前会一直阻塞</span></span><br><span class="line">        String info = <span class="keyword">new</span> String(data, <span class="number">0</span>, packet.getLength());</span><br><span class="line">        System.out.println(<span class="string">"我是服务器，客户端说："</span> + info);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//发送数据报包</span></span><br><span class="line">        InetAddress address = packet.getAddress();</span><br><span class="line">        <span class="keyword">int</span> port = packet.getPort();</span><br><span class="line">        <span class="keyword">byte</span>[] data2 = <span class="string">"欢迎您!"</span>.getBytes();</span><br><span class="line">        DatagramPacket packet2 = <span class="keyword">new</span> DatagramPacket(data2, data2.length, address, port);</span><br><span class="line">        socket.send(packet2);</span><br><span class="line">        </span><br><span class="line">        socket.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>Hexo问题与解决方案</title>
+    <url>/2020/07/17/Hexo/Hexo%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="1、hexo引用外网的图片不显示"><a href="#1、hexo引用外网的图片不显示" class="headerlink" title="1、hexo引用外网的图片不显示"></a>1、hexo引用外网的图片不显示</h2><p>方法其实很简单，只需要文章的头部如下图所示位置添加<code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;</code>这一句话就可以完美解决问题。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo问题与解决方案</span><br><span class="line">toc: true</span><br><span class="line">date: 2020-07-17 18:24:16</span><br><span class="line">categories:</span><br><span class="line">---</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"referrer"</span> <span class="attr">content</span>=<span class="string">"no-referrer"</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>css应用</title>
+    <url>/2020/08/10/CSS/css%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="1、单行文本超出省略"><a href="#1、单行文本超出省略" class="headerlink" title="1、单行文本超出省略"></a>1、单行文本超出省略</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;* 强制不换行 *&#x2F;</span><br><span class="line">white-space: nowrap;</span><br><span class="line">&#x2F;* 隐藏超出部分 *&#x2F;</span><br><span class="line">overflow: hidden;</span><br><span class="line">&#x2F;* 用省略号代替剩余内容 *&#x2F;</span><br><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、元素水平居中"><a href="#2、元素水平居中" class="headerlink" title="2、元素水平居中"></a>2、元素水平居中</h2><blockquote>
+<ol>
+<li>若内部为行内元素，我们可以在父容器上使用 <code>text-align: center</code>  。</li>
+<li>若内部是块状元素，我们可以在子容器上使用 <code>margin: 0 auto</code> （若内部不是块状元素，需要设置 <code>display: block</code> ）。</li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo的应用</title>
+    <url>/2020/07/08/Hexo/Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
+<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br>那么框架就会自动替我们创建一个叫做hello.md的文。<br>创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。</p>
+<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
+</blockquote>
+<blockquote>
+<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
+</blockquote>
+<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code></p>
+<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>css</title>
     <url>/2020/07/31/CSS/css/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -241,40 +333,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Hexo问题与解决方案</title>
-    <url>/2020/07/17/Hexo/Hexo%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h2 id="1、hexo引用外网的图片不显示"><a href="#1、hexo引用外网的图片不显示" class="headerlink" title="1、hexo引用外网的图片不显示"></a>1、hexo引用外网的图片不显示</h2><p>方法其实很简单，只需要文章的头部如下图所示位置添加<code>&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;</code>这一句话就可以完美解决问题。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo问题与解决方案</span><br><span class="line">toc: true</span><br><span class="line">date: 2020-07-17 18:24:16</span><br><span class="line">categories:</span><br><span class="line">---</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"referrer"</span> <span class="attr">content</span>=<span class="string">"no-referrer"</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo的应用</title>
-    <url>/2020/07/08/Hexo/Hexo%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h1 id="一、创建博客"><a href="#一、创建博客" class="headerlink" title="一、创建博客"></a>一、创建博客</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new 博客名</span><br></pre></td></tr></table></figure>
-<p>利用这条命令我们可以创建一个新的md文件，比如我们输入<code>hexo new hello</code>，<br>那么框架就会自动替我们创建一个叫做hello.md的文。<br>创建的md文件存放在我们博客文件夹下source/_posts文件夹内，然后重新发布博客就可以了。</p>
-<h1 id="二、Hexo更换主题"><a href="#二、Hexo更换主题" class="headerlink" title="二、Hexo更换主题"></a>二、Hexo更换主题</h1><h2 id="1、下载主题文件至themes目录下"><a href="#1、下载主题文件至themes目录下" class="headerlink" title="1、下载主题文件至themes目录下"></a>1、下载主题文件至themes目录下</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在博客根目录中使用该命令</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>这里<code>[https://github.com/iissnan/hexo-theme-next](https://github.com/iissnan/hexo-theme-next)</code>是该主题的仓库地址</p>
-</blockquote>
-<blockquote>
-<p><code>themes/next</code>表示下载到根目录中的themes文件夹下，下载为next文<br>件夹，注意前面有个空格和仓库地址分隔哦</p>
-</blockquote>
-<h2 id="2、更改文件配置"><a href="#2、更改文件配置" class="headerlink" title="2、更改文件配置"></a>2、更改文件配置</h2><p>我们打开<code>_config.yml</code>这个文件，将配置中的<code>theme: landscape</code>改为<code>theme: next</code></p>
-<h2 id="3、发布更改"><a href="#3、发布更改" class="headerlink" title="3、发布更改"></a>3、发布更改</h2><p><code>hexo generate</code> -&gt; <code>hexo deploy</code> -&gt; <code>hexo clean</code> </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>本地电脑部署博客步骤</title>
     <url>/2020/07/08/Hexo/%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E6%AD%A5%E9%AA%A4/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -294,6 +352,144 @@
 
 <h1 id="五、git-clone-到本地"><a href="#五、git-clone-到本地" class="headerlink" title="五、git clone 到本地"></a>五、git clone 到本地</h1><p>clone 远程仓库dev分支的代码到本地</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b dev 仓库地址</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SASS/SCSS</title>
+    <url>/2020/08/10/CSS/SASS-SCSS/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p><strong>SASS 是一款 CSS 预编译器</strong>，它定义了一种新的编程语言，为CSS添加了一些编程的特性。SASS有变量、函数、控制语句、混用、嵌套等高级功能。<br>SASS有两种语法，一种是<strong>SCSS</strong>，另一种是类似yaml一样的<strong>缩进语法</strong>。</p>
+<h1 id="SCSS语法"><a href="#SCSS语法" class="headerlink" title="SCSS语法"></a>SCSS语法</h1><h2 id="1、变量"><a href="#1、变量" class="headerlink" title="1、变量"></a>1、变量</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 声明变量 */</span></span><br><span class="line">$width: 10px;</span><br><span class="line">	<span class="comment">/* 变量类型为字符串，一般不需要加引号，但是有些特殊情况*，比如字符串中有双斜杠“//”，</span></span><br><span class="line"><span class="comment">		就需要用英文输入法状态下的单引号或者双引号包裹字符串，用引号的写法 */</span></span><br><span class="line">$url: 'https://www.yuque.com/';</span><br><span class="line">	<span class="comment">/* 定义类似数组的遍量 */</span></span><br><span class="line">$animals: puppy kitty chick;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用变量 */</span></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: $width;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: $width / <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">height</span>: $width * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、嵌套"><a href="#2、嵌套" class="headerlink" title="2、嵌套"></a>2、嵌套</h2><h3 id="嵌套规则"><a href="#嵌套规则" class="headerlink" title="嵌套规则"></a>嵌套规则</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1597042054160-4fa4476d-cdbb-4124-b24d-d98514a5f578.png#align=left&display=inline&height=266&margin=%5Bobject%20Object%5D&name=image.png&originHeight=354&originWidth=652&size=91047&status=done&style=none&width=489" alt="image.png"></p>
+<h3 id="父选择器-amp"><a href="#父选择器-amp" class="headerlink" title="父选择器 &amp;"></a>父选择器 &amp;</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1597042183281-45493093-692e-48b0-84f6-02eb25399b7a.png#align=left&display=inline&height=217&margin=%5Bobject%20Object%5D&name=image.png&originHeight=289&originWidth=653&size=65836&status=done&style=none&width=490" alt="image.png"></p>
+<h2 id="3、复用"><a href="#3、复用" class="headerlink" title="3、复用"></a>3、复用</h2><p>无参数时</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> square &#123;</span><br><span class="line">  <span class="selector-tag">width</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">  <span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 应用：</span><br><span class="line"><span class="selector-class">.user-avatar</span> &#123;</span><br><span class="line">  @include square;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.admin-avatar</span> &#123;</span><br><span class="line">  @include square;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参数无默认值时</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> square($size) &#123;</span><br><span class="line">  width: $size;</span><br><span class="line">  height: $size;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 应用</span><br><span class="line"><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  @include square(100px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参数有默认值时</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> square($<span class="attribute">size:</span> <span class="number">100px</span>,$<span class="attribute">lineHeight:</span> <span class="number">50px</span>) &#123;</span><br><span class="line">  width: $size;</span><br><span class="line">  height: $size;</span><br><span class="line">  line-height: $lineHeight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不传参数就会使用默认的值 100px</span><br><span class="line"><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  @include square;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 传入参数就会使用传入的值 200px</span><br><span class="line"><span class="selector-class">.avatar-200</span> &#123;</span><br><span class="line">  @include square(200px,100px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、其他"><a href="#4、其他" class="headerlink" title="4、其他"></a>4、其他</h2><h3 id="插值法"><a href="#插值法" class="headerlink" title="插值法"></a>插值法</h3><p><code>#{}</code> 插值几乎可以在Sass样式表的任何地方使用：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">$name: "mail";</span><br><span class="line">$top-or-bottom: "top";</span><br><span class="line">$left-or-right: "left";</span><br><span class="line"></span><br><span class="line">.icon-#&#123;$name&#125; &#123;</span><br><span class="line">  background-image: url("/icons/#&#123;$name&#125;.svg");</span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">  #&#123;$top-or-bottom&#125;: 0;</span><br><span class="line">  #&#123;$left-or-right&#125;: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>css渐变</title>
+    <url>/2020/08/09/CSS/css%E6%B8%90%E5%8F%98/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_CSS_gradients" target="_blank" rel="noopener">学习链接地址</a></p>
+<h2 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h2><p>从某一个边界到另一个边界的颜色渐变</p>
+<blockquote>
+<ol>
+<li>background：linear-gradient(red, blue); 从上到下</li>
+<li>background：linear-gradient(to right, red, blue); 从左到右</li>
+<li>background：linear-gradient(to bottom right, red, blue); 从左上到右下</li>
+</ol>
+<p><strong>0deg代表从上往下，90deg代表从左往右，-90deg代表从右往左</strong></p>
+<ol>
+<li><strong>background：linear-gradient(180deg, red, blue); 角度渐变</strong></li>
+<li>background：linear-gradient(red 10%, green 85%, blue 90%); 多色渐变</li>
+<li>background：linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); 透明度渐变</li>
+<li>background：repeating-linear-gradient(red, yellow 10%, green 20%); 重复渐变</li>
+</ol>
+</blockquote>
+<h2 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h2><p>从某一个点开始的向四周扩散的颜色渐变</p>
+<blockquote>
+<ol>
+<li>background：radial-gradient(red, green, blue); 同比例</li>
+<li>background：radial-gradient(red 5%, green 15%, blue 60%); 自定义比例</li>
+<li>background：radial-gradient(circle, red, yellow, green); 环形径向渐变</li>
+</ol>
+</blockquote>
+<p>实例：<code>background: radial-gradient(red 10px, yellow 30%, #1e90ff 50%);</code> <br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596978141735-15f341e0-2bee-495c-bb38-13f623e7e749.png#align=left&display=inline&height=80&margin=%5Bobject%20Object%5D&name=image.png&originHeight=159&originWidth=160&size=12072&status=done&style=none&width=80" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>css知识点</title>
+    <url>/2020/07/31/CSS/css%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+
+<h2 id="1、行内元素不能设置宽高"><a href="#1、行内元素不能设置宽高" class="headerlink" title="1、行内元素不能设置宽高"></a>1、行内元素不能设置宽高</h2><p>行内元素不能设置<code>width</code>和<code>height</code>,但可以设置<code>padding</code>。<br>行内元素可以设置左右 <code>margin</code> ,不可以设置上下 <code>margin</code> </p>
+<h2 id="2、两个盒子之间margin的计算"><a href="#2、两个盒子之间margin的计算" class="headerlink" title="2、两个盒子之间margin的计算"></a>2、两个盒子之间margin的计算</h2><p><strong>水平距离：margin等于两者margin之和</strong><br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596187549738-48b83058-91b5-4252-97d2-5d79b44f8666.png#align=left&display=inline&height=204&margin=%5Bobject%20Object%5D&originHeight=204&originWidth=1000&size=0&status=done&style=none&width=1000" alt><br><strong>垂直距离：margin取较大值</strong><br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596187573244-93df2bab-a63e-474e-8590-6c5d10f48541.png#align=left&display=inline&height=378&margin=%5Bobject%20Object%5D&originHeight=378&originWidth=1000&size=0&status=done&style=none&width=1000" alt></p>
+<h2 id="3、空白折叠现象"><a href="#3、空白折叠现象" class="headerlink" title="3、空白折叠现象"></a>3、空白折叠现象</h2><p>我们将 <code>div</code> 的 <code>display</code> 属性从 <code>block</code> 切换成 <code>inline-block</code> 之后，我们希望得到的效果是这样的:<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596187907799-97bbd30c-6173-4df1-9942-8f94710e55cc.png#align=left&display=inline&height=59&margin=%5Bobject%20Object%5D&name=image.png&originHeight=78&originWidth=374&size=890&status=done&style=none&width=281" alt="image.png"><br>但是得到的结果却是这样的：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596187942637-da61d1e4-4be5-40b1-bb72-068fb3c53111.png#align=left&display=inline&height=53&margin=%5Bobject%20Object%5D&name=image.png&originHeight=70&originWidth=493&size=972&status=done&style=none&width=370" alt="image.png"><br>两个盒子中间多了一点空白，但是我们并没有设置margin，这就是传说中的<font color="red"><strong>空白折叠</strong></font>现象。<br>其原因就是因为两个 div 之间多了一个回车，在html中，回车被当作是一个文字，所以这里的空白就是文字的空白，相当于在两个div之间加了一个字母。<br><strong>解决方案：给父元素设置font-size为0；</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"father"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fff2cc</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#b0e3e6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4、margin问题"><a href="#4、margin问题" class="headerlink" title="4、margin问题"></a>4、margin问题</h2><p><strong>兄弟之间的margin</strong></p>
+<blockquote>
+<p>我们之间最常用的应该是这种兄弟之间的margin</p>
+</blockquote>
+<p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596527293425-9e1ab01c-dcb7-42da-9148-2f8aa7211546.png#align=left&display=inline&height=364&margin=%5Bobject%20Object%5D&name=%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200804154725.png&originHeight=364&originWidth=1430&size=45445&status=done&style=none&width=1430" alt="微信图片_20200804154725.png"></strong><br><strong>父子之间的margin</strong><br>分为两种情况：父元素有border和没有border时<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596527477051-15bfa7b0-832f-45c6-88d4-1afca5ea7818.png#align=left&display=inline&height=134&margin=%5Bobject%20Object%5D&name=%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200804155102.png&originHeight=534&originWidth=1050&size=25451&status=done&style=none&width=263" alt="微信图片_20200804155102.png"></p>
+<blockquote>
+<p>如上图所示，纸箱靠墙，人在纸箱里，<br>给人设置margin-top就相当于人在往上踹，这时有两种结果，</p>
+<ol>
+<li>一种就是纸箱的上边没有纸箱壁（也就是没有border-top），此时人往上踹，踹到的是墙，所以<strong>纸箱会跟着人一起往下跑</strong>。</li>
+<li>纸箱有上纸箱壁（有border-top），此时人往上踹，人会因为反作用力，远离纸箱壁，而<strong>纸箱并没有动</strong>。</li>
+</ol>
+</blockquote>
+<p>同样的道理理解margin-bottom失效原因即可。</p>
+<h2 id="5、选择器优先级问题"><a href="#5、选择器优先级问题" class="headerlink" title="5、选择器优先级问题"></a>5、选择器优先级问题</h2><h3 id="（1）单个选择器"><a href="#（1）单个选择器" class="headerlink" title="（1）单个选择器"></a>（1）单个选择器</h3><blockquote>
+<p><strong>单个选择器的优先级顺序：id 选择器&gt;类选择器&gt;标签选择器</strong></p>
+</blockquote>
+<h3 id="（2）高级选择器的优先级"><a href="#（2）高级选择器的优先级" class="headerlink" title="（2）高级选择器的优先级"></a>（2）高级选择器的优先级</h3><p>高级选择器的优先级由权重决定。权重的作用就是决定当用<strong>两个不同的选择器</strong>给<strong>同一个标签</strong>设置了相同的属性，该听谁的。</p>
+<blockquote>
+<p>假设 id 选择器的权重为 100，类选择器的权重为 10，标签选择器的权重为 1。<br><code>.param #item span{}</code> 该选择器的权重为：10+100+1=111<br><code>#item1 #item2 .param1 .param2 p span {}</code> 该选择器的权重为：200+20+2=222</p>
+</blockquote>
+<h2 id="6、文字属性的继承性"><a href="#6、文字属性的继承性" class="headerlink" title="6、文字属性的继承性"></a>6、文字属性的继承性</h2><p>例如<code>font-size</code>(文字大小)、<code>font-weight</code>(文字粗细)、<code>font-family</code>(字体)、<code>color</code>(文字颜色)等属性属于文字属性，子类标签会继承的是离它最近的一个父类标签的文字属性。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ul-item"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>文字的颜色到底是什么颜色？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ul-item</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ff6973</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>像这样，p标签父类的父类定义了字体颜色为<code>#ff6973</code>,p标签自己又没有定义颜色,此时p标签的颜色就是<code>#ff6873</code>。</p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>初识Hexo</title>
+    <url>/2020/07/08/Hexo/%E5%88%9D%E8%AF%86Hexo/</url>
+    <content><![CDATA[<h1 id="一、Hexo定义"><a href="#一、Hexo定义" class="headerlink" title="一、Hexo定义"></a>一、Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
+<h1 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">hexo的安装</a></p>
+<ol>
+<li>安装<strong>Node.js</strong>和<strong>Git</strong></li>
+<li>然后使用npm安装Hexo<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<li>局部安装 <code>hexo</code> 包<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>安装以后，可以使用以下两种方式执行 Hexo命令：</p>
+<ol>
+<li><code>npx hexo &lt;command&gt;</code></li>
+<li>将 Hexo 所在的目录下的 node_modules 添加到环境变量之中即可直接使用 hexo ：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &#39;PATH&#x3D;&quot;$PATH:.&#x2F;node_modules&#x2F;.bin&quot;&#39; &gt;&gt; ~&#x2F;.profile</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="三、创建博客文件夹"><a href="#三、创建博客文件夹" class="headerlink" title="三、创建博客文件夹"></a>三、创建博客文件夹</h1><p>进入某目录，执行如下命令创建博客文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在当前目录下创建一个叫blog的博客文件夹</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+
+<h1 id="四、安装发布工具"><a href="#四、安装发布工具" class="headerlink" title="四、安装发布工具"></a>四、安装发布工具</h1><p>进入博客目录（<code>cd blog</code>），打开控制台，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="五、修改配置文件"><a href="#五、修改配置文件" class="headerlink" title="五、修改配置文件"></a>五、修改配置文件</h1><p>找到blog文件夹中的<code>_config.yml</code>文件，输入如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: landscape</span><br><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repository: git@github.com:sterben110&#x2F;sterben110.github.io.git  </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h1 id="六、Hexo提交"><a href="#六、Hexo提交" class="headerlink" title="六、Hexo提交"></a>六、Hexo提交</h1><h2 id="hexo-generate"><a href="#hexo-generate" class="headerlink" title="hexo generate"></a>hexo generate</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>作用是生成新的静态文件,可以简写为<code>hexo g</code></p>
+<h2 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>作用是把生成的文件部署到我们的博客上，可以简写为<code>hexo d</code>，发布后，我们就可以看到我们的博客变成了这样：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594185106908-7ab390a4-e0fc-45bc-a0c0-4b04b20d7392.png#align=left&display=inline&height=326&margin=%5Bobject%20Object%5D&originHeight=1302&originWidth=2524&size=0&status=done&style=none&width=631" alt></p>
+<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<p>用途是清除缓存，能让新发布的博客能快速生效</p>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -344,24 +540,6 @@
       </categories>
   </entry>
   <entry>
-    <title>复杂度</title>
-    <url>/2020/07/25/%E7%AE%97%E6%B3%95/%E5%A4%8D%E6%9D%82%E5%BA%A6/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-
-<h2 id="1、大O记法（复杂度）"><a href="#1、大O记法（复杂度）" class="headerlink" title="1、大O记法（复杂度）"></a>1、大O记法（复杂度）</h2><p>复杂度，又被称为<font color="red"><strong>大O记法</strong></font>，用于在进行测试之前粗略<font color="red"><strong>估计算法执行效率</strong></font>的方法。<br>在测试结果能判断算法执行效率的情况下，使用复杂度的原因：</p>
-<ul>
-<li>测试结果受硬件条件影响很大</li>
-<li>测试结果必须在程序可运行时才能拿到</li>
-<li>测试数据不够多，不具有统计学上的意义</li>
-</ul>
-<h2 id="2、时间复杂度"><a href="#2、时间复杂度" class="headerlink" title="2、时间复杂度"></a>2、时间复杂度</h2><p><font color="red" size="4"><strong>大 O 记法，只保留最大趋势公式，指数 &gt; 线性 &gt; 对数 &gt; 常数。</strong></font><br><br>计算<font color="red" size="4"><strong>时间复杂度</strong></font>，只需要<font color="red" size="4"><strong>关注for 循环嵌套情况</strong></font>。<br>写代码的时候，如果能用<strong>线性复杂度</strong>的代码，替换<strong>指数复杂度</strong>的代码，那就是大大的优化。</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>动态规划</title>
     <url>/2020/07/11/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -401,48 +579,43 @@
       </categories>
   </entry>
   <entry>
-    <title>初识Hexo</title>
-    <url>/2020/07/08/Hexo/%E5%88%9D%E8%AF%86Hexo/</url>
-    <content><![CDATA[<h1 id="一、Hexo定义"><a href="#一、Hexo定义" class="headerlink" title="一、Hexo定义"></a>一、Hexo定义</h1><p>hexo是一个快速、简洁且高效的博客框架，它支持几条简短的命令发布博客，因此是对于初学者比较友好的博客框架。</p>
-<h1 id="二、安装Hexo"><a href="#二、安装Hexo" class="headerlink" title="二、安装Hexo"></a>二、安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Hexo" target="_blank" rel="noopener">hexo的安装</a></p>
-<ol>
-<li>安装<strong>Node.js</strong>和<strong>Git</strong></li>
-<li>然后使用npm安装Hexo<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li>局部安装 <code>hexo</code> 包<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>安装以后，可以使用以下两种方式执行 Hexo命令：</p>
-<ol>
-<li><code>npx hexo &lt;command&gt;</code></li>
-<li>将 Hexo 所在的目录下的 node_modules 添加到环境变量之中即可直接使用 hexo ：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">echo &#39;PATH&#x3D;&quot;$PATH:.&#x2F;node_modules&#x2F;.bin&quot;&#39; &gt;&gt; ~&#x2F;.profile</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="三、创建博客文件夹"><a href="#三、创建博客文件夹" class="headerlink" title="三、创建博客文件夹"></a>三、创建博客文件夹</h1><p>进入某目录，执行如下命令创建博客文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;在当前目录下创建一个叫blog的博客文件夹</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-
-<h1 id="四、安装发布工具"><a href="#四、安装发布工具" class="headerlink" title="四、安装发布工具"></a>四、安装发布工具</h1><p>进入博客目录（<code>cd blog</code>），打开控制台，输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+    <title>复杂度</title>
+    <url>/2020/07/25/%E7%AE%97%E6%B3%95/%E5%A4%8D%E6%9D%82%E5%BA%A6/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
 
 
-<h1 id="五、修改配置文件"><a href="#五、修改配置文件" class="headerlink" title="五、修改配置文件"></a>五、修改配置文件</h1><p>找到blog文件夹中的<code>_config.yml</code>文件，输入如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: landscape</span><br><span class="line">deploy:</span><br><span class="line">  type: git  </span><br><span class="line">  repository: git@github.com:sterben110&#x2F;sterben110.github.io.git  </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<h1 id="六、Hexo提交"><a href="#六、Hexo提交" class="headerlink" title="六、Hexo提交"></a>六、Hexo提交</h1><h2 id="hexo-generate"><a href="#hexo-generate" class="headerlink" title="hexo generate"></a>hexo generate</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<p>作用是生成新的静态文件,可以简写为<code>hexo g</code></p>
-<h2 id="hexo-deploy"><a href="#hexo-deploy" class="headerlink" title="hexo deploy"></a>hexo deploy</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>作用是把生成的文件部署到我们的博客上，可以简写为<code>hexo d</code>，发布后，我们就可以看到我们的博客变成了这样：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1594185106908-7ab390a4-e0fc-45bc-a0c0-4b04b20d7392.png#align=left&display=inline&height=326&margin=%5Bobject%20Object%5D&originHeight=1302&originWidth=2524&size=0&status=done&style=none&width=631" alt></p>
-<h2 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>用途是清除缓存，能让新发布的博客能快速生效</p>
+<h2 id="1、大O记法（复杂度）"><a href="#1、大O记法（复杂度）" class="headerlink" title="1、大O记法（复杂度）"></a>1、大O记法（复杂度）</h2><p>复杂度，又被称为<font color="red"><strong>大O记法</strong></font>，用于在进行测试之前粗略<font color="red"><strong>估计算法执行效率</strong></font>的方法。<br>在测试结果能判断算法执行效率的情况下，使用复杂度的原因：</p>
+<ul>
+<li>测试结果受硬件条件影响很大</li>
+<li>测试结果必须在程序可运行时才能拿到</li>
+<li>测试数据不够多，不具有统计学上的意义</li>
+</ul>
+<h2 id="2、时间复杂度"><a href="#2、时间复杂度" class="headerlink" title="2、时间复杂度"></a>2、时间复杂度</h2><p><font color="red" size="4"><strong>大 O 记法，只保留最大趋势公式，指数 &gt; 线性 &gt; 对数 &gt; 常数。</strong></font><br><br>计算<font color="red" size="4"><strong>时间复杂度</strong></font>，只需要<font color="red" size="4"><strong>关注for 循环嵌套情况</strong></font>。<br>写代码的时候，如果能用<strong>线性复杂度</strong>的代码，替换<strong>指数复杂度</strong>的代码，那就是大大的优化。</p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java是如何运行的</title>
+    <url>/2020/07/15/Java/Java%E5%9F%BA%E7%A1%80/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="一、什么是编程语言"><a href="#一、什么是编程语言" class="headerlink" title="一、什么是编程语言"></a>一、什么是编程语言</h2><p>Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color="red"><strong>只能运行低级语言</strong></font>，所以<font color="red"><strong>高级语言编写的程序必须先被翻译成低级语言才能运行</strong></font>。<br><font color="red"><strong>高级语言的优点</strong></font>有很多：更容易编程、更容易阅读和修改、<font color="red"><strong>可移植性高</strong></font>；低级语言只能在一种计算机上运行。</p>
+<h2 id="二、Java语言的执行"><a href="#二、Java语言的执行" class="headerlink" title="二、Java语言的执行"></a>二、Java语言的执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765" alt><br>Java 既可以被编译也可以被解释，不同的是<font color="red"><strong>Java 编译</strong></font>过程并不生成机器语言，而是<font color="red"><strong>生成字节码</strong></font>。<font color="red"><strong>字节码</strong></font>和机器语言一样，但是它<font color="red"><strong>具备高级语言的可移植性</strong></font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color="red"><strong>字节码的解释运行</strong></font>。</p>
+<h2 id="三、Java代码的注释"><a href="#三、Java代码的注释" class="headerlink" title="三、Java代码的注释"></a>三、Java代码的注释</h2><h3 id="1、块注释"><a href="#1、块注释" class="headerlink" title="1、块注释"></a>1、块注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、行注释"><a href="#2、行注释" class="headerlink" title="2、行注释"></a>2、行注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java基础</category>
       </categories>
   </entry>
   <entry>
     <title>Java注意点</title>
-    <url>/2020/07/16/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
+    <url>/2020/07/16/Java/Java%E5%9F%BA%E7%A1%80/Java%E6%B3%A8%E6%84%8F%E7%82%B9/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
 <h2 id="1、数组初始化注意事项"><a href="#1、数组初始化注意事项" class="headerlink" title="1、数组初始化注意事项"></a>1、数组初始化注意事项</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
@@ -478,37 +651,7 @@
 ]]></content>
       <categories>
         <category>Java</category>
-        <category>Java语言入门</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaMail</title>
-    <url>/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/JavaMail/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.security.Security;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Authenticator;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Message;</span><br><span class="line"><span class="keyword">import</span> javax.mail.PasswordAuthentication;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Session;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Transport;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.InternetAddress;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"><span class="keyword">import</span> com.sun.net.ssl.internal.ssl.Provider;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MailClient</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">//设置SSL连接、邮件环境</span></span><br><span class="line">      Security.addProvider(<span class="keyword">new</span> Provider());</span><br><span class="line">      <span class="keyword">final</span> String SSL_FACTORY = <span class="string">"javax.net.ssl.SSLSocketFactory"</span>;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//配置邮箱信息</span></span><br><span class="line">      Properties props = System.getProperties();</span><br><span class="line">      <span class="comment">//邮件服务器</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.host"</span>, <span class="string">"smtp.qq.com"</span>);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.class"</span>, SSL_FACTORY);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.fallback"</span>, <span class="string">"false"</span>);</span><br><span class="line">      <span class="comment">//邮件服务器端口</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">      <span class="comment">//鉴权信息</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</span><br><span class="line">      <span class="comment">//建立邮件会话</span></span><br><span class="line">      Session session = Session.getDefaultInstance(props, <span class="keyword">new</span> Authenticator() &#123;</span><br><span class="line">        <span class="comment">//身份认证</span></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> PasswordAuthentication <span class="title">getPasswordAuthentication</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="comment">//1.账户 授权码</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> PasswordAuthentication(<span class="string">"987454568@qq.com"</span>, <span class="string">"rzuqttyyhwpabead"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">//建立邮件对象</span></span><br><span class="line">      MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</span><br><span class="line">      <span class="comment">//设置邮件的发件人</span></span><br><span class="line">      message.setFrom(<span class="keyword">new</span> InternetAddress(<span class="string">"987454568@qq.com"</span>));</span><br><span class="line">      <span class="comment">//2.设置邮件的单（多）个收件人</span></span><br><span class="line">      message.setRecipients(Message.RecipientType.TO, <span class="string">"xxxx@qq.com,xxxx@126.com"</span>);</span><br><span class="line">      <span class="comment">//设置邮件的主题</span></span><br><span class="line">      message.setSubject(<span class="string">"通过javamail发出！！！"</span>);</span><br><span class="line">      <span class="comment">//文本部分</span></span><br><span class="line">      message.setContent(<span class="string">"文本邮件测试"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">      message.saveChanges();</span><br><span class="line">      <span class="comment">//发送邮件</span></span><br><span class="line">      Transport.send(message);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java网络编程</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java是如何运行的</title>
-    <url>/2020/07/15/Java/Java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/Java%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h2 id="一、什么是编程语言"><a href="#一、什么是编程语言" class="headerlink" title="一、什么是编程语言"></a>一、什么是编程语言</h2><p>Java 是一种高级语言，有“高级语言”自然也有“低级语言”，一般计算机世界里把“低级语言”叫做机器语言或者汇编语言。计算机<font color="red"><strong>只能运行低级语言</strong></font>，所以<font color="red"><strong>高级语言编写的程序必须先被翻译成低级语言才能运行</strong></font>。<br><font color="red"><strong>高级语言的优点</strong></font>有很多：更容易编程、更容易阅读和修改、<font color="red"><strong>可移植性高</strong></font>；低级语言只能在一种计算机上运行。</p>
-<h2 id="二、Java语言的执行"><a href="#二、Java语言的执行" class="headerlink" title="二、Java语言的执行"></a>二、Java语言的执行</h2><p><img src="https://cdn.nlark.com/yuque/0/2020/svg/437282/1594785283558-6833f28a-67d6-40f9-b2ab-54ab51ae1885.svg#align=left&display=inline&height=98&margin=%5Bobject%20Object%5D&originHeight=98&originWidth=765&size=0&status=done&style=none&width=765" alt><br>Java 既可以被编译也可以被解释，不同的是<font color="red"><strong>Java 编译</strong></font>过程并不生成机器语言，而是<font color="red"><strong>生成字节码</strong></font>。<font color="red"><strong>字节码</strong></font>和机器语言一样，但是它<font color="red"><strong>具备高级语言的可移植性</strong></font>。JVM （Java virtual machine ，Java 虚拟机）支持了对<font color="red"><strong>字节码的解释运行</strong></font>。</p>
-<h2 id="三、Java代码的注释"><a href="#三、Java代码的注释" class="headerlink" title="三、Java代码的注释"></a>三、Java代码的注释</h2><h3 id="1、块注释"><a href="#1、块注释" class="headerlink" title="1、块注释"></a>1、块注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 	我是块注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2、行注释"><a href="#2、行注释" class="headerlink" title="2、行注释"></a>2、行注释</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 我是行注释</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java语言入门</category>
+        <category>Java基础</category>
       </categories>
   </entry>
   <entry>
@@ -534,6 +677,19 @@
 <h3 id="2-2、post请求"><a href="#2-2、post请求" class="headerlink" title="2.2、post请求"></a>2.2、post请求</h3><h4 id="2-2-1、post-表单数据"><a href="#2-2-1、post-表单数据" class="headerlink" title="2.2.1、post 表单数据"></a>2.2.1、post 表单数据</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">postContent</span><span class="params">(String url, Map&lt;String, String&gt; formData)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// okHttpClient 实例</span></span><br><span class="line">    OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//post方式提交的数据</span></span><br><span class="line">    Builder builder = <span class="keyword">new</span> FormBody.Builder();</span><br><span class="line">    <span class="comment">// 放入表单数据</span></span><br><span class="line">    <span class="keyword">for</span>(String key : formData.keySet())&#123;</span><br><span class="line">      builder.add(key,formData.get(key));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 构建 FormBody 对象</span></span><br><span class="line">    FormBody formBody = builder.build();</span><br><span class="line">    <span class="comment">// 指定 post 方式提交FormBody</span></span><br><span class="line">    Request request = <span class="keyword">new</span> Request.Builder().url(url).post(formBody).build();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 使用client去请求</span></span><br><span class="line">    Call call = okHttpClient.newCall(request);</span><br><span class="line">    <span class="comment">// 返回结果字符串</span></span><br><span class="line">    String result = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// 获得返回结果</span></span><br><span class="line">      result = call.execute().body().string();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">      <span class="comment">// 抓取异常</span></span><br><span class="line">      System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-2-2、post-JSON数据"><a href="#2-2-2、post-JSON数据" class="headerlink" title="2.2.2、post JSON数据"></a>2.2.2、post JSON数据</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 定义提交数据的类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> MediaType JSON_TYPE = MediaType.parse(<span class="string">"application/json; charset=utf-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 向指定的 url 提交数据，以 json 的方式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">postContent</span><span class="params">(String url, Map&lt;String, String&gt; datas)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// okHttpClient 实例</span></span><br><span class="line">  OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 数据对象转换成 json 格式字符串</span></span><br><span class="line">  String param = JSON.toJSONString(datas);</span><br><span class="line">  <span class="comment">//post方式提交的数据</span></span><br><span class="line">  RequestBody requestBody = RequestBody.create(JSON_TYPE, param);</span><br><span class="line">  Request request = <span class="keyword">new</span> Request.Builder().url(url).post(requestBody).build();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用client去请求</span></span><br><span class="line">  Call call = okHttpClient.newCall(request);</span><br><span class="line">  <span class="comment">// 返回结果字符串</span></span><br><span class="line">  String result = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 获得返回结果</span></span><br><span class="line">    result = call.execute().body().string();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    <span class="comment">// 抓取异常</span></span><br><span class="line">    System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java网络编程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaMail</title>
+    <url>/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/JavaMail/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.mail<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.security.Security;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Authenticator;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Message;</span><br><span class="line"><span class="keyword">import</span> javax.mail.PasswordAuthentication;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Session;</span><br><span class="line"><span class="keyword">import</span> javax.mail.Transport;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.InternetAddress;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"><span class="keyword">import</span> com.sun.net.ssl.internal.ssl.Provider;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MailClient</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">//设置SSL连接、邮件环境</span></span><br><span class="line">      Security.addProvider(<span class="keyword">new</span> Provider());</span><br><span class="line">      <span class="keyword">final</span> String SSL_FACTORY = <span class="string">"javax.net.ssl.SSLSocketFactory"</span>;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//配置邮箱信息</span></span><br><span class="line">      Properties props = System.getProperties();</span><br><span class="line">      <span class="comment">//邮件服务器</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.host"</span>, <span class="string">"smtp.qq.com"</span>);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.class"</span>, SSL_FACTORY);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.fallback"</span>, <span class="string">"false"</span>);</span><br><span class="line">      <span class="comment">//邮件服务器端口</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.socketFactory.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">      <span class="comment">//鉴权信息</span></span><br><span class="line">      props.setProperty(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</span><br><span class="line">      <span class="comment">//建立邮件会话</span></span><br><span class="line">      Session session = Session.getDefaultInstance(props, <span class="keyword">new</span> Authenticator() &#123;</span><br><span class="line">        <span class="comment">//身份认证</span></span><br><span class="line">        <span class="function"><span class="keyword">protected</span> PasswordAuthentication <span class="title">getPasswordAuthentication</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="comment">//1.账户 授权码</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">new</span> PasswordAuthentication(<span class="string">"987454568@qq.com"</span>, <span class="string">"rzuqttyyhwpabead"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">//建立邮件对象</span></span><br><span class="line">      MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</span><br><span class="line">      <span class="comment">//设置邮件的发件人</span></span><br><span class="line">      message.setFrom(<span class="keyword">new</span> InternetAddress(<span class="string">"987454568@qq.com"</span>));</span><br><span class="line">      <span class="comment">//2.设置邮件的单（多）个收件人</span></span><br><span class="line">      message.setRecipients(Message.RecipientType.TO, <span class="string">"xxxx@qq.com,xxxx@126.com"</span>);</span><br><span class="line">      <span class="comment">//设置邮件的主题</span></span><br><span class="line">      message.setSubject(<span class="string">"通过javamail发出！！！"</span>);</span><br><span class="line">      <span class="comment">//文本部分</span></span><br><span class="line">      message.setContent(<span class="string">"文本邮件测试"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">      message.saveChanges();</span><br><span class="line">      <span class="comment">//发送邮件</span></span><br><span class="line">      Transport.send(message);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Java</category>
         <category>Java网络编程</category>
@@ -610,33 +766,6 @@
       </categories>
   </entry>
   <entry>
-    <title>内部类</title>
-    <url>/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<p>内部类可分为<font color="red" size="5"><strong>实例内部类</strong></font>和<font color="red" size="5"><strong>静态内部类</strong></font>。</p>
-<h2 id="1、实例内部类"><a href="#1、实例内部类" class="headerlink" title="1、实例内部类"></a>1、实例内部类</h2><p><font color="red" size="4"><strong>特性：</strong></font></p>
-<ul>
-<li>实例内部类不能有静态成员(包括属性、方法) </li>
-<li>实例内部类对象外部创建语法:Outer.new Inner(); </li>
-<li>实例内部类访问外部类成员的格式:Outer.this.成员（包含私有成员）<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"张三"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num1=<span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner1</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name=<span class="string">"李四"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num2=<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num3=<span class="number">10</span>;<span class="comment">//静态常量在内部类中是可以的</span></span><br><span class="line">        <span class="comment">//private static int num3=30;//在成员内部类中不能声明静态的成员,包括属性和方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">            <span class="comment">//System.out.println(Outer1.this.name);</span></span><br><span class="line">            System.out.println(num2);</span><br><span class="line">            outerShow();<span class="comment">//成员内部类可以直接访问外部类的属性和方法，包括私有的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="2、静态内部类"><a href="#2、静态内部类" class="headerlink" title="2、静态内部类"></a>2、静态内部类</h2><p><font color="red" size="4"><strong>特性：</strong></font></p>
-<ul>
-<li>静态内部类可以包含静态成员，也可以包含非静态成员</li>
-<li>静态内部类只能访问外部类的静态成员，格式为：Outer.静态成员</li>
-</ul>
-<p>如果我们声明内部类为静态内部类后，那么就可以直接调用这个内部类，不需要先实例化外部类。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil;</span><br><span class="line"><span class="comment">// 静态内部类是需要单独 import 的</span></span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil.InnerTool;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtilTest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line">       <span class="keyword">int</span> sum = tool.add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">       System.out.println(sum);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java面向对象</category>
-      </categories>
-  </entry>
-  <entry>
     <title>异常类</title>
     <url>/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%BC%82%E5%B8%B8%E7%B1%BB/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -672,6 +801,48 @@
       <categories>
         <category>Java</category>
         <category>Java网络编程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>内部类</title>
+    <url>/2020/07/18/Java/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<p>内部类可分为<font color="red" size="5"><strong>实例内部类</strong></font>和<font color="red" size="5"><strong>静态内部类</strong></font>。</p>
+<h2 id="1、实例内部类"><a href="#1、实例内部类" class="headerlink" title="1、实例内部类"></a>1、实例内部类</h2><p><font color="red" size="4"><strong>特性：</strong></font></p>
+<ul>
+<li>实例内部类不能有静态成员(包括属性、方法) </li>
+<li>实例内部类对象外部创建语法:Outer.new Inner(); </li>
+<li>实例内部类访问外部类成员的格式:Outer.this.成员（包含私有成员）<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"张三"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num1=<span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner1</span></span>&#123;</span><br><span class="line">        <span class="keyword">private</span> String name=<span class="string">"李四"</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> num2=<span class="number">20</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> num3=<span class="number">10</span>;<span class="comment">//静态常量在内部类中是可以的</span></span><br><span class="line">        <span class="comment">//private static int num3=30;//在成员内部类中不能声明静态的成员,包括属性和方法</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">innerShow</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">            <span class="comment">//System.out.println(Outer1.this.name);</span></span><br><span class="line">            System.out.println(num2);</span><br><span class="line">            outerShow();<span class="comment">//成员内部类可以直接访问外部类的属性和方法，包括私有的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2、静态内部类"><a href="#2、静态内部类" class="headerlink" title="2、静态内部类"></a>2、静态内部类</h2><p><font color="red" size="4"><strong>特性：</strong></font></p>
+<ul>
+<li>静态内部类可以包含静态成员，也可以包含非静态成员</li>
+<li>静态内部类只能访问外部类的静态成员，格式为：Outer.静态成员</li>
+</ul>
+<p>如果我们声明内部类为静态内部类后，那么就可以直接调用这个内部类，不需要先实例化外部类。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil;</span><br><span class="line"><span class="comment">// 静态内部类是需要单独 import 的</span></span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil.InnerTool;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtilTest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line">       <span class="keyword">int</span> sum = tool.add(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">       System.out.println(sum);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java面向对象</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Math类</title>
+    <url>/2020/07/15/Java/Java%E7%B1%BB/java.lang/Math%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color="red"><strong>double类型</strong></font>的随机数，随机数范围为<font color="red"><strong>[0,1)</strong></font>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java类</category>
+        <category>java.lang</category>
       </categories>
   </entry>
   <entry>
@@ -958,12 +1129,63 @@
       </categories>
   </entry>
   <entry>
+    <title>Duration类</title>
+    <url>/2020/07/20/Java/Java%E7%B1%BB/java.time/Duration%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><table>
+<thead>
+<tr>
+<th align="center"><strong>方法</strong></th>
+<th align="center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>static Duration between(Temporal startInclusive, Temporal endExclusive)</strong></td>
+<td align="center">获取表示两个临时对象之间的持续时间的Duration</td>
+</tr>
+</tbody></table>
+<h2 id="2、Duration类的应用"><a href="#2、Duration类的应用" class="headerlink" title="2、Duration类的应用"></a>2、Duration类的应用</h2><h3 id="获取两个日期的间隔天数"><a href="#获取两个日期的间隔天数" class="headerlink" title="获取两个日期的间隔天数"></a>获取两个日期的间隔天数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDateTime startDay = LocalDateTime.of(<span class="number">2019</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">LocalDateTime endDay = LocalDateTime.of(<span class="number">2020</span>, <span class="number">1</span>, <span class="number">15</span>, <span class="number">18</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//得到两个日期的间隔天数</span></span><br><span class="line"><span class="keyword">long</span> days = Duration.between(startDay,endDay).toDays();</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java类</category>
+        <category>java.time</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Random类</title>
     <url>/2020/07/18/Java/Java%E7%B1%BB/java.util/Random%E7%B1%BB/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
 
 <h2 id="1、int-nextInt-int-n-方法"><a href="#1、int-nextInt-int-n-方法" class="headerlink" title="1、int nextInt(int n)方法"></a>1、int nextInt(int n)方法</h2><p>int nextInt(int n) 返回一个[0,n)区间内的随机整数，范围: <font color="red"><strong>[0,n)</strong></font></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 实例化随机数</span></span><br><span class="line">Random r = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="comment">// 得到0-7之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到 0-8 之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想得到50-100之间的随机数</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">51</span>)+<span class="number">50</span>;</span><br><span class="line"><span class="comment">// 这个 51 = 100 - 50 + 1</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java类</category>
+        <category>java.util</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Arrays类</title>
+    <url>/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><p>sort()方法</p>
+<h2 id="2、Arrays类的相关应用"><a href="#2、Arrays类的相关应用" class="headerlink" title="2、Arrays类的相关应用"></a>2、Arrays类的相关应用</h2><h3 id="数组转为List"><a href="#数组转为List" class="headerlink" title="数组转为List"></a>数组转为List</h3><p>利用<code>java.util.Arrays</code>类的<code>asList()</code>方法,该方法无法对<font color="red"><strong>基本类型数组</strong></font>进行转换。<font color="red"><strong>只能转换对象数组</strong></font>。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 数字数组</span></span><br><span class="line">  Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;Integer&gt; lists = Arrays.asList(intArr);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;String&gt; lists = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转化数组为 list2</span></span><br><span class="line">  List&lt;String&gt; lists2 = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>,<span class="string">"小李"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合2的长度是: "</span> + lists2.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h3><p>利用<code>java.util.Arrays</code>类的<code>sort()</code>方法就可以实现数组的自定义排序，默认是升序排序。</p>
+<blockquote>
+<p>static <T> void sort(T[] a, Comparator&lt; super T&gt; c):</T></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 自定义排序</span></span><br><span class="line">    Arrays.sort(intArr, <span class="keyword">new</span> Comparator&lt;Integer&gt;()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span></span>&#123;</span><br><span class="line">            <span class="comment">// 判断 o2&gt;o1，执行降序排序</span></span><br><span class="line">            <span class="keyword">return</span> o2-o1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"Integer Array: "</span></span><br><span class="line">                       + Arrays.toString(intArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组转为字符串"><a href="#数组转为字符串" class="headerlink" title="数组转为字符串"></a>数组转为字符串</h3><p>利用<code>java.util.Arrays</code>类的<code>toString()</code>方法用于转换数组（包含基本类型数组）为字符串</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span>[] boolArr = <span class="keyword">new</span> <span class="keyword">boolean</span>[] &#123; <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> &#125;;</span><br><span class="line">    <span class="keyword">byte</span>[] byteArr = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line">    <span class="keyword">char</span>[] charArr = <span class="keyword">new</span> <span class="keyword">char</span>[] &#123; <span class="string">'g'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'k'</span>, <span class="string">'s'</span> &#125;;</span><br><span class="line">    <span class="keyword">double</span>[] dblArr = <span class="keyword">new</span> <span class="keyword">double</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">float</span>[] floatArr = <span class="keyword">new</span> <span class="keyword">float</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span>[] intArr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">long</span>[] lomgArr = <span class="keyword">new</span> <span class="keyword">long</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    Object[] objArr = <span class="keyword">new</span> Object[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">short</span>[] shortArr = <span class="keyword">new</span> <span class="keyword">short</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line">    System.out.println(Arrays.toString(boolArr));</span><br><span class="line">    System.out.println(Arrays.toString(byteArr));</span><br><span class="line">    System.out.println(Arrays.toString(charArr));</span><br><span class="line">    System.out.println(Arrays.toString(dblArr));</span><br><span class="line">    System.out.println(Arrays.toString(floatArr));</span><br><span class="line">    System.out.println(Arrays.toString(intArr));</span><br><span class="line">    System.out.println(Arrays.toString(lomgArr));</span><br><span class="line">    System.out.println(Arrays.toString(objArr));</span><br><span class="line">    System.out.println(Arrays.toString(shortArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
       <categories>
         <category>Java</category>
         <category>Java类</category>
@@ -1049,45 +1271,6 @@
         <category>Java</category>
         <category>Java类</category>
         <category>java.util</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Math类</title>
-    <url>/2020/07/15/Java/Java%E7%B1%BB/java.lang/Math%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h2 id="一、Math-random"><a href="#一、Math-random" class="headerlink" title="一、Math.random()"></a>一、Math.random()</h2><p>Math.random() 方法返回一个<font color="red"><strong>double类型</strong></font>的随机数，随机数范围为<font color="red"><strong>[0,1)</strong></font>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 得到一个随机数</span></span><br><span class="line"><span class="keyword">double</span> value = Math.random();</span><br><span class="line">System.out.println(value);</span><br></pre></td></tr></table></figure>
-
-<h3 id="生成6位随机数的例子"><a href="#生成6位随机数的例子" class="headerlink" title="生成6位随机数的例子"></a>生成6位随机数的例子</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//得到一个随机数[10的5次方，10的6次方)</span></span><br><span class="line"><span class="keyword">double</span> value = (Math.random()*<span class="number">9</span>+<span class="number">1</span>)*<span class="number">10</span>⁵;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java类</category>
-        <category>java.lang</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Duration类</title>
-    <url>/2020/07/20/Java/Java%E7%B1%BB/java.time/Duration%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><table>
-<thead>
-<tr>
-<th align="center"><strong>方法</strong></th>
-<th align="center"><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>static Duration between(Temporal startInclusive, Temporal endExclusive)</strong></td>
-<td align="center">获取表示两个临时对象之间的持续时间的Duration</td>
-</tr>
-</tbody></table>
-<h2 id="2、Duration类的应用"><a href="#2、Duration类的应用" class="headerlink" title="2、Duration类的应用"></a>2、Duration类的应用</h2><h3 id="获取两个日期的间隔天数"><a href="#获取两个日期的间隔天数" class="headerlink" title="获取两个日期的间隔天数"></a>获取两个日期的间隔天数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LocalDateTime startDay = LocalDateTime.of(<span class="number">2019</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">LocalDateTime endDay = LocalDateTime.of(<span class="number">2020</span>, <span class="number">1</span>, <span class="number">15</span>, <span class="number">18</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//得到两个日期的间隔天数</span></span><br><span class="line"><span class="keyword">long</span> days = Duration.between(startDay,endDay).toDays();</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java类</category>
-        <category>java.time</category>
       </categories>
   </entry>
   <entry>
@@ -1270,149 +1453,6 @@
         <category>Java</category>
         <category>Java类</category>
         <category>java.time</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Arrays类</title>
-    <url>/2020/07/19/Java/Java%E7%B1%BB/java.util/Arrays%E7%B1%BB/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><p>sort()方法</p>
-<h2 id="2、Arrays类的相关应用"><a href="#2、Arrays类的相关应用" class="headerlink" title="2、Arrays类的相关应用"></a>2、Arrays类的相关应用</h2><h3 id="数组转为List"><a href="#数组转为List" class="headerlink" title="数组转为List"></a>数组转为List</h3><p>利用<code>java.util.Arrays</code>类的<code>asList()</code>方法,该方法无法对<font color="red"><strong>基本类型数组</strong></font>进行转换。<font color="red"><strong>只能转换对象数组</strong></font>。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 数字数组</span></span><br><span class="line">  Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;Integer&gt; lists = Arrays.asList(intArr);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 转化数组为 list</span></span><br><span class="line">  List&lt;String&gt; lists = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合的长度是: "</span> + lists.size());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转化数组为 list2</span></span><br><span class="line">  List&lt;String&gt; lists2 = Arrays.asList(<span class="string">"小王"</span>,<span class="string">"小明"</span>,<span class="string">"小李"</span>);</span><br><span class="line">  System.out.println(<span class="string">"集合2的长度是: "</span> + lists2.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组的排序"><a href="#数组的排序" class="headerlink" title="数组的排序"></a>数组的排序</h3><p>利用<code>java.util.Arrays</code>类的<code>sort()</code>方法就可以实现数组的自定义排序，默认是升序排序。</p>
-<blockquote>
-<p>static <T> void sort(T[] a, Comparator&lt; super T&gt; c):</T></p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Integer[] intArr = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 自定义排序</span></span><br><span class="line">    Arrays.sort(intArr, <span class="keyword">new</span> Comparator&lt;Integer&gt;()&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Integer o1, Integer o2)</span></span>&#123;</span><br><span class="line">            <span class="comment">// 判断 o2&gt;o1，执行降序排序</span></span><br><span class="line">            <span class="keyword">return</span> o2-o1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"Integer Array: "</span></span><br><span class="line">                       + Arrays.toString(intArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组转为字符串"><a href="#数组转为字符串" class="headerlink" title="数组转为字符串"></a>数组转为字符串</h3><p>利用<code>java.util.Arrays</code>类的<code>toString()</code>方法用于转换数组（包含基本类型数组）为字符串</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span>[] boolArr = <span class="keyword">new</span> <span class="keyword">boolean</span>[] &#123; <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> &#125;;</span><br><span class="line">    <span class="keyword">byte</span>[] byteArr = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line">    <span class="keyword">char</span>[] charArr = <span class="keyword">new</span> <span class="keyword">char</span>[] &#123; <span class="string">'g'</span>, <span class="string">'e'</span>, <span class="string">'e'</span>, <span class="string">'k'</span>, <span class="string">'s'</span> &#125;;</span><br><span class="line">    <span class="keyword">double</span>[] dblArr = <span class="keyword">new</span> <span class="keyword">double</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">float</span>[] floatArr = <span class="keyword">new</span> <span class="keyword">float</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span>[] intArr = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">long</span>[] lomgArr = <span class="keyword">new</span> <span class="keyword">long</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    Object[] objArr = <span class="keyword">new</span> Object[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">short</span>[] shortArr = <span class="keyword">new</span> <span class="keyword">short</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line">    System.out.println(Arrays.toString(boolArr));</span><br><span class="line">    System.out.println(Arrays.toString(byteArr));</span><br><span class="line">    System.out.println(Arrays.toString(charArr));</span><br><span class="line">    System.out.println(Arrays.toString(dblArr));</span><br><span class="line">    System.out.println(Arrays.toString(floatArr));</span><br><span class="line">    System.out.println(Arrays.toString(intArr));</span><br><span class="line">    System.out.println(Arrays.toString(lomgArr));</span><br><span class="line">    System.out.println(Arrays.toString(objArr));</span><br><span class="line">    System.out.println(Arrays.toString(shortArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java类</category>
-        <category>java.util</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>css渐变</title>
-    <url>/2020/08/09/CSS/css%E6%B8%90%E5%8F%98/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_CSS_gradients" target="_blank" rel="noopener">学习链接地址</a></p>
-<h2 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h2><p>从某一个边界到另一个边界的颜色渐变</p>
-<blockquote>
-<ol>
-<li>background：linear-gradient(red, blue); 从上到下</li>
-<li>background：linear-gradient(to right, red, blue); 从左到右</li>
-<li>background：linear-gradient(to bottom right, red, blue); 从左上到右下</li>
-</ol>
-<p><strong>0deg代表从上往下，90deg代表从左往右，-90deg代表从右往左</strong></p>
-<ol>
-<li><strong>background：linear-gradient(180deg, red, blue); 角度渐变</strong></li>
-<li>background：linear-gradient(red 10%, green 85%, blue 90%); 多色渐变</li>
-<li>background：linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); 透明度渐变</li>
-<li>background：repeating-linear-gradient(red, yellow 10%, green 20%); 重复渐变</li>
-</ol>
-</blockquote>
-<h2 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h2><p>从某一个点开始的向四周扩散的颜色渐变</p>
-<blockquote>
-<ol>
-<li>background：radial-gradient(red, green, blue); 同比例</li>
-<li>background：radial-gradient(red 5%, green 15%, blue 60%); 自定义比例</li>
-<li>background：radial-gradient(circle, red, yellow, green); 环形径向渐变</li>
-</ol>
-</blockquote>
-<p>实例：<code>background: radial-gradient(red 10px, yellow 30%, #1e90ff 50%);</code> <br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596978141735-15f341e0-2bee-495c-bb38-13f623e7e749.png#align=left&display=inline&height=80&margin=%5Bobject%20Object%5D&name=image.png&originHeight=159&originWidth=160&size=12072&status=done&style=none&width=80" alt="image.png"></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>css知识点</title>
-    <url>/2020/07/31/CSS/css%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-
-<h2 id="1、行内元素不能设置宽高"><a href="#1、行内元素不能设置宽高" class="headerlink" title="1、行内元素不能设置宽高"></a>1、行内元素不能设置宽高</h2><p>行内元素不能设置<code>width</code>和<code>height</code>,但可以设置<code>padding</code>。<br>行内元素可以设置左右 <code>margin</code> ,不可以设置上下 <code>margin</code> </p>
-<h2 id="2、两个盒子之间margin的计算"><a href="#2、两个盒子之间margin的计算" class="headerlink" title="2、两个盒子之间margin的计算"></a>2、两个盒子之间margin的计算</h2><p><strong>水平距离：margin等于两者margin之和</strong><br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596187549738-48b83058-91b5-4252-97d2-5d79b44f8666.png#align=left&display=inline&height=204&margin=%5Bobject%20Object%5D&originHeight=204&originWidth=1000&size=0&status=done&style=none&width=1000" alt><br><strong>垂直距离：margin取较大值</strong><br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596187573244-93df2bab-a63e-474e-8590-6c5d10f48541.png#align=left&display=inline&height=378&margin=%5Bobject%20Object%5D&originHeight=378&originWidth=1000&size=0&status=done&style=none&width=1000" alt></p>
-<h2 id="3、空白折叠现象"><a href="#3、空白折叠现象" class="headerlink" title="3、空白折叠现象"></a>3、空白折叠现象</h2><p>我们将 <code>div</code> 的 <code>display</code> 属性从 <code>block</code> 切换成 <code>inline-block</code> 之后，我们希望得到的效果是这样的:<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596187907799-97bbd30c-6173-4df1-9942-8f94710e55cc.png#align=left&display=inline&height=59&margin=%5Bobject%20Object%5D&name=image.png&originHeight=78&originWidth=374&size=890&status=done&style=none&width=281" alt="image.png"><br>但是得到的结果却是这样的：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596187942637-da61d1e4-4be5-40b1-bb72-068fb3c53111.png#align=left&display=inline&height=53&margin=%5Bobject%20Object%5D&name=image.png&originHeight=70&originWidth=493&size=972&status=done&style=none&width=370" alt="image.png"><br>两个盒子中间多了一点空白，但是我们并没有设置margin，这就是传说中的<font color="red"><strong>空白折叠</strong></font>现象。<br>其原因就是因为两个 div 之间多了一个回车，在html中，回车被当作是一个文字，所以这里的空白就是文字的空白，相当于在两个div之间加了一个字母。<br><strong>解决方案：给父元素设置font-size为0；</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"father"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fff2cc</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#b0e3e6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4、margin问题"><a href="#4、margin问题" class="headerlink" title="4、margin问题"></a>4、margin问题</h2><p><strong>兄弟之间的margin</strong></p>
-<blockquote>
-<p>我们之间最常用的应该是这种兄弟之间的margin</p>
-</blockquote>
-<p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596527293425-9e1ab01c-dcb7-42da-9148-2f8aa7211546.png#align=left&display=inline&height=364&margin=%5Bobject%20Object%5D&name=%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200804154725.png&originHeight=364&originWidth=1430&size=45445&status=done&style=none&width=1430" alt="微信图片_20200804154725.png"></strong><br><strong>父子之间的margin</strong><br>分为两种情况：父元素有border和没有border时<br><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1596527477051-15bfa7b0-832f-45c6-88d4-1afca5ea7818.png#align=left&display=inline&height=134&margin=%5Bobject%20Object%5D&name=%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200804155102.png&originHeight=534&originWidth=1050&size=25451&status=done&style=none&width=263" alt="微信图片_20200804155102.png"></p>
-<blockquote>
-<p>如上图所示，纸箱靠墙，人在纸箱里，<br>给人设置margin-top就相当于人在往上踹，这时有两种结果，</p>
-<ol>
-<li>一种就是纸箱的上边没有纸箱壁（也就是没有border-top），此时人往上踹，踹到的是墙，所以<strong>纸箱会跟着人一起往下跑</strong>。</li>
-<li>纸箱有上纸箱壁（有border-top），此时人往上踹，人会因为反作用力，远离纸箱壁，而<strong>纸箱并没有动</strong>。</li>
-</ol>
-</blockquote>
-<p>同样的道理理解margin-bottom失效原因即可。</p>
-<h2 id="5、选择器优先级问题"><a href="#5、选择器优先级问题" class="headerlink" title="5、选择器优先级问题"></a>5、选择器优先级问题</h2><h3 id="（1）单个选择器"><a href="#（1）单个选择器" class="headerlink" title="（1）单个选择器"></a>（1）单个选择器</h3><blockquote>
-<p><strong>单个选择器的优先级顺序：id 选择器&gt;类选择器&gt;标签选择器</strong></p>
-</blockquote>
-<h3 id="（2）高级选择器的优先级"><a href="#（2）高级选择器的优先级" class="headerlink" title="（2）高级选择器的优先级"></a>（2）高级选择器的优先级</h3><p>高级选择器的优先级由权重决定。权重的作用就是决定当用<strong>两个不同的选择器</strong>给<strong>同一个标签</strong>设置了相同的属性，该听谁的。</p>
-<blockquote>
-<p>假设 id 选择器的权重为 100，类选择器的权重为 10，标签选择器的权重为 1。<br><code>.param #item span{}</code> 该选择器的权重为：10+100+1=111<br><code>#item1 #item2 .param1 .param2 p span {}</code> 该选择器的权重为：200+20+2=222</p>
-</blockquote>
-<h2 id="6、文字属性的继承性"><a href="#6、文字属性的继承性" class="headerlink" title="6、文字属性的继承性"></a>6、文字属性的继承性</h2><p>例如<code>font-size</code>(文字大小)、<code>font-weight</code>(文字粗细)、<code>font-family</code>(字体)、<code>color</code>(文字颜色)等属性属于文字属性，子类标签会继承的是离它最近的一个父类标签的文字属性。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"ul-item"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>文字的颜色到底是什么颜色？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.ul-item</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#ff6973</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>像这样，p标签父类的父类定义了字体颜色为<code>#ff6973</code>,p标签自己又没有定义颜色,此时p标签的颜色就是<code>#ff6873</code>。</p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>css应用</title>
-    <url>/2020/08/10/CSS/css%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h2 id="1、单行文本超出省略"><a href="#1、单行文本超出省略" class="headerlink" title="1、单行文本超出省略"></a>1、单行文本超出省略</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;* 强制不换行 *&#x2F;</span><br><span class="line">white-space: nowrap;</span><br><span class="line">&#x2F;* 隐藏超出部分 *&#x2F;</span><br><span class="line">overflow: hidden;</span><br><span class="line">&#x2F;* 用省略号代替剩余内容 *&#x2F;</span><br><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、元素水平居中"><a href="#2、元素水平居中" class="headerlink" title="2、元素水平居中"></a>2、元素水平居中</h2><blockquote>
-<ol>
-<li>若内部为行内元素，我们可以在父容器上使用 <code>text-align: center</code>  。</li>
-<li>若内部是块状元素，我们可以在子容器上使用 <code>margin: 0 auto</code> （若内部不是块状元素，需要设置 <code>display: block</code> ）。</li>
-</ol>
-</blockquote>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>SASS/SCSS</title>
-    <url>/2020/08/10/CSS/SASS-SCSS/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<p><strong>SASS 是一款 CSS 预编译器</strong>，它定义了一种新的编程语言，为CSS添加了一些编程的特性。SASS有变量、函数、控制语句、混用、嵌套等高级功能。<br>SASS有两种语法，一种是<strong>SCSS</strong>，另一种是类似yaml一样的<strong>缩进语法</strong>。</p>
-<h1 id="SCSS语法"><a href="#SCSS语法" class="headerlink" title="SCSS语法"></a>SCSS语法</h1><h2 id="1、变量"><a href="#1、变量" class="headerlink" title="1、变量"></a>1、变量</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 声明变量 */</span></span><br><span class="line">$width: 10px;</span><br><span class="line">	<span class="comment">/* 变量类型为字符串，一般不需要加引号，但是有些特殊情况*，比如字符串中有双斜杠“//”，</span></span><br><span class="line"><span class="comment">		就需要用英文输入法状态下的单引号或者双引号包裹字符串，用引号的写法 */</span></span><br><span class="line">$url: 'https://www.yuque.com/';</span><br><span class="line">	<span class="comment">/* 定义类似数组的遍量 */</span></span><br><span class="line">$animals: puppy kitty chick;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用变量 */</span></span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: $width;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: $width / <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">height</span>: $width * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、嵌套"><a href="#2、嵌套" class="headerlink" title="2、嵌套"></a>2、嵌套</h2><h3 id="嵌套规则"><a href="#嵌套规则" class="headerlink" title="嵌套规则"></a>嵌套规则</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1597042054160-4fa4476d-cdbb-4124-b24d-d98514a5f578.png#align=left&display=inline&height=266&margin=%5Bobject%20Object%5D&name=image.png&originHeight=354&originWidth=652&size=91047&status=done&style=none&width=489" alt="image.png"></p>
-<h3 id="父选择器-amp"><a href="#父选择器-amp" class="headerlink" title="父选择器 &amp;"></a>父选择器 &amp;</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/437282/1597042183281-45493093-692e-48b0-84f6-02eb25399b7a.png#align=left&display=inline&height=217&margin=%5Bobject%20Object%5D&name=image.png&originHeight=289&originWidth=653&size=65836&status=done&style=none&width=490" alt="image.png"></p>
-<h2 id="3、复用"><a href="#3、复用" class="headerlink" title="3、复用"></a>3、复用</h2><p>无参数时</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> square &#123;</span><br><span class="line">  <span class="selector-tag">width</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">  <span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 应用：</span><br><span class="line"><span class="selector-class">.user-avatar</span> &#123;</span><br><span class="line">  @include square;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.admin-avatar</span> &#123;</span><br><span class="line">  @include square;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参数无默认值时</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> square($size) &#123;</span><br><span class="line">  width: $size;</span><br><span class="line">  height: $size;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 应用</span><br><span class="line"><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  @include square(100px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参数有默认值时</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> square($<span class="attribute">size:</span> <span class="number">100px</span>,$<span class="attribute">lineHeight:</span> <span class="number">50px</span>) &#123;</span><br><span class="line">  width: $size;</span><br><span class="line">  height: $size;</span><br><span class="line">  line-height: $lineHeight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不传参数就会使用默认的值 100px</span><br><span class="line"><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">  @include square;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 传入参数就会使用传入的值 200px</span><br><span class="line"><span class="selector-class">.avatar-200</span> &#123;</span><br><span class="line">  @include square(200px,100px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、其他"><a href="#4、其他" class="headerlink" title="4、其他"></a>4、其他</h2><h3 id="插值法"><a href="#插值法" class="headerlink" title="插值法"></a>插值法</h3><p><code>#{}</code> 插值几乎可以在Sass样式表的任何地方使用：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">$name: "mail";</span><br><span class="line">$top-or-bottom: "top";</span><br><span class="line">$left-or-right: "left";</span><br><span class="line"></span><br><span class="line">.icon-#&#123;$name&#125; &#123;</span><br><span class="line">  background-image: url("/icons/#&#123;$name&#125;.svg");</span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">  #&#123;$top-or-bottom&#125;: 0;</span><br><span class="line">  #&#123;$left-or-right&#125;: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>CSS</category>
       </categories>
   </entry>
 </search>

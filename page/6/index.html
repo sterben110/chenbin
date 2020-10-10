@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/21/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/fastjson/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenbin">
@@ -280,7 +280,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/07/21/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" itemprop="url">Java网络编程问题与解决方案</a></h1>
+                <a class="post-title-link" href="/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/fastjson/" itemprop="url">fastjson</a></h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-21T14:05:15+08:00">
-                2020-07-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T15:29:02+08:00">
+                2020-07-23
               </time>
             
 
@@ -357,520 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  900字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer">
-
-<h2 id="1、User-Agent-解决请求-HTTP-失败"><a href="#1、User-Agent-解决请求-HTTP-失败" class="headerlink" title="1、User-Agent 解决请求 HTTP 失败"></a>1、User-Agent 解决请求 HTTP 失败</h2><p>不一定任何请求都能成功，例如我们在浏览器中输入 <code>IP</code>  地址详情信息查询的 <code>API</code>  ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;ip.taobao.com&#x2F;service&#x2F;getIpInfo.php?ip&#x3D;117.89.35.58&amp;format&#x3D;json</span><br></pre></td></tr></table></figure>
-<p>该 <code>API</code> 在浏览器中是可以看到结果的，但是下述 <code>Java</code> 程序调用却不行：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// okHttpClient 实例</span></span><br><span class="line">  OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">  <span class="comment">// 定义一个request</span></span><br><span class="line">  Request request = <span class="keyword">new</span> Request.Builder().url(url).build();</span><br><span class="line">  <span class="comment">// 返回结果字符串</span></span><br><span class="line">  String result = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 执行请求</span></span><br><span class="line">    Response response = okHttpClient.newCall(request).execute();</span><br><span class="line">    <span class="comment">// 获取响应内容</span></span><br><span class="line">    result = response.body().string();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    <span class="comment">// 抓取异常</span></span><br><span class="line">    System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这是因为像 <code>taobao.com</code>  这样的大型网站，处于安全等各种因素考虑，会对请求进行比较严格的校验，其中一个重要的校验，是判断请求是否真的来自于一个真实的浏览器。若不是来自浏览器，例如 <code>Java</code>  程序请求， <code>API</code>  服务器认为不是真实的浏览器访问，就直接拒绝掉了。<br><br><font color="red"><strong>解决方法：</strong></font><br><br>判断请求是否真的来自于一个真实的浏览器，需要从 <code>HTTP</code>  消息头（ <code>Headers</code> ）中取得 <code>User-Agent</code>  信息后，才能判断。 <br><br><code>User-Agent</code>  是存放在 <code>Headers</code>  中的一种数据信息。作用是，在指定 <code>URL</code>  发送请求的时候，告诉服务端当前用户的浏览器类型、版本，甚至操作系统、CPU等非隐私的技术信息。服务器从 <code>Headers</code>  中的 <code>User-Agent</code>  信息获取到浏览器类型、版本等数据后，就认为是一个浏览器请求的环境了，就会给出响应。<br><br><font color="red"><strong>模拟一个 <code>win7+chrome</code> 环境：</strong></font></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mozilla&#x2F;5.0 (Windows NT 6.1; WOW64) AppleWebKit&#x2F;535.1 (KHTML, like Gecko) Chrome&#x2F;14.0.835.163 Safari&#x2F;535.1</span><br></pre></td></tr></table></figure>
-<h2 id="2、Referer解决“图片防盗链”"><a href="#2、Referer解决“图片防盗链”" class="headerlink" title="2、Referer解决“图片防盗链”"></a>2、Referer解决“图片防盗链”</h2><p><code>https://ham.youkeda.com/course/j14/3/1/0</code> 页面中的下述 <code>img</code> 元素图片无法正常显示</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://cdn.nlark.com/yuque/0/2019/</span></span></span><br><span class="line"><span class="tag"><span class="string">          png/93870/1571386626984-2462f7f9-d397-4e50-91e4-e4b688dd3410.png</span></span></span><br><span class="line"><span class="tag"><span class="string">          ?_t=41516115"</span> </span></span><br><span class="line"><span class="tag">     <span class="attr">alt</span>=<span class="string">"此处应有图片"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>但拷贝图片网址贴到浏览器地址栏，是可以访问的。<br>因为在<code>https://ham.youkeda.com/course/j14/3/1/0</code>页面下，浏览器在请求网页中的图片（或其它任何文件）时，会<font color="red"><strong>自动</strong></font>在  <code>HTTP</code>  消息头 <code>Headers</code>  中，加一个 <code>Referer</code>  信息，表示<font color="red"><strong>请求的来源</strong></font>。<br>即浏览器<font color="red"><strong>自动</strong></font>告诉图片服务器，从当前 <code>youkeda.com</code>  请求此图片，这时图片服务器拒绝了访问，因为图片服务器的规则是不允许其它网站（非 <code>nlark.com</code> ）访问图片。<br><font color="red"><strong>解决方法：</strong></font><br>把 <code>Referer</code>  信息设置为图片原始使用的网站即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// okHttpClient 实例</span></span><br><span class="line">  OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">  <span class="comment">// 定义一个request</span></span><br><span class="line">  Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">    .url(url)</span><br><span class="line">    .addHeader(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1"</span>)</span><br><span class="line">    .addHeader(<span class="string">"Referer"</span>, <span class="string">"http://sug.qianqian.com/"</span>)</span><br><span class="line">    .addHeader(<span class="string">"Host"</span>, <span class="string">"sug.qianqian.com"</span>)</span><br><span class="line">    .build();</span><br><span class="line">  <span class="comment">// 返回结果字符串</span></span><br><span class="line">  String result = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 执行请求</span></span><br><span class="line">    Response response = okHttpClient.newCall(request).execute();</span><br><span class="line">    <span class="comment">// 获取响应内容</span></span><br><span class="line">    result = response.body().string();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    System.out.println(<span class="string">"request "</span> + url + <span class="string">" error . "</span>);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  String url = <span class="string">"http://sug.qianqian.com/info/suggestion?format=json&amp;version=2&amp;from=0&amp;word=刺心&amp;third_type=0&amp;client_type=0"</span>;</span><br><span class="line">  ApiAsker asker = <span class="keyword">new</span> ApiAsker();</span><br><span class="line">  String content = asker.getContent(url);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 解析结果</span></span><br><span class="line">  Map contentObj = JSON.parseObject(content, Map<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  Map data = (Map) contentObj.get(<span class="string">"data"</span>);</span><br><span class="line">  List list = (List) data.get(<span class="string">"song"</span>);</span><br><span class="line">  <span class="keyword">int</span> length = list.size();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">    Map song = (Map)list.get(i);</span><br><span class="line">    String songname = song.get(<span class="string">"songname"</span>).toString();</span><br><span class="line">    String artistname = song.get(<span class="string">"artistname"</span>).toString();</span><br><span class="line">    System.out.println(songname+ <span class="string">"-"</span>+ artistname);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/19/Java/Java%E7%B1%BB/java.util/List%E6%8E%A5%E5%8F%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/19/Java/Java%E7%B1%BB/java.util/List%E6%8E%A5%E5%8F%A3/" itemprop="url">List接口</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-19T15:18:31+08:00">
-                2020-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-util/" itemprop="url" rel="index">
-                    <span itemprop="name">java.util</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  916字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="referrer" content="no-referrer">
-
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><table>
-<thead>
-<tr>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><font color="red"><strong>boolean add(E o)</strong></font></td>
-<td align="left">向列表的尾部追加指定的元素</td>
-</tr>
-<tr>
-<td align="left"><strong>void add(int index,E element)</strong></td>
-<td align="left">在列表的指定位置插入指定元素。</td>
-</tr>
-<tr>
-<td align="left"><font color="red"><strong>boolean addAll(Collection&lt;? extends E&gt; c)</strong></font></td>
-<td align="left">追加指定 collection中的所有元素到此列表的结尾，顺序是指定collection的迭代器返回这些元素的顺序。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean addAll(int index,Collection&lt;? extends E&gt; c)</strong></td>
-<td align="left">将指定collection中的所有元素都插入到列表中的指定位置。</td>
-</tr>
-<tr>
-<td align="left"><strong>void clear()</strong></td>
-<td align="left">从列表中移除所有元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean contains(Object o)</strong></td>
-<td align="left">如果列表包含指定的元素，则返回true。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean containsAll(Collection&lt;?&gt; c)</strong></td>
-<td align="left">如果列表包含指定collection的所有元素，则返回true。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean equals(Object c)</strong></td>
-<td align="left">比较指定的对象与列表是否相等。</td>
-</tr>
-<tr>
-<td align="left"><font color="red"><strong>E get(int index)</strong></font></td>
-<td align="left">返回列表中指定位置的元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>int hashCode()</strong></td>
-<td align="left">返回列表的哈希码值。</td>
-</tr>
-<tr>
-<td align="left"><strong>int indexOf(Object o)</strong></td>
-<td align="left">返回列表中首次出现指定元素的索引，如果列表不包含此元素，则返回-1。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean isEmpty()</strong></td>
-<td align="left">判断集合是否为空 如果为空 则返回true,否则返回false</td>
-</tr>
-<tr>
-<td align="left"><font color="red"><strong>Iterator<E> iterator()</E></strong></font></td>
-<td align="left">返回以正确顺序在列表的元素上进行迭代的迭代器。</td>
-</tr>
-<tr>
-<td align="left"><strong>int lastIndexOf(Object o)</strong></td>
-<td align="left">返回列表中最后出现指定元素的索引，如果列表不包含此元素，则返回-1。</td>
-</tr>
-<tr>
-<td align="left"><strong>ListIterator<E> listIterator()</E></strong></td>
-<td align="left">返回列表中元素的列表迭代器（以正确的顺序）。</td>
-</tr>
-<tr>
-<td align="left"><strong>ListIterator<E> listIterator(int index)</E></strong></td>
-<td align="left">返回列表中元素的列表迭代器（以正确的顺序），从列表的指定位置开始。</td>
-</tr>
-<tr>
-<td align="left"><font color="red"><strong>E remove(int index)</strong></font></td>
-<td align="left">移除列表中指定位置的元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean remove(Object o)</strong></td>
-<td align="left">移除列表中出现的首个指定元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean removeAll(Collection&lt;?&gt; c)</strong></td>
-<td align="left">从列表中移除指定collection中包含的所有元素。</td>
-</tr>
-<tr>
-<td align="left"><strong>boolean retainAll(Collection&lt;?&gt; c)</strong></td>
-<td align="left">仅在列表中保留指定collection中所包含的元素。</td>
-</tr>
-<tr>
-<td align="left"><font color="red"><strong>E set(int index,E element)</strong></font></td>
-<td align="left">用指定元素替换列表中指定位置的元素。</td>
-</tr>
-<tr>
-<td align="left"><font color="red"><strong>int size()</strong></font></td>
-<td align="left">返回列表中的元素数。</td>
-</tr>
-<tr>
-<td align="left"><strong>List<E> subList(int forIndex,int toIndex)</E></strong></td>
-<td align="left">返回列表中指定的formIndex(包括) 和toIndex(不包括)之间的部分视图。</td>
-</tr>
-<tr>
-<td align="left"><strong>Object toArray()</strong></td>
-<td align="left">返回以正确顺序包含列表中的所有元素的数组。</td>
-</tr>
-</tbody></table>
-<h2 id="2、List类相关的应用"><a href="#2、List类相关的应用" class="headerlink" title="2、List类相关的应用"></a>2、List类相关的应用</h2><h3 id="List转为数组"><a href="#List转为数组" class="headerlink" title="List转为数组"></a>List转为数组</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; al = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    al.add(<span class="number">10</span>);</span><br><span class="line">    al.add(<span class="number">20</span>);</span><br><span class="line">    al.add(<span class="number">30</span>);</span><br><span class="line">    al.add(<span class="number">40</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 转化为数组</span></span><br><span class="line">    Integer[] arr = al.toArray(<span class="keyword">new</span> Integer[] &#123;&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Integer x : arr) &#123;</span><br><span class="line">        System.out.println(x + <span class="string">" "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="List转为字符串"><a href="#List转为字符串" class="headerlink" title="List转为字符串"></a>List转为字符串</h3><p>利用<code>String</code>类的<code>String.join(&quot;,&quot;,list)</code>方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建字符串集合</span></span><br><span class="line">    List&lt;String&gt; list = Arrays.asList(<span class="string">"Geeks"</span>, <span class="string">"ForGeeks"</span>, <span class="string">"GeeksForGeeks"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 转化集合为字符串， 使用 `,` 分割</span></span><br><span class="line">    String string = String.join(<span class="string">","</span>, list);</span><br><span class="line">    <span class="comment">// 打印结果</span></span><br><span class="line">    System.out.println(<span class="string">"字符串是: "</span> + string);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="List的排序"><a href="#List的排序" class="headerlink" title="List的排序"></a>List的排序</h3><p>利用<code>java.util.Collection</code>类中的<code>sort()</code>方法</p>
-<blockquote>
-<p>static <T> void sort(List<T> list, Comparator&lt;? super T&gt; c)</T></T></p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   List&lt;Student&gt; ar = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">111</span>, <span class="string">"bbbb"</span>, <span class="string">"london"</span>));</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">131</span>, <span class="string">"aaaa"</span>, <span class="string">"nyc"</span>));</span><br><span class="line">   ar.add(<span class="keyword">new</span> Student(<span class="number">121</span>, <span class="string">"cccc"</span>, <span class="string">"jaipur"</span>));</span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"原始集合"</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ar.size(); i++) &#123;</span><br><span class="line">     System.out.println(ar.get(i));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 实现升序排序</span></span><br><span class="line">   Collections.sort(ar, <span class="keyword">new</span> Comparator&lt;Student&gt;()&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student a, Student b)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 第一个参数的学号 &gt; 第二个参数的学号</span></span><br><span class="line">       <span class="keyword">return</span> a.getRollNo() - b.getRollNo();</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"\n排序后的集合"</span>);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ar.size(); i++) &#123;</span><br><span class="line">     System.out.println(ar.get(i));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="List的过滤"><a href="#List的过滤" class="headerlink" title="List的过滤"></a>List的过滤</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AccountingRecord</span> </span>&#123;</span><br><span class="line">  <span class="comment">//创建时间</span></span><br><span class="line">  <span class="keyword">private</span> String createTime;</span><br><span class="line">  <span class="comment">//记录时间</span></span><br><span class="line">  <span class="keyword">private</span> Date time;</span><br><span class="line">  <span class="comment">//金额</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> amount;</span><br><span class="line">  <span class="comment">//收入或支出</span></span><br><span class="line">  <span class="keyword">private</span> String type;</span><br><span class="line">  <span class="comment">//分类</span></span><br><span class="line">  <span class="keyword">private</span> String category;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//List&lt;AccountingRecord&gt; records=new ArrayList();</span></span><br><span class="line">  List&lt;AccountingRecord&gt; filterd=records.stream().filter(str-&gt;str.getAmount()&gt;amount).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/20/Java/Java%E7%B1%BB/java.time/Duration%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="sterben110的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/20/Java/Java%E7%B1%BB/java.time/Duration%E7%B1%BB/" itemprop="url">Duration类</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-20T11:55:22+08:00">
-                2020-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/" itemprop="url" rel="index">
-                    <span itemprop="name">Java类</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Java%E7%B1%BB/java-time/" itemprop="url" rel="index">
-                    <span itemprop="name">java.time</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  89字
+                  375字
                 </span>
               
 
@@ -911,19 +398,400 @@
           
             <meta name="referrer" content="no-referrer">
 
-<h2 id="1、方法列表"><a href="#1、方法列表" class="headerlink" title="1、方法列表"></a>1、方法列表</h2><table>
-<thead>
-<tr>
-<th align="center"><strong>方法</strong></th>
-<th align="center"><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>static Duration between(Temporal startInclusive, Temporal endExclusive)</strong></td>
-<td align="center">获取表示两个临时对象之间的持续时间的Duration</td>
-</tr>
-</tbody></table>
-<h2 id="2、Duration类的应用"><a href="#2、Duration类的应用" class="headerlink" title="2、Duration类的应用"></a>2、Duration类的应用</h2><h3 id="获取两个日期的间隔天数"><a href="#获取两个日期的间隔天数" class="headerlink" title="获取两个日期的间隔天数"></a>获取两个日期的间隔天数</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LocalDateTime startDay = LocalDateTime.of(<span class="number">2019</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">LocalDateTime endDay = LocalDateTime.of(<span class="number">2020</span>, <span class="number">1</span>, <span class="number">15</span>, <span class="number">18</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//得到两个日期的间隔天数</span></span><br><span class="line"><span class="keyword">long</span> days = Duration.between(startDay,endDay).toDays();</span><br></pre></td></tr></table></figure>
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- JSON 操作库 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.62<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><blockquote>
+<p>Fastjson 是一个 Java 库，可以将 Java 对象转换为 JSON 格式，当然它也可以将 JSON 字符串转换为 Java 对象。</p>
+</blockquote>
+<h3 id="2-1、序列化对象"><a href="#2-1、序列化对象" class="headerlink" title="2.1、序列化对象"></a>2.1、序列化对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Building b = <span class="keyword">new</span> Building();</span><br><span class="line">    b.setName(<span class="string">"创业大厦"</span>);</span><br><span class="line">    b.setAddress(<span class="string">"天宁兰陵兰陵路26号 "</span>);</span><br><span class="line"></span><br><span class="line">    String content = JSON.toJSONString(b);</span><br><span class="line">    System.out.println(content);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2、反序列化对象"><a href="#2-2、反序列化对象" class="headerlink" title="2.2、反序列化对象"></a>2.2、反序列化对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  Building b = <span class="keyword">new</span> Building();</span><br><span class="line">  b.setName(<span class="string">"创业大厦"</span>);</span><br><span class="line">  b.setAddress(<span class="string">"天宁兰陵兰陵路26号 "</span>);</span><br><span class="line"></span><br><span class="line">  String content = JSON.toJSONString(b);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 转换为一个具体的对象</span></span><br><span class="line">  Building b2 = JSON.parseObject(content, Building<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  String name = b2.getName();</span><br><span class="line">  System.out.println(name);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 特殊情况下，java系统里没有具体对象的 class ，可以反序列化为 Map</span></span><br><span class="line">  Building bInfo = JSON.parseObject(content, Building<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  String name2 = bInfo.getName();</span><br><span class="line">  System.out.println(name2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3、解析JSON对象"><a href="#2-3、解析JSON对象" class="headerlink" title="2.3、解析JSON对象"></a>2.3、解析JSON对象</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"data"</span>: &#123;</span><br><span class="line">    <span class="attr">"keyword"</span>: <span class="string">"西海情歌"</span>,</span><br><span class="line">    <span class="attr">"priority"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="attr">"qc"</span>: [</span><br><span class="line"></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"semantic"</span>: &#123;</span><br><span class="line">      <span class="attr">"curnum"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"curpage"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"list"</span>: [],</span><br><span class="line">      <span class="attr">"totalnum"</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"song"</span>: &#123;</span><br><span class="line">      <span class="attr">"curnum"</span>: <span class="number">50</span>,</span><br><span class="line">      <span class="attr">"curpage"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"list"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"albumid"</span>: <span class="number">14880</span>,</span><br><span class="line">          <span class="attr">"albummid"</span>: <span class="string">"0024RXz94OSKCa"</span>,</span><br><span class="line">          <span class="attr">"albumname"</span>: <span class="string">"刀郎Ⅲ"</span>,</span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">   String url = <span class="string">"https://c.y.qq.com/soso/fcgi-bin/client_search_cp?aggr=1&amp;cr=1&amp;flag_qc=0&amp;p=1&amp;n=30&amp;w=西海情歌&amp;format=json"</span>;</span><br><span class="line">   ApiAsker asker = <span class="keyword">new</span> ApiAsker();</span><br><span class="line">   String content = asker.getContent(url);</span><br><span class="line"></span><br><span class="line">   Map contentObj = JSON.parseObject(content, Map<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">   <span class="comment">// 解析嵌套的对象，获取数据</span></span><br><span class="line">   Map data = (Map) contentObj.get(<span class="string">"data"</span>);</span><br><span class="line">   Map song = (Map) data.get(<span class="string">"song"</span>);</span><br><span class="line">   List list = (List) song.get(<span class="string">"list"</span>);</span><br><span class="line"></span><br><span class="line">   String albumname = ((Map)list.get(<span class="number">0</span>)).get(<span class="string">"albumname"</span>)+<span class="string">""</span>;</span><br><span class="line">   System.out.println(<span class="string">"albumname = "</span> + albumname);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/easyexcel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/23/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/easyexcel/" itemprop="url">easyexcel</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T15:31:23+08:00">
+                2020-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  183字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer">
+
+<h2 id="1、依赖"><a href="#1、依赖" class="headerlink" title="1、依赖"></a>1、依赖</h2><blockquote>
+<p>easyexcel 是一个 JAVA 解析 Excel 工具。</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- excel 操作库 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>easyexcel<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><h3 id="2-1、不转化为类"><a href="#2-1、不转化为类" class="headerlink" title="2.1、不转化为类"></a>2.1、不转化为类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 读取第一个sheet</span></span><br><span class="line">List&lt;Map&lt;Integer, String&gt;&gt; sheetDatas = EasyExcel.read(<span class="string">"xzq_201907.xlsx"</span>).sheet(<span class="number">0</span>).doReadSync();</span><br><span class="line"><span class="comment">// List 中每个元素表示一行</span></span><br><span class="line"><span class="keyword">for</span> (Map&lt;Integer, String&gt; rowData : sheetDatas) &#123;</span><br><span class="line">  <span class="comment">// Map 中用序号指代每一列</span></span><br><span class="line">  <span class="keyword">for</span> (Integer index : rowData.keySet()) &#123;</span><br><span class="line">    <span class="comment">// 列值</span></span><br><span class="line">    String columnValue = rowData.get(index);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2、自动转化为类"><a href="#2-2、自动转化为类" class="headerlink" title="2.2、自动转化为类"></a>2.2、自动转化为类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;DemoData&gt; sheetDatas = EasyExcel.read(<span class="string">"xzq_201907.xlsx"</span>).head(DemoData<span class="class">.<span class="keyword">class</span>).<span class="title">sheet</span>(0).<span class="title">doReadSync</span>()</span>;</span><br><span class="line">  <span class="keyword">for</span> (DemoData rowData : sheetDatas) &#123;</span><br><span class="line">    System.out.println(JSON.toJSONString(rowData));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoData</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> String code1;</span><br><span class="line">  <span class="keyword">private</span> String city1;</span><br><span class="line">  <span class="keyword">private</span> String code2;</span><br><span class="line">  <span class="keyword">private</span> String city2;</span><br><span class="line">  <span class="keyword">private</span> String code3;</span><br><span class="line">  <span class="keyword">private</span> String city3;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/22/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%A4%8D%E7%94%A8Session/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sterben110的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/22/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%A4%8D%E7%94%A8Session/" itemprop="url">复用Session</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-22T15:51:25+08:00">
+                2020-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">Java网络编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  717字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="referrer" content="no-referrer">
+
+<h2 id="经典案例"><a href="#经典案例" class="headerlink" title="经典案例"></a>经典案例</h2><h3 id="1、登录复用"><a href="#1、登录复用" class="headerlink" title="1、登录复用"></a>1、登录复用</h3><p>我们把 <code>OkHttpClient</code>  对象进行重构，不再定义为 <code>postContent()</code>  方法的变量。而是改为类变量： <code>private static final OkHttpClient okHttpClient</code> ，目的就是在整个类中，使用同一个 okHttpClient 执行 HTTP 请求，提升效率。重构在本节课就派上用场了。<br>分析执行两次请求的过程，实际上过程是类似的，区别是 <code>Request</code> 不同，所以，又做了一次重构，把真正执行的过程封装成一个方法： <code>doExcute</code>  ，被其它 <code>postContent()</code>  和 <code>getContent()</code>  方法调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.test.http;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> okhttp3.Cookie;</span><br><span class="line"><span class="keyword">import</span> okhttp3.CookieJar;</span><br><span class="line"><span class="keyword">import</span> okhttp3.FormBody;</span><br><span class="line"><span class="keyword">import</span> okhttp3.FormBody.Builder;</span><br><span class="line"><span class="keyword">import</span> okhttp3.HttpUrl;</span><br><span class="line"><span class="keyword">import</span> okhttp3.OkHttpClient;</span><br><span class="line"><span class="keyword">import</span> okhttp3.Request;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PageLoginer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 用 CookieJar 实现 cookie 的存储，便于登录后请求其它 URL 可以复用</span></span><br><span class="line">  <span class="comment">// 在登录成功后返回Response对象时，会有拦截器链判断Response的Headers中是否有Cookie，若有则保存</span></span><br><span class="line">  <span class="comment">// 登录后请求其它URL过程中，会有拦截器链调用loadForRequest()方法来获得内存中的Cookie</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> OkHttpClient okHttpClient = <span class="keyword">new</span> OkHttpClient.Builder()</span><br><span class="line">      .cookieJar(<span class="keyword">new</span> CookieJar() &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> HashMap&lt;String, List&lt;Cookie&gt;&gt; cookieStore = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveFromResponse</span><span class="params">(HttpUrl url, List&lt;Cookie&gt; cookies)</span> </span>&#123;</span><br><span class="line">          cookieStore.put(<span class="string">"mtime.com"</span>, cookies);</span><br><span class="line">          <span class="comment">//System.out.println("[saveFromResponse]url.host()=" + url.host());</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> List&lt;Cookie&gt; <span class="title">loadForRequest</span><span class="params">(HttpUrl url)</span> </span>&#123;</span><br><span class="line">          <span class="comment">//System.out.println("[loadForRequest]url.host()=" + url.host());</span></span><br><span class="line">          List&lt;Cookie&gt; cookies = cookieStore.get(<span class="string">"mtime.com"</span>);</span><br><span class="line">          <span class="keyword">return</span> cookies != <span class="keyword">null</span> ? cookies : <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .build();</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 向指定的 URL 提交数据，并返回提交后的结果</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">postContent</span><span class="params">(String url, Map&lt;String, String&gt; formData)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//post方式提交的数据</span></span><br><span class="line">    Builder builder = <span class="keyword">new</span> FormBody.Builder();</span><br><span class="line">    <span class="comment">// 放入表单数据</span></span><br><span class="line">    <span class="keyword">for</span> (String key : formData.keySet()) &#123;</span><br><span class="line">      builder.add(key, formData.get(key));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 构建 FormBody 对象</span></span><br><span class="line">    FormBody formBody = builder.build();</span><br><span class="line">    <span class="comment">// 指定 post 方式提交FormBody</span></span><br><span class="line">    Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">        .url(url)</span><br><span class="line">        .post(formBody)</span><br><span class="line">        .addHeader(<span class="string">"User-Agent"</span>,</span><br><span class="line">            <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"</span>)</span><br><span class="line">        .addHeader(<span class="string">"Referer"</span>,</span><br><span class="line">            <span class="string">"https://passport.mtime.com/member/signin/?redirectUrl=http%3A%2F%2Fwww.mtime.com%2F"</span>)</span><br><span class="line">        .addHeader(<span class="string">"Host"</span>, <span class="string">"passport.mtime.com"</span>)</span><br><span class="line">        .build();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> doExcute(request);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 根据输入的url，读取页面内容并返回</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 定义一个request</span></span><br><span class="line">    Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">        .url(url)</span><br><span class="line">        .addHeader(<span class="string">"User-Agent"</span>,</span><br><span class="line">            <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"</span>)</span><br><span class="line">        .addHeader(<span class="string">"Host"</span>, <span class="string">"my.mtime.com"</span>)</span><br><span class="line">        .build();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> doExcute(request);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> String <span class="title">doExcute</span><span class="params">(Request request)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 返回结果字符串</span></span><br><span class="line">    String result = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      result = okHttpClient.newCall(request).execute().body().string();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">      <span class="comment">// 抓取异常</span></span><br><span class="line">      System.out.println(<span class="string">"request "</span> + request.url() + <span class="string">" error . "</span>);</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    PageLoginer asker = <span class="keyword">new</span> PageLoginer();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 完成登录</span></span><br><span class="line">    String url = <span class="string">"https://passport.mtime.com/member/signinLogin"</span>;</span><br><span class="line">    <span class="comment">// 登录表单数据</span></span><br><span class="line">    Map&lt;String, String&gt; formData = <span class="keyword">new</span> HashMap();</span><br><span class="line">    formData.put(<span class="string">"loginEmailText"</span>, <span class="string">"15195960267"</span>);</span><br><span class="line">    formData.put(<span class="string">"loginPasswordText"</span>, <span class="string">"6b22c167fc289650b968021ba3cdee70"</span>);</span><br><span class="line">    formData.put(<span class="string">"isvcode"</span>, <span class="string">"true"</span>);</span><br><span class="line">    formData.put(<span class="string">"isAutoSign"</span>, <span class="string">"false"</span>);</span><br><span class="line">    String content = asker.postContent(url, formData);</span><br><span class="line">    System.out.println(<span class="string">"login result:"</span>);</span><br><span class="line">    System.out.println(content);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 请求我的订单</span></span><br><span class="line">    String myOrderUrl = <span class="string">"http://my.mtime.com/account/"</span>;</span><br><span class="line">    String myOrderContent = asker.getContent(myOrderUrl);</span><br><span class="line">    System.out.println(<span class="string">"orderList result:"</span>);</span><br><span class="line">    System.out.println(myOrderContent);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -1014,7 +882,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1094,7 +962,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.1k</span>
+    <span title="Site words total count">17.6k</span>
   
 </div>
 
@@ -1151,9 +1019,6 @@
 
 
 
-  
-  
-
 
 
 
@@ -1193,16 +1058,6 @@
   
   
     <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
   
 
 
